@@ -42,7 +42,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-right">
-              &copy; {new Date().getFullYear()} LaUni - Facultad de Tecnología<br />
+              &copy; {new Date().getFullYear()} LaUni - Ingeniería en Sistemas Computacionales<br />
               Todos los derechos reservados.
             </div>
           </div>
