@@ -50,3 +50,13 @@
 .presentation-card {
   @apply bg-white shadow-2xl rounded-none md:rounded-lg overflow-hidden border-t-8 border-[#FF1E2D];
 }
+
+@keyframes rotate-phone {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(90deg); }
+  100% { transform: rotate(90deg); }
+}
+
+.animate-rotate-phone {
+  animation: rotate-phone 2s ease-in-out infinite;
+}

@@ -1,16 +1,27 @@
-
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hero from "@/components/landing/Hero";
 import ProblemStatement from "@/components/landing/ProblemStatement";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
 import Methodology from "@/components/landing/Methodology";
 import PresentationMode from "@/components/landing/PresentationMode";
+import { Smartphone } from "lucide-react";
 
 export default function Home() {
   const [isPresenting, setIsPresenting] = useState(false);
+  const [showRotationHint, setShowRotationHint] = useState(false);
+
+  useEffect(() => {
+    // Detect if mobile and show hint
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      setShowRotationHint(true);
+      const timer = setTimeout(() => setShowRotationHint(false), 3500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const sections = [
     { id: 'hero', component: <Hero isPresentation onStart={() => setIsPresenting(true)} /> },
@@ -21,7 +32,18 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#F5F5F5] py-0 md:py-12 px-0 md:px-4">
+    <main className="min-h-screen bg-[#F5F5F5] py-0 md:py-12 px-0 md:px-4 relative">
+      {/* Mobile Rotation Hint Overlay */}
+      {showRotationHint && (
+        <div className="fixed inset-0 z-[200] bg-[#2B2B2B] flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500">
+          <div className="animate-rotate-phone mb-8">
+            <Smartphone className="w-20 h-20 text-[#FF1E2D]" />
+          </div>
+          <h2 className="text-xl font-black tracking-widest text-center uppercase mb-2">Gire su dispositivo</h2>
+          <p className="text-gray-400 text-xs font-bold uppercase tracking-widest text-center">Para una mejor experiencia visual en horizontal</p>
+        </div>
+      )}
+
       {isPresenting && (
         <PresentationMode 
           sections={sections} 
@@ -30,10 +52,8 @@ export default function Home() {
       )}
 
       <div className="max-w-5xl mx-auto presentation-card bg-white shadow-2xl">
-        {/* Header / Cover */}
         <Hero onStartPresentation={() => setIsPresenting(true)} />
         
-        {/* Content Body with alternating sections */}
         <div className="divide-y divide-gray-100">
           <section className="p-8 md:p-16 bg-white">
             <ProblemStatement />
@@ -52,7 +72,6 @@ export default function Home() {
           </section>
         </div>
 
-        {/* Institutional Footer */}
         <footer className="bg-[#2B2B2B] py-12 px-8 text-white">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-6">
