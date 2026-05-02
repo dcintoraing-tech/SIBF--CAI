@@ -12,66 +12,55 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 
 const specificObjectives = [
-  { icon: Scan, title: "Reconocimiento Facial", desc: "Identificación biométrica precisa" },
-  { icon: Cpu, title: "Registro Automático", desc: "Optimización de tiempos de ingreso" },
-  { icon: Database, title: "Base de Datos", desc: "Almacenamiento centralizado y seguro" },
-  { icon: LayoutList, title: "Organización", desc: "Estructura eficiente de registros" },
-  { icon: FileSpreadsheet, title: "Reportes Excel", desc: "Generación automatizada de informes" },
-  { icon: ShieldCheck, title: "Validación", desc: "Integridad total del sistema" },
-  { icon: BarChart3, title: "Análisis de Datos", desc: "Visualización en tiempo real" },
-  { icon: BellRing, title: "Alertas", desc: "Notificaciones académicas automáticas" },
+  { icon: Scan, title: "Identificación Biométrica", desc: "Reconocimiento facial de alta fidelidad." },
+  { icon: Cpu, title: "Automatización", desc: "Registro instantáneo sin intervención humana." },
+  { icon: Database, title: "Gestión Centralizada", desc: "Arquitectura de datos segura y unificada." },
+  { icon: BarChart3, title: "Analítica Predictiva", desc: "Visualización de tendencias en tiempo real." },
+  { icon: FileSpreadsheet, title: "Reportería Digital", desc: "Exportación automatizada de informes." },
+  { icon: BellRing, title: "Alertas Tempranas", desc: "Notificaciones automáticas ante irregularidades." },
 ];
 
 export default function Objectives() {
   return (
-    <section id="objetivo" className="py-24 bg-black relative">
-      <div className="container px-4 mx-auto">
+    <section id="objetivo" className="py-24 bg-slate-50">
+      <div className="container px-6 mx-auto">
         {/* General Objective */}
-        <div className="mb-24">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-black md:text-4xl mb-4">
-                OBJETIVO <span className="text-primary">GENERAL</span>
-              </h2>
-              <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
-            </div>
-            
-            <Card className="bg-zinc-900/50 border-primary/20 overflow-hidden group">
-              <CardContent className="p-12 text-center relative">
-                <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <Target className="w-32 h-32" />
-                </div>
-                <p className="text-2xl md:text-3xl font-body leading-snug text-white font-medium italic">
-                  "Desarrollar un sistema inteligente de control de asistencia basado en reconocimiento facial que automatice el registro, centralice la información y genere análisis en tiempo real, mejorando la precisión, seguridad y eficiencia operativa institucional."
-                </p>
-              </CardContent>
-            </Card>
+        <div className="max-w-4xl mx-auto mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-primary mb-4">Visión Estratégica</h2>
+            <h2 className="text-3xl font-bold md:text-5xl text-slate-900 mb-8">Objetivo General</h2>
           </div>
+          
+          <Card className="presentation-card bg-white overflow-hidden">
+            <CardContent className="p-10 md:p-16 text-center">
+              <div className="mb-8 inline-block p-4 rounded-2xl bg-primary/5 text-primary">
+                <Target className="w-10 h-10" />
+              </div>
+              <p className="text-2xl md:text-3xl font-medium leading-relaxed text-slate-800">
+                "Desarrollar un ecosistema digital de control de asistencia basado en <span className="text-primary font-bold">reconocimiento facial</span> que optimice la seguridad, centralice la información y proporcione inteligencia de datos para la excelencia institucional."
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Specific Objectives */}
         <div>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-black md:text-4xl mb-4">
-              OBJETIVOS <span className="text-muted-foreground">ESPECÍFICOS</span>
-            </h2>
-            <p className="text-muted-foreground tracking-widest uppercase text-sm">Metas detalladas del proyecto</p>
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-slate-900">Ejes de Implementación</h3>
+            <p className="text-slate-500 mt-2">Objetivos operativos específicos del proyecto</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {specificObjectives.map((obj, index) => (
-              <Card 
-                key={index} 
-                className="bg-zinc-900 border-white/5 hover:border-primary/50 transition-all duration-300 group hover:-translate-y-2 cursor-default"
-              >
+              <Card key={index} className="presentation-card group">
                 <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-red-gradient transition-colors duration-300">
-                    <obj.icon className="w-7 h-7 text-primary group-hover:text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <obj.icon className="w-6 h-6 text-primary group-hover:text-white" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 tracking-tight">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">
                     {obj.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                  <p className="text-sm text-slate-500 leading-relaxed">
                     {obj.desc}
                   </p>
                 </CardContent>

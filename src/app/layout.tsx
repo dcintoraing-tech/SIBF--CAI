@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'UniAssist Hub | Sistema Inteligente de Control de Asistencia',
-  description: 'Solución innovadora para automatizar y optimizar la gestión de asistencia institucional con reconocimiento facial.',
+  title: 'UniAssist Hub | Presentación Ejecutiva',
+  description: 'Sistema inteligente de control de asistencia para la gestión institucional avanzada.',
 };
 
 export default function RootLayout({
@@ -13,13 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="dark">
+    <html lang="es">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased bg-black text-white selection:bg-primary">
+      <body className="font-sans bg-slate-50 text-slate-900">
         {children}
         <Toaster />
       </body>
