@@ -35,7 +35,7 @@ const phases = [
   {
     name: "Fase de Desarrollo",
     duration: "8 Semanas",
-    progress: 45,
+    progress: 80,
     color: "bg-[#FF1E2D]",
     start: 35,
     width: 40,
