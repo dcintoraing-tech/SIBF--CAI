@@ -8,7 +8,8 @@ import {
   Layers, 
   PlayCircle,
   Clock,
-  ChevronRight
+  ChevronRight,
+  FileSpreadsheet
 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
@@ -64,6 +65,11 @@ const phases = [
 export default function Methodology() {
   const [activePhase, setActivePhase] = useState<number | null>(null);
 
+  const handleDownloadBacklog = () => {
+    // El archivo debe estar en public/scrum-backlog.xlsx
+    window.open('/scrum-backlog.xlsx', '_blank');
+  };
+
   return (
     <div id="metodologia" className="space-y-16">
       <div className="space-y-2">
@@ -92,9 +98,18 @@ export default function Methodology() {
 
       {/* Gantt Chart Section */}
       <div className="space-y-8">
-        <div className="flex items-center gap-3">
-          <Clock className="w-5 h-5 text-[#FF1E2D]" />
-          <h3 className="text-xl font-black text-[#2B2B2B] uppercase tracking-tighter">Diagrama de Gantt del Proyecto</h3>
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <Clock className="w-5 h-5 text-[#FF1E2D]" />
+            <h3 className="text-xl font-black text-[#2B2B2B] uppercase tracking-tighter">Diagrama de Gantt del Proyecto</h3>
+          </div>
+          <button 
+            onClick={handleDownloadBacklog}
+            className="flex items-center gap-2 px-6 py-3 bg-[#F5F5F5] border border-gray-200 hover:border-[#FF1E2D] hover:bg-white transition-all text-[10px] font-black uppercase tracking-widest text-[#2B2B2B] group"
+          >
+            <FileSpreadsheet className="w-4 h-4 text-[#FF1E2D] group-hover:scale-110 transition-transform" />
+            Ver Scrum Backlog (Excel)
+          </button>
         </div>
 
         <div className="bg-[#2B2B2B] p-4 md:p-8 rounded-none md:rounded-lg overflow-x-auto">
