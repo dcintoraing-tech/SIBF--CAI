@@ -1,4 +1,4 @@
-import { TrendingUp, ShieldCheck, Zap, ChartColumn, Rocket } from "lucide-react";
+import { TrendingUp, ShieldCheck, Zap, ChartColumn } from "lucide-react";
 
 export default function Justification() {
   const values = [
@@ -50,21 +50,6 @@ export default function Justification() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="p-10 md:p-14 bg-[#2B2B2B] text-white flex flex-col md:flex-row items-center justify-between gap-10">
-          <div className="space-y-2 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-3">
-              <Rocket className="w-5 h-5 text-[#FF1E2D]" />
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter italic">Impulse la Eficiencia Hoy</h3>
-            </div>
-            <p className="text-gray-400 text-xs font-bold uppercase tracking-[0.2em]">
-              SIBF-CAI: LA SOLUCIÓN ACCESIBLE Y ESCALABLE PARA EL FUTURO.
-            </p>
-          </div>
-          <button className="px-10 py-5 red-gradient hover:scale-105 transition-all text-white font-black uppercase tracking-widest text-xs shadow-xl shadow-red-500/20">
-            Solicitar Implementación
-          </button>
         </div>
       </div>
     </div>
