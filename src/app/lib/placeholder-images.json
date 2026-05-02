@@ -1,0 +1,16 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Abstract technology network background",
+      "imageUrl": "https://picsum.photos/seed/12/1920/1080",
+      "imageHint": "technology abstract"
+    },
+    {
+      "id": "facial-recognition",
+      "description": "Facial recognition biometric visualization",
+      "imageUrl": "https://picsum.photos/seed/face/800/600",
+      "imageHint": "facial recognition"
+    }
+  ]
+}
