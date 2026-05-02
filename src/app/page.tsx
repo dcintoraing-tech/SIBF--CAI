@@ -2,6 +2,7 @@ import Hero from "@/components/landing/Hero";
 import ProblemStatement from "@/components/landing/ProblemStatement";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
+import Methodology from "@/components/landing/Methodology";
 
 export default function Home() {
   return (
@@ -19,8 +20,12 @@ export default function Home() {
           <section className="p-8 md:p-16 bg-[#F5F5F5]">
             <Objectives />
           </section>
-          
+
           <section className="p-8 md:p-16 bg-white">
+            <Methodology />
+          </section>
+          
+          <section className="p-8 md:p-16 bg-[#F5F5F5]">
             <Justification />
           </section>
         </div>

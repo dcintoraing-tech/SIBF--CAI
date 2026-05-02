@@ -88,6 +88,10 @@ export default {
         'float': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        'spin-slow': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
         }
       },
       animation: {
@@ -95,6 +99,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin-slow 8s linear infinite',
       },
     },
   },
