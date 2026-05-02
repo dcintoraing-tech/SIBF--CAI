@@ -66,8 +66,8 @@ export default function Methodology() {
   const [activePhase, setActivePhase] = useState<number | null>(null);
 
   const handleDownloadBacklog = () => {
-    // El archivo debe estar en public/scrum-backlog.xlsx
-    window.open('/scrum-backlog.xlsx', '_blank');
+    // Se actualiza la ruta para coincidir con el nombre exacto del archivo subido por el usuario
+    window.open('/Scrum Backlog.xlsx', '_blank');
   };
 
   return (
