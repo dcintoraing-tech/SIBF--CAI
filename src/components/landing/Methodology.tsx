@@ -66,14 +66,13 @@ export default function Methodology() {
   const [activePhase, setActivePhase] = useState<number | null>(null);
 
   const handleDownloadBacklog = () => {
-    // Se actualiza la ruta para coincidir con el nombre exacto del archivo subido por el usuario
     window.open('/Scrum Backlog.xlsx', '_blank');
   };
 
   return (
     <div id="metodologia" className="space-y-16">
       <div className="space-y-2">
-        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.3 Metodología de Trabajo</span>
+        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.4 Metodología de Trabajo</span>
         <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight text-balance">AGILIDAD CON SCRUM</h2>
       </div>
 
@@ -161,7 +160,7 @@ export default function Methodology() {
           </div>
         </div>
 
-        {/* Phase Details (Conditional Rendering based on interaction) */}
+        {/* Phase Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="p-8 bg-[#F5F5F5] space-y-4">
             <h4 className="text-xs font-black text-[#2B2B2B] uppercase tracking-widest flex items-center gap-2">

@@ -22,11 +22,11 @@ export default function Home() {
           </section>
 
           <section className="p-8 md:p-16 bg-white">
-            <Methodology />
+            <Justification />
           </section>
           
           <section className="p-8 md:p-16 bg-[#F5F5F5]">
-            <Justification />
+            <Methodology />
           </section>
         </div>
 
