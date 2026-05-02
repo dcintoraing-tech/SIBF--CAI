@@ -1,65 +1,71 @@
-import { CheckCircle2, TrendingUp, Users, Shield } from "lucide-react";
+import { TrendingUp, ShieldCheck, Zap, Globe } from "lucide-react";
 
 export default function Justification() {
-  const valueProps = [
-    { 
-      icon: Shield, 
-      title: "Seguridad Certificada", 
-      desc: "Eliminación total del fraude de identidad mediante biometría avanzada." 
+  const values = [
+    {
+      icon: Zap,
+      title: "Rápido y Automático",
+      desc: "Elimina errores humanos y reduce significativamente los tiempos administrativos."
     },
-    { 
-      icon: TrendingUp, 
-      title: "Optimización de Tiempos", 
-      desc: "Reducción del 90% en tiempos de registro y procesamiento de datos." 
+    {
+      icon: ShieldCheck,
+      title: "Seguridad Anti-Fraude",
+      desc: "Evita suplantaciones sin necesidad de credenciales físicas o tarjetas."
     },
-    { 
-      icon: Users, 
-      title: "Mejora Institucional", 
-      desc: "Toma de decisiones basada en datos precisos sobre asistencia y puntualidad." 
+    {
+      icon: TrendingUp,
+      title: "Decisiones con Datos",
+      desc: "Información centralizada que facilita la toma de decisiones estratégicas."
+    },
+    {
+      icon: Globe,
+      title: "Vanguardia Tecnológica",
+      desc: "Solución escalable que posiciona a la institución como líder en innovación."
     }
   ];
 
   return (
-    <section id="valor" className="py-24 bg-white">
-      <div className="container px-6 mx-auto">
-        <div className="flex flex-col lg:flex-row gap-20 items-center">
-          <div className="flex-1 space-y-8">
-            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Justificación</h2>
-            <h2 className="text-3xl font-bold md:text-5xl text-slate-900 leading-tight">
-              Propuesta de <br />
-              <span className="text-slate-400">Valor Estratégico</span>
-            </h2>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-              <p>
-                Este sistema no solo automatiza procesos; redefine la interacción institucional con la tecnología, proporcionando un entorno seguro y transparente para la comunidad académica.
-              </p>
-              <p>
-                La implementación de UniAssist Hub representa un salto cualitativo en la <span className="text-slate-900 font-semibold">transformación digital</span>, garantizando registros inalterables y análisis detallados que impulsan la productividad.
-              </p>
-            </div>
-            
-            <div className="pt-4 grid grid-cols-2 gap-4">
-              {["ROI Operativo", "Escalabilidad", "Precisión 99.9%", "UX Intuitiva"].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm font-bold text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
+    <section id="justificacion" className="space-y-12">
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 shadow-sm border border-green-100">
+          <TrendingUp className="w-6 h-6" />
+        </div>
+        <div>
+          <span className="text-sm font-bold uppercase tracking-widest text-slate-400">Sección 1.3</span>
+          <h2 className="text-3xl font-bold text-slate-900">Justificación y Enfoque de Venta</h2>
+        </div>
+      </div>
 
-          <div className="flex-1 grid gap-6">
-            {valueProps.map((prop, index) => (
-              <div key={index} className="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex gap-6 items-start group hover:bg-white hover:shadow-xl transition-all duration-500">
-                <div className="p-3 rounded-xl bg-white text-primary shadow-sm group-hover:scale-110 transition-transform">
-                  <prop.icon className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-slate-900 mb-1">{prop.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{prop.desc}</p>
-                </div>
+      <div className="space-y-10">
+        <div className="prose prose-slate max-w-none">
+          <p className="text-xl text-slate-600 leading-relaxed">
+            Este sistema transforma el control de asistencia en un proceso de alto nivel, garantizando registros confiables en tiempo real y posicionando a la institución a la <span className="text-slate-900 font-bold">vanguardia tecnológica</span>.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {values.map((v, i) => (
+            <div key={i} className="flex gap-6 p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-lg transition-all duration-500 group">
+              <div className="flex-none w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <v.icon className="w-7 h-7" />
               </div>
-            ))}
+              <div className="space-y-2">
+                <h4 className="text-lg font-bold text-slate-900">{v.title}</h4>
+                <p className="text-slate-500 leading-relaxed">{v.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="p-8 rounded-3xl bg-blue-600 text-white shadow-xl shadow-blue-200">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="space-y-2">
+              <h3 className="text-2xl font-bold">¿Listo para la transformación digital?</h3>
+              <p className="text-blue-100 font-medium">UniAssist Hub es la solución innovadora y escalable que su institución necesita.</p>
+            </div>
+            <div className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-bold shadow-lg">
+              Solicitar Implementación
+            </div>
           </div>
         </div>
       </div>

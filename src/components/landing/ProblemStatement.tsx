@@ -1,52 +1,49 @@
 import { AlertCircle, ArrowRight } from "lucide-react";
 
 export default function ProblemStatement() {
-  const painPoints = [
-    "Ineficiencia en registros manuales",
-    "Riesgos de suplantación de identidad",
-    "Falta de datos centralizados en tiempo real",
-    "Altos costos operativos de supervisión"
-  ];
-
   return (
-    <section id="problema" className="py-24 bg-white">
-      <div className="container px-6 mx-auto">
-        <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 rounded-lg bg-red-50 text-red-600">
-              <AlertCircle className="w-5 h-5" />
-            </div>
-            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-400">Contexto Actual</h2>
+    <section id="problema" className="space-y-8">
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-600 shadow-sm border border-red-100">
+          <AlertCircle className="w-6 h-6" />
+        </div>
+        <div>
+          <span className="text-sm font-bold uppercase tracking-widest text-slate-400">Sección 1.1</span>
+          <h2 className="text-3xl font-bold text-slate-900">Planteamiento del Problema</h2>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-8 space-y-6">
+          <p className="text-xl text-slate-600 leading-relaxed">
+            Actualmente, el control de asistencia en instituciones como <span className="text-slate-900 font-bold">LaUni</span> se realiza mediante métodos manuales o poco integrados, como listas, firmas o registros en archivos digitales básicos. 
+          </p>
+          <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 italic text-slate-500">
+            "Estos procesos generan errores, pérdida de tiempo y falta de confiabilidad institucional."
           </div>
-          <h2 className="text-3xl font-bold md:text-5xl text-slate-900 mb-6 leading-tight">
-            Planteamiento del <span className="text-slate-400">Problema</span>
-          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Existen problemas críticos como la <span className="text-primary font-semibold">suplantación de identidad</span>, registros incorrectos y dispersión de la información en distintos formatos, lo que dificulta la consulta inmediata y la generación de reportes precisos.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-7 space-y-8">
-            <p className="text-2xl text-slate-600 font-light leading-relaxed">
-              Los métodos tradicionales de control de asistencia generan <span className="text-slate-900 font-medium">brechas de seguridad</span> y una carga administrativa insostenible para instituciones modernas.
-            </p>
-            <div className="h-px bg-slate-100 w-full" />
-            <p className="text-lg text-slate-500 leading-relaxed">
-              La suplantación de identidad y la dispersión de la información limitan la capacidad de respuesta institucional, afectando directamente la toma de decisiones estratégicas y la eficiencia operativa en entornos de alta concurrencia.
-            </p>
-          </div>
-          
-          <div className="lg:col-span-5">
-            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
-              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-6">Desafíos Críticos</h4>
-              <div className="space-y-4">
-                {painPoints.map((item, index) => (
-                  <div key={index} className="flex items-center gap-4 group">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span className="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">{item}</span>
-                  </div>
-                ))}
+        <div className="lg:col-span-4 space-y-4">
+          <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm space-y-4">
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Desafíos Críticos</h4>
+            {[
+              "Suplantación de identidad",
+              "Dispersión de información",
+              "Falta de datos en tiempo real",
+              "Ineficiencia operativa"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                <span className="text-sm font-semibold text-slate-700">{item}</span>
               </div>
-            </div>
+            ))}
           </div>
+          <p className="text-sm text-slate-400 px-2 leading-tight">
+            La falta de un sistema automatizado limita el acceso a información precisa en tiempo real.
+          </p>
         </div>
       </div>
     </section>

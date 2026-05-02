@@ -1,75 +1,49 @@
-import { Button } from "@/components/ui/button";
-import { ChevronRight, ShieldCheck } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ShieldCheck, Calendar } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-slate-50 py-20 overflow-hidden">
-      {/* Background patterns for executive feel */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
+    <header className="relative bg-white border-b border-slate-100 overflow-hidden">
+      {/* Subtle decorative elements */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-50 rounded-full -ml-24 -mb-24 blur-2xl" />
 
-      <div className="container relative z-10 px-6 mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="flex-1 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold text-primary uppercase tracking-wider bg-primary/10 rounded-full">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              Proyecto de Innovación Institucional
-            </div>
-            
-            <h1 className="mb-6 text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-7xl">
-              Sistema Inteligente <br />
-              <span className="text-primary">de Asistencia</span>
-            </h1>
-            
-            <p className="max-w-xl mb-10 text-xl text-slate-600 font-normal leading-relaxed">
-              Una solución robusta y escalable diseñada para automatizar la gestión de asistencia mediante biometría facial de alta precisión.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="h-12 px-8 text-base font-semibold shadow-lg shadow-primary/20"
-                asChild
-              >
-                <a href="#objetivo">
-                  Ver Propuesta
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="h-12 px-8 text-base font-semibold border-slate-300 text-slate-700 hover:bg-slate-100"
-                asChild
-              >
-                <a href="#problema">Planteamiento</a>
-              </Button>
-            </div>
+      <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex-1 space-y-6">
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className="px-3 py-1 border-primary/20 text-primary bg-primary/5 font-bold uppercase tracking-wider">
+              Propuesta Ejecutiva v1.0
+            </Badge>
           </div>
           
-          <div className="flex-1 hidden lg:block">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary/5 rounded-[2rem] blur-2xl" />
-              <div className="relative bg-white p-4 rounded-[2rem] shadow-2xl border border-slate-100">
-                <img 
-                  src="https://picsum.photos/seed/executive/800/600" 
-                  alt="Interface Dashboard" 
-                  className="rounded-2xl w-full h-auto grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
-                  data-ai-hint="dashboard professional"
-                />
-              </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+            Sistema Inteligente <br />
+            <span className="text-primary">de Control de Asistencia</span>
+          </h1>
+          
+          <div className="flex items-center gap-6 text-slate-500 font-medium">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-primary" />
+              <span>Biometría Facial</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-primary" />
+              <span>Gestión en Tiempo Real</span>
             </div>
           </div>
         </div>
+
+        <div className="flex-none bg-slate-50 p-3 rounded-2xl border border-slate-100 shadow-inner">
+           <div className="w-48 h-48 md:w-64 md:h-64 rounded-xl bg-white flex items-center justify-center border border-slate-100 shadow-sm overflow-hidden group">
+              <img 
+                src="https://picsum.photos/seed/face-auth/600/600" 
+                alt="Logo Institucional" 
+                className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-500"
+                data-ai-hint="facial biometric"
+              />
+           </div>
+        </div>
       </div>
-    </section>
+    </header>
   );
 }
