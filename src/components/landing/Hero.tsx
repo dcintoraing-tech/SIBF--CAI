@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { ShieldCheck, Calendar, Scan } from "lucide-react";
+import { ShieldCheck, Calendar } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -7,12 +7,21 @@ export default function Hero() {
       {/* Decorative red accent line */}
       <div className="absolute top-0 left-0 w-full h-1 red-gradient" />
 
-      <div className="relative z-10 p-8 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex-1 space-y-6">
-          <div className="flex items-center gap-2">
-            <Badge variant="outline" className="px-4 py-1 border-[#FF1E2D] text-[#FF1E2D] font-bold uppercase tracking-[0.2em] text-[10px] rounded-none">
-              DOCUMENTO EJECUTIVO V1.0
-            </Badge>
+          <div className="flex flex-col gap-6">
+            {/* Institutional Logo Area */}
+            <div className="flex items-center gap-6">
+              <img 
+                src="/images/logo.png" 
+                alt="Logo Institucional" 
+                className="h-20 w-auto object-contain"
+              />
+              <div className="h-14 w-[1px] bg-gray-200 hidden md:block" />
+              <Badge variant="outline" className="px-4 py-1 border-[#FF1E2D] text-[#FF1E2D] font-bold uppercase tracking-[0.2em] text-[10px] rounded-none">
+                DOCUMENTO EJECUTIVO V1.0
+              </Badge>
+            </div>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-black text-[#2B2B2B] tracking-tighter leading-[0.9] uppercase italic">

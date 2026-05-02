@@ -55,7 +55,7 @@ export default function Justification() {
         <div className="p-10 md:p-14 bg-[#2B2B2B] text-white flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="space-y-2 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3">
-              <rocket className="w-5 h-5 text-[#FF1E2D]" />
+              <Rocket className="w-5 h-5 text-[#FF1E2D]" />
               <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter italic">Impulse la Eficiencia Hoy</h3>
             </div>
             <p className="text-gray-400 text-xs font-bold uppercase tracking-[0.2em]">

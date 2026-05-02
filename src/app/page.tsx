@@ -6,7 +6,7 @@ import Justification from "@/components/landing/Justification";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F5F5F5] py-0 md:py-12 px-0 md:px-4">
-      <div className="max-w-5xl mx-auto presentation-card">
+      <div className="max-w-5xl mx-auto presentation-card bg-white shadow-2xl">
         {/* Header / Cover */}
         <Hero />
         
@@ -27,11 +27,13 @@ export default function Home() {
 
         {/* Institutional Footer */}
         <footer className="bg-[#2B2B2B] py-12 px-8 text-white">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 red-gradient rounded-sm flex items-center justify-center">
-                <span className="text-white font-bold text-sm">UA</span>
-              </div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex items-center gap-6">
+              <img 
+                src="/images/logo.png" 
+                alt="Logo Institucional" 
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
               <div>
                 <h2 className="text-lg font-bold tracking-widest text-white leading-tight uppercase">
                   UNI<span className="text-[#FF1E2D]">ASSIST</span> HUB
@@ -39,8 +41,9 @@ export default function Home() {
                 <p className="text-gray-400 text-[10px] uppercase tracking-[0.3em] font-semibold">Propuesta de Innovación Tecnológica</p>
               </div>
             </div>
-            <div className="text-gray-500 text-xs font-medium uppercase tracking-widest">
-              &copy; {new Date().getFullYear()} LaUni - Facultad de Tecnología
+            <div className="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-right">
+              &copy; {new Date().getFullYear()} LaUni - Facultad de Tecnología<br />
+              Todos los derechos reservados.
             </div>
           </div>
         </footer>
