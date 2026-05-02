@@ -12,56 +12,46 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 
 const specificObjectives = [
-  { icon: Scan, title: "Reconocimiento Facial", desc: "Integrar módulo biométrico para identificación segura de usuarios." },
-  { icon: CheckCircle, title: "Registro Automático", desc: "Captura instantánea de entradas, asistencias y salidas." },
-  { icon: Database, title: "Data Centralizada", desc: "Almacenamiento unificado en base de datos robusta." },
-  { icon: LayoutList, title: "Organización Estructurada", desc: "Registros filtrables por usuario, fecha y horarios." },
-  { icon: FileSpreadsheet, title: "Reportería Digital", desc: "Generación automática de informes en formato Excel." },
-  { icon: BarChart3, title: "Validación de Precisión", desc: "Pruebas constantes para garantizar la confiabilidad." },
-  { icon: Activity, title: "Análisis de Patrones", desc: "Estudio de comportamiento de asistencia institucional." },
-  { icon: AlertTriangle, title: "Alertas Académicas", desc: "Notificaciones para alumnos en riesgo por inasistencia." },
+  { icon: Scan, title: "Biometría Facial", desc: "Módulo para identificación segura de usuarios." },
+  { icon: CheckCircle, title: "Captura Auto", desc: "Registro instantáneo de entradas y salidas." },
+  { icon: Database, title: "Base Central", desc: "Almacenamiento unificado y seguro." },
+  { icon: LayoutList, title: "Ordenación", desc: "Registros filtrables por usuario y fecha." },
+  { icon: FileSpreadsheet, title: "Reportes Excel", desc: "Generación automática de informes digitales." },
+  { icon: BarChart3, title: "Validación", desc: "Garantía de confiabilidad mediante pruebas." },
+  { icon: Activity, title: "Análisis IA", desc: "Estudio de comportamiento institucional." },
+  { icon: AlertTriangle, title: "Alertas", desc: "Notificaciones para alumnos en riesgo." },
 ];
 
 export default function Objectives() {
   return (
-    <section id="objetivos" className="space-y-12">
-      <div className="flex items-center gap-4">
-        <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary shadow-sm border border-primary/10">
-          <Target className="w-7 h-7" />
-        </div>
-        <div>
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary/60">Sección 1.2</span>
-          <h2 className="text-3xl font-bold text-slate-900">Objetivos del Proyecto</h2>
-        </div>
+    <div id="objetivos" className="space-y-12">
+      <div className="space-y-2">
+        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.2 Objetivos del Proyecto</span>
+        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight">METAS ESTRATÉGICAS</h2>
       </div>
 
       {/* General Objective */}
-      <div className="relative overflow-hidden bg-primary p-12 md:p-16 rounded-[2.5rem] shadow-2xl shadow-primary/20 text-center group">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-white/20 transition-all duration-700" />
-        <div className="relative z-10 space-y-6">
-          <h4 className="text-xs font-bold text-primary-foreground/70 uppercase tracking-[0.3em]">Objetivo General</h4>
-          <p className="text-2xl md:text-4xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
-            "Desarrollar un sistema inteligente basado en <span className="text-blue-200">reconocimiento facial</span> que automatice el registro, centralice la información y mejore la seguridad y eficiencia operativa."
-          </p>
-        </div>
+      <div className="red-gradient p-10 md:p-14 text-center">
+        <h4 className="text-[10px] font-bold text-white/70 uppercase tracking-[0.4em] mb-4">Objetivo General</h4>
+        <p className="text-xl md:text-3xl font-black text-white leading-none uppercase italic">
+          "Desarrollar un sistema basado en reconocimiento facial que automatice el registro, centralice la información y mejore la seguridad operativa."
+        </p>
       </div>
 
       {/* Specific Objectives Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {specificObjectives.map((obj, index) => (
-          <Card key={index} className="border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-2xl">
-            <CardContent className="p-8 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                <obj.icon className="w-6 h-6" />
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-base font-bold text-slate-900 leading-tight">{obj.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed font-medium">{obj.desc}</p>
-              </div>
-            </CardContent>
-          </Card>
+          <div key={index} className="bg-white p-6 border border-gray-100 hover:border-[#FF1E2D] transition-all group">
+            <div className="text-[#FF1E2D] mb-4 group-hover:scale-110 transition-transform">
+              <obj.icon className="w-6 h-6" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-xs font-black text-[#2B2B2B] leading-tight uppercase tracking-widest">{obj.title}</h3>
+              <p className="text-[10px] text-gray-500 leading-tight font-bold uppercase tracking-tighter">{obj.desc}</p>
+            </div>
+          </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
