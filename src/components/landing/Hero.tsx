@@ -26,7 +26,7 @@ export default function Hero() {
           
           <h1 className="text-4xl md:text-6xl font-black text-[#2B2B2B] tracking-tighter leading-[0.9] uppercase italic">
             SISTEMA INTELIGENTE <br />
-            <span className="red-gradient-text">CONTROL DE ASISTENCIA</span>
+            <span className="red-gradient-text">SIBF-CAI</span>
           </h1>
           
           <p className="text-sm md:text-base text-gray-500 max-w-xl font-medium leading-relaxed uppercase tracking-wide">

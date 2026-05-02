@@ -36,7 +36,7 @@ export default function Home() {
               />
               <div>
                 <h2 className="text-lg font-bold tracking-widest text-white leading-tight uppercase">
-                  UNI<span className="text-[#FF1E2D]">ASSIST</span> HUB
+                  SIBF<span className="text-[#FF1E2D]">-CAI</span>
                 </h2>
                 <p className="text-gray-400 text-[10px] uppercase tracking-[0.3em] font-semibold">Propuesta de Innovación Tecnológica</p>
               </div>
