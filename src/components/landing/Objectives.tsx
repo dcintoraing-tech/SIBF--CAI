@@ -1,25 +1,24 @@
 import { 
   Scan, 
-  CheckCircle, 
+  CircleCheckBig, 
   Database, 
   LayoutList, 
   FileSpreadsheet, 
   Activity, 
-  AlertTriangle,
+  TriangleAlert,
   Target,
-  BarChart3
+  ChartColumn
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const specificObjectives = [
   { icon: Scan, title: "Biometría Facial", desc: "Módulo para identificación segura de usuarios." },
-  { icon: CheckCircle, title: "Captura Auto", desc: "Registro instantáneo de entradas y salidas." },
+  { icon: CircleCheckBig, title: "Captura Auto", desc: "Registro instantáneo de entradas y salidas." },
   { icon: Database, title: "Base Central", desc: "Almacenamiento unificado y seguro." },
   { icon: LayoutList, title: "Ordenación", desc: "Registros filtrables por usuario y fecha." },
   { icon: FileSpreadsheet, title: "Reportes Excel", desc: "Generación automática de informes digitales." },
-  { icon: BarChart3, title: "Validación", desc: "Garantía de confiabilidad mediante pruebas." },
+  { icon: ChartColumn, title: "Validación", desc: "Garantía de confiabilidad mediante pruebas." },
   { icon: Activity, title: "Análisis IA", desc: "Estudio de comportamiento institucional." },
-  { icon: AlertTriangle, title: "Alertas", desc: "Notificaciones para alumnos en riesgo." },
+  { icon: TriangleAlert, title: "Alertas", desc: "Notificaciones para alumnos en riesgo." },
 ];
 
 export default function Objectives() {
@@ -33,8 +32,8 @@ export default function Objectives() {
       {/* General Objective */}
       <div className="red-gradient p-10 md:p-14 text-center">
         <h4 className="text-[10px] font-bold text-white/70 uppercase tracking-[0.4em] mb-4">Objetivo General</h4>
-        <p className="text-xl md:text-3xl font-black text-white leading-none uppercase italic">
-          "Desarrollar un sistema basado en reconocimiento facial que automatice el registro, centralice la información y mejore la seguridad operativa."
+        <p className="text-xl md:text-2xl font-black text-white leading-tight uppercase italic max-w-4xl mx-auto">
+          "Desarrollar un sistema inteligente de control de asistencia basado en reconocimiento facial que automatice el registro, centralice la información y genere análisis en tiempo real, mejorando la precisión, seguridad y eficiencia operativa institucional."
         </p>
       </div>
 
