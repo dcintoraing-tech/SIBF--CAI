@@ -5,6 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: 'SIBF-CAI | Presentación Ejecutiva',
   description: 'Sistema inteligente de control de asistencia para la gestión institucional avanzada.',
+  icons: {
+    icon: '/images/logo.png',
+    apple: '/images/logo.png',
+  }
 };
 
 export default function RootLayout({

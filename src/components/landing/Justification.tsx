@@ -59,7 +59,7 @@ export default function Justification() {
               <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter italic">Impulse la Eficiencia Hoy</h3>
             </div>
             <p className="text-gray-400 text-xs font-bold uppercase tracking-[0.2em]">
-              UNIASSIST HUB: LA SOLUCIÓN ACCESIBLE Y ESCALABLE PARA EL FUTURO.
+              SIBF-CAI: LA SOLUCIÓN ACCESIBLE Y ESCALABLE PARA EL FUTURO.
             </p>
           </div>
           <button className="px-10 py-5 red-gradient hover:scale-105 transition-all text-white font-black uppercase tracking-widest text-xs shadow-xl shadow-red-500/20">
