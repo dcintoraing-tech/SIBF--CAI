@@ -1,11 +1,11 @@
-import { AlertCircle, FileX, Clock, ShieldAlert } from "lucide-react";
+import { ShieldAlert, FileX, Clock, CircleAlert } from "lucide-react";
 
 export default function ProblemStatement() {
   const challenges = [
     { icon: ShieldAlert, text: "SUPLANTACIÓN DE IDENTIDAD" },
     { icon: FileX, text: "DISPERSIÓN DE INFORMACIÓN" },
     { icon: Clock, text: "FALTA DE DATOS EN TIEMPO REAL" },
-    { icon: AlertCircle, text: "INEFICIENCIA OPERATIVA" }
+    { icon: CircleAlert, text: "INEFICIENCIA OPERATIVA" }
   ];
 
   return (
@@ -36,7 +36,7 @@ export default function ProblemStatement() {
 
         <div className="lg:col-span-5">
           <div className="bg-[#2B2B2B] p-8 text-white space-y-6">
-            <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.4em] text-center border-b border-gray-700 pb-4">CRITICAL CHALLENGES</h4>
+            <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.4em] text-center border-b border-gray-700 pb-4">DESAFÍOS CRÍTICOS</h4>
             <div className="space-y-3">
               {challenges.map((item, i) => (
                 <div key={i} className="flex items-center gap-4 p-3 border border-gray-700 hover:border-[#FF1E2D] transition-colors group">

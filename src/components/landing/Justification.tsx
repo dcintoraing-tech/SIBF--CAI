@@ -1,4 +1,4 @@
-import { TrendingUp, ShieldCheck, Zap, BarChart3, Rocket } from "lucide-react";
+import { TrendingUp, ShieldCheck, Zap, ChartColumn, Rocket } from "lucide-react";
 
 export default function Justification() {
   const values = [
@@ -13,7 +13,7 @@ export default function Justification() {
       desc: "Evita suplantaciones sin necesidad de credenciales físicas, garantizando registros reales."
     },
     {
-      icon: BarChart3,
+      icon: ChartColumn,
       title: "Data Driven",
       desc: "Centraliza información y genera reportes automáticos para una toma de decisiones estratégica."
     },
@@ -27,7 +27,7 @@ export default function Justification() {
   return (
     <div id="justificacion" className="space-y-12">
       <div className="space-y-2">
-        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.3 Justificación y Enfoque</span>
+        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">JUSTIFICACIÓN</span>
         <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight">VALOR INSTITUCIONAL</h2>
       </div>
 
