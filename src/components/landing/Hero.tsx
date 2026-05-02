@@ -1,26 +1,47 @@
-import { Badge } from "@/components/ui/badge";
-import { ShieldCheck, Calendar } from "lucide-react";
 
-export default function Hero() {
+'use client';
+
+import { Badge } from "@/components/ui/badge";
+import { ShieldCheck, Calendar, Play } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+interface HeroProps {
+  onStartPresentation?: () => void;
+  isPresentation?: boolean;
+}
+
+export default function Hero({ onStartPresentation, isPresentation = false }: HeroProps) {
   return (
-    <header className="relative bg-white border-b border-gray-100 overflow-hidden">
+    <header className={`relative bg-white border-b border-gray-100 overflow-hidden ${isPresentation ? 'min-h-[80vh] flex items-center' : ''}`}>
       {/* Decorative red accent line */}
       <div className="absolute top-0 left-0 w-full h-1 red-gradient" />
 
-      <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 w-full">
         <div className="flex-1 space-y-6">
           <div className="flex flex-col gap-6">
             {/* Institutional Logo Area */}
-            <div className="flex items-center gap-6">
-              <img 
-                src="/images/logo.png" 
-                alt="Logo Institucional" 
-                className="h-20 w-auto object-contain"
-              />
-              <div className="h-14 w-[1px] bg-gray-200 hidden md:block" />
-              <Badge variant="outline" className="px-4 py-1 border-[#FF1E2D] text-[#FF1E2D] font-bold uppercase tracking-[0.2em] text-[10px] rounded-none">
-                DOCUMENTO EJECUTIVO V1.0
-              </Badge>
+            <div className="flex items-center justify-between w-full">
+              <div className="flex items-center gap-6">
+                <img 
+                  src="/images/logo.png" 
+                  alt="Logo Institucional" 
+                  className="h-20 w-auto object-contain"
+                />
+                <div className="h-14 w-[1px] bg-gray-200 hidden md:block" />
+                <Badge variant="outline" className="px-4 py-1 border-[#FF1E2D] text-[#FF1E2D] font-bold uppercase tracking-[0.2em] text-[10px] rounded-none">
+                  DOCUMENTO EJECUTIVO V1.0
+                </Badge>
+              </div>
+              
+              {!isPresentation && (
+                <Button 
+                  onClick={onStartPresentation}
+                  className="red-gradient hover:scale-105 transition-all text-white font-black uppercase tracking-widest text-[10px] px-6 py-6 h-auto rounded-none shadow-xl shadow-red-500/20 gap-3"
+                >
+                  <Play className="w-4 h-4 fill-current" />
+                  Modo Presentación
+                </Button>
+              )}
             </div>
           </div>
           

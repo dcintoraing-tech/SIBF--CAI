@@ -1,15 +1,37 @@
+
+'use client';
+
+import { useState } from "react";
 import Hero from "@/components/landing/Hero";
 import ProblemStatement from "@/components/landing/ProblemStatement";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
 import Methodology from "@/components/landing/Methodology";
+import PresentationMode from "@/components/landing/PresentationMode";
 
 export default function Home() {
+  const [isPresenting, setIsPresenting] = useState(false);
+
+  const sections = [
+    { id: 'hero', component: <Hero isPresentation onStart={() => setIsPresenting(true)} /> },
+    { id: 'problema', title: 'Planteamiento del Problema', component: <ProblemStatement /> },
+    { id: 'objetivos', title: 'Objetivos del Proyecto', component: <Objectives /> },
+    { id: 'justificacion', title: 'Justificación', component: <Justification /> },
+    { id: 'metodologia', title: 'Metodología', component: <Methodology /> }
+  ];
+
   return (
     <main className="min-h-screen bg-[#F5F5F5] py-0 md:py-12 px-0 md:px-4">
+      {isPresenting && (
+        <PresentationMode 
+          sections={sections} 
+          onClose={() => setIsPresenting(false)} 
+        />
+      )}
+
       <div className="max-w-5xl mx-auto presentation-card bg-white shadow-2xl">
         {/* Header / Cover */}
-        <Hero />
+        <Hero onStartPresentation={() => setIsPresenting(true)} />
         
         {/* Content Body with alternating sections */}
         <div className="divide-y divide-gray-100">
