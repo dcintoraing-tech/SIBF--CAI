@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Hero from "@/components/landing/Hero";
 import ProblemStatement from "@/components/landing/ProblemStatement";
+import AnalysisPhase from "@/components/landing/AnalysisPhase";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
 import Methodology from "@/components/landing/Methodology";
@@ -27,6 +28,7 @@ export default function Home() {
   const sections = [
     { id: 'hero', component: <Hero isPresentation onStart={() => setIsPresenting(true)} /> },
     { id: 'problema', title: 'Planteamiento del Problema', component: <ProblemStatement /> },
+    { id: 'analisis', title: 'Fase de Análisis', component: <AnalysisPhase /> },
     { id: 'objetivos', title: 'Objetivos del Proyecto', component: <Objectives /> },
     { id: 'justificacion', title: 'Justificación', component: <Justification /> },
     { id: 'metodologia', title: 'Metodología', component: <Methodology /> },
@@ -60,20 +62,24 @@ export default function Home() {
           <section className="p-8 md:p-16 bg-white">
             <ProblemStatement />
           </section>
-          
+
           <section className="p-8 md:p-16 bg-[#F5F5F5]">
+            <AnalysisPhase />
+          </section>
+          
+          <section className="p-8 md:p-16 bg-white">
             <Objectives />
           </section>
 
-          <section className="p-8 md:p-16 bg-white">
+          <section className="p-8 md:p-16 bg-[#F5F5F5]">
             <Justification />
           </section>
           
-          <section className="p-8 md:p-16 bg-[#F5F5F5]">
+          <section className="p-8 md:p-16 bg-white">
             <Methodology />
           </section>
 
-          <section className="p-8 md:p-16 bg-white">
+          <section className="p-8 md:p-16 bg-[#F5F5F5]">
             <QRSection />
           </section>
         </div>
