@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Hero from "@/components/landing/Hero";
 import ProblemStatement from "@/components/landing/ProblemStatement";
 import AnalysisPhase from "@/components/landing/AnalysisPhase";
+import DesignPhase from "@/components/landing/DesignPhase";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
 import Methodology from "@/components/landing/Methodology";
@@ -32,6 +33,7 @@ export default function Home() {
     { id: 'justificacion', title: 'Justificación', component: <Justification /> },
     { id: 'metodologia', title: 'Metodología', component: <Methodology /> },
     { id: 'analisis', title: 'Fase de Análisis', component: <AnalysisPhase /> },
+    { id: 'diseno', title: 'Fase de Diseño', component: <DesignPhase /> },
     { id: 'acceso', title: 'Acceso al Sistema', component: <QRSection /> }
   ];
 
@@ -80,6 +82,10 @@ export default function Home() {
           </section>
 
           <section className="p-8 md:p-16 bg-[#F5F5F5]">
+            <DesignPhase />
+          </section>
+
+          <section className="p-8 md:p-16 bg-white">
             <QRSection />
           </section>
         </div>
