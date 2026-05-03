@@ -6,6 +6,7 @@ import ProblemStatement from "@/components/landing/ProblemStatement";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
 import Methodology from "@/components/landing/Methodology";
+import QRSection from "@/components/landing/QRSection";
 import PresentationMode from "@/components/landing/PresentationMode";
 import { Smartphone } from "lucide-react";
 
@@ -28,14 +29,15 @@ export default function Home() {
     { id: 'problema', title: 'Planteamiento del Problema', component: <ProblemStatement /> },
     { id: 'objetivos', title: 'Objetivos del Proyecto', component: <Objectives /> },
     { id: 'justificacion', title: 'Justificación', component: <Justification /> },
-    { id: 'metodologia', title: 'Metodología', component: <Methodology /> }
+    { id: 'metodologia', title: 'Metodología', component: <Methodology /> },
+    { id: 'acceso', title: 'Acceso al Sistema', component: <QRSection /> }
   ];
 
   return (
     <main className="min-h-screen bg-[#F5F5F5] py-0 md:py-12 px-0 md:px-4 relative">
       {/* Mobile Rotation Hint Overlay */}
       {showRotationHint && (
-        <div className="fixed inset-0 z-[200] bg-[#2B2B2B] flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500">
+        <div className="fixed inset-0 z-[200] bg-[#2B2B2B]/95 flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500 backdrop-blur-sm">
           <div className="animate-rotate-phone mb-8">
             <Smartphone className="w-20 h-20 text-[#FF1E2D]" />
           </div>
@@ -69,6 +71,10 @@ export default function Home() {
           
           <section className="p-8 md:p-16 bg-[#F5F5F5]">
             <Methodology />
+          </section>
+
+          <section className="p-8 md:p-16 bg-white">
+            <QRSection />
           </section>
         </div>
 
