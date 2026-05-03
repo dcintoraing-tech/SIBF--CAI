@@ -4,11 +4,9 @@ import {
   ClipboardList, 
   Users, 
   ShieldCheck, 
-  Cpu, 
   Fingerprint, 
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 export default function AnalysisPhase() {
@@ -41,7 +39,7 @@ export default function AnalysisPhase() {
       </div>
 
       {/* Grid de Análisis */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Proceso de Negocio */}
         <Card className="rounded-none border-t-4 border-[#FF1E2D] shadow-xl hover:shadow-2xl transition-all group">
           <CardHeader className="space-y-1">
@@ -72,24 +70,6 @@ export default function AnalysisPhase() {
                 <span className="text-[10px] font-bold text-[#2B2B2B] uppercase">{item.value}</span>
               </div>
             ))}
-          </CardContent>
-        </Card>
-
-        {/* Requerimientos del Sistema */}
-        <Card className="rounded-none border-t-4 border-[#FF1E2D] shadow-xl hover:shadow-2xl transition-all">
-          <CardHeader className="space-y-1">
-            <div className="w-12 h-12 red-gradient flex items-center justify-center mb-4">
-              <Cpu className="w-6 h-6 text-white" />
-            </div>
-            <CardTitle className="text-sm font-black uppercase tracking-widest">Stack Tecnológico</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="flex gap-2 flex-wrap">
-              <Badge variant="outline" className="rounded-none border-gray-200 text-[9px] font-black uppercase">Firebase Firestore</Badge>
-              <Badge variant="outline" className="rounded-none border-gray-200 text-[9px] font-black uppercase">Next.js 15</Badge>
-              <Badge variant="outline" className="rounded-none border-gray-200 text-[9px] font-black uppercase">Biometría SDK</Badge>
-              <Badge variant="outline" className="rounded-none border-gray-200 text-[9px] font-black uppercase">Cloud Functions</Badge>
-            </div>
           </CardContent>
         </Card>
       </div>
