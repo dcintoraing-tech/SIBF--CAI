@@ -1,7 +1,6 @@
 'use client';
 
 import { QrCode, ExternalLink } from "lucide-react";
-import Image from "next/image";
 
 export default function QRSection() {
   return (
@@ -15,14 +14,12 @@ export default function QRSection() {
         {/* Glow effect */}
         <div className="absolute -inset-4 red-gradient blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
         
-        <div className="relative bg-white p-6 shadow-2xl border border-gray-100 rounded-xl">
-          <div className="relative w-48 h-48 md:w-64 md:h-64">
-            <Image 
+        <div className="relative bg-white p-6 shadow-2xl border border-gray-100 rounded-xl flex items-center justify-center">
+          <div className="w-48 h-48 md:w-64 md:h-64 relative">
+            <img 
               src="/QR.png" 
               alt="Código QR de acceso al sistema SIBF-CAI"
-              fill
-              className="object-contain"
-              priority
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="absolute top-2 right-2">
