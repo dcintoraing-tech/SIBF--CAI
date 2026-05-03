@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     // Detect if mobile and show hint
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
     if (isMobile) {
       setShowRotationHint(true);
       const timer = setTimeout(() => setShowRotationHint(false), 3500);
@@ -28,10 +28,10 @@ export default function Home() {
   const sections = [
     { id: 'hero', component: <Hero isPresentation onStart={() => setIsPresenting(true)} /> },
     { id: 'problema', title: 'Planteamiento del Problema', component: <ProblemStatement /> },
-    { id: 'analisis', title: 'Fase de Análisis', component: <AnalysisPhase /> },
     { id: 'objetivos', title: 'Objetivos del Proyecto', component: <Objectives /> },
     { id: 'justificacion', title: 'Justificación', component: <Justification /> },
     { id: 'metodologia', title: 'Metodología', component: <Methodology /> },
+    { id: 'analisis', title: 'Fase de Análisis', component: <AnalysisPhase /> },
     { id: 'acceso', title: 'Acceso al Sistema', component: <QRSection /> }
   ];
 
@@ -64,19 +64,19 @@ export default function Home() {
           </section>
 
           <section className="p-8 md:p-16 bg-[#F5F5F5]">
-            <AnalysisPhase />
+            <Objectives />
           </section>
           
           <section className="p-8 md:p-16 bg-white">
-            <Objectives />
+            <Justification />
           </section>
 
           <section className="p-8 md:p-16 bg-[#F5F5F5]">
-            <Justification />
+            <Methodology />
           </section>
           
           <section className="p-8 md:p-16 bg-white">
-            <Methodology />
+            <AnalysisPhase />
           </section>
 
           <section className="p-8 md:p-16 bg-[#F5F5F5]">

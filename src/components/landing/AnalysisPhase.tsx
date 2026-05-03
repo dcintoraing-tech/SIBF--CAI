@@ -34,7 +34,7 @@ export default function AnalysisPhase() {
     <div id="analisis" className="space-y-16">
       {/* Header */}
       <div className="space-y-2">
-        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.1.2 Fase de Análisis</span>
+        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.5 Fase de Análisis</span>
         <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight">LEVANTAMIENTO DE REQUERIMIENTOS</h2>
       </div>
 
