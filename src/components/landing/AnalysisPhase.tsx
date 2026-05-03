@@ -6,11 +6,6 @@ import {
   ShieldCheck, 
   Cpu, 
   Fingerprint, 
-  ChevronRight, 
-  CheckCircle2,
-  BarChart3,
-  MessageSquare,
-  Search
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -121,52 +116,30 @@ export default function AnalysisPhase() {
         </div>
       </div>
 
-      {/* Usabilidad y Flujo */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="space-y-8">
-          <div className="flex items-center gap-4">
-            <Fingerprint className="w-6 h-6 text-[#FF1E2D]" />
-            <h3 className="text-lg font-black text-[#2B2B2B] uppercase tracking-widest">Estudio de Usabilidad (UX)</h3>
-          </div>
-          <div className="space-y-6 bg-white p-8 border border-gray-100 shadow-sm">
-            <div className="space-y-2">
-              <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
-                <span>Satisfacción del Usuario</span>
-                <span className="text-[#FF1E2D]">95%</span>
-              </div>
-              <Progress value={95} className="h-1 bg-gray-100" />
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
-                <span>Facilidad de Navegación</span>
-                <span className="text-[#FF1E2D]">92%</span>
-              </div>
-              <Progress value={92} className="h-1 bg-gray-100" />
-            </div>
-            <p className="text-[10px] text-gray-400 font-bold uppercase italic mt-4">
-              Resultados obtenidos mediante pruebas A/B y encuestas de usabilidad con el personal administrativo.
-            </p>
-          </div>
+      {/* Usabilidad */}
+      <div className="max-w-3xl mx-auto space-y-8">
+        <div className="flex items-center gap-4">
+          <Fingerprint className="w-6 h-6 text-[#FF1E2D]" />
+          <h3 className="text-lg font-black text-[#2B2B2B] uppercase tracking-widest">Estudio de Usabilidad (UX)</h3>
         </div>
-
-        <div className="space-y-8">
-          <div className="flex items-center gap-4">
-            <Search className="w-6 h-6 text-[#FF1E2D]" />
-            <h3 className="text-lg font-black text-[#2B2B2B] uppercase tracking-widest">Flujo del Análisis</h3>
+        <div className="space-y-6 bg-white p-8 border border-gray-100 shadow-sm">
+          <div className="space-y-2">
+            <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
+              <span>Satisfacción del Usuario</span>
+              <span className="text-[#FF1E2D]">95%</span>
+            </div>
+            <Progress value={95} className="h-1 bg-gray-100" />
           </div>
-          <div className="relative space-y-6 pl-8 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-gray-100">
-            {[
-              { t: "Entrevistas Directas", d: "Reuniones con stakeholders clave." },
-              { t: "Análisis de Documentos", d: "Revisión de bitácoras actuales." },
-              { t: "Modelado de Datos", d: "Definición de entidades y relaciones." }
-            ].map((step, i) => (
-              <div key={i} className="relative">
-                <div className="absolute -left-[27px] top-1 w-4 h-4 rounded-full border-2 border-[#FF1E2D] bg-white z-10" />
-                <h4 className="text-xs font-black text-[#2B2B2B] uppercase">{step.t}</h4>
-                <p className="text-[10px] text-gray-500 font-bold uppercase">{step.d}</p>
-              </div>
-            ))}
+          <div className="space-y-2">
+            <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
+              <span>Facilidad de Navegación</span>
+              <span className="text-[#FF1E2D]">92%</span>
+            </div>
+            <Progress value={92} className="h-1 bg-gray-100" />
           </div>
+          <p className="text-[10px] text-gray-400 font-bold uppercase italic mt-4">
+            Resultados obtenidos mediante pruebas A/B y encuestas de usabilidad con el personal administrativo.
+          </p>
         </div>
       </div>
     </div>
