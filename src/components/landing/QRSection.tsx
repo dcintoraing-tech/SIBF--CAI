@@ -17,7 +17,7 @@ export default function QRSection() {
         <div className="relative bg-white p-6 shadow-2xl border border-gray-100 rounded-xl flex items-center justify-center">
           <div className="w-48 h-48 md:w-64 md:h-64 relative">
             <img 
-              src="/QR.png" 
+              src="/images/QR.png" 
               alt="Código QR de acceso al sistema SIBF-CAI"
               className="w-full h-full object-contain"
             />
