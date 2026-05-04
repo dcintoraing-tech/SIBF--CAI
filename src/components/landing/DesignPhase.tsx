@@ -132,11 +132,7 @@ export default function DesignPhase() {
       </div>
 
       {/* Footer Fase */}
-      <div className="flex justify-between items-center bg-[#F5F5F5] p-6 border border-gray-100">
-        <div className="flex gap-4">
-          <Badge className="bg-[#FF1E2D] rounded-none uppercase text-[8px] font-black tracking-widest">Blueprint</Badge>
-          <Badge className="bg-[#2B2B2B] rounded-none uppercase text-[8px] font-black tracking-widest">Arquitectura</Badge>
-        </div>
+      <div className="flex justify-end items-center bg-[#F5F5F5] p-6 border border-gray-100">
         <button className="text-[9px] font-black uppercase text-[#FF1E2D] hover:underline tracking-tighter flex items-center gap-2">
           Ver documentación técnica completa <FileCode className="w-3 h-3" />
         </button>
