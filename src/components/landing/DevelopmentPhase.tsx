@@ -56,13 +56,13 @@ export default function DevelopmentPhase() {
       {/* Header */}
       <div className="space-y-2">
         <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.7 Fase de Desarrollo</span>
-        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight uppercase">IMPLEMENTACIÓN DE UNILINK ACCESS</h2>
+        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight uppercase">IMPLEMENTACIÓN DE SIBF-CAI</h2>
       </div>
 
       {/* Intro */}
       <div className="prose prose-slate max-w-4xl border-l-4 border-[#FF1E2D] pl-6">
         <p className="text-lg text-gray-600 leading-relaxed font-medium uppercase tracking-tight">
-          El sistema fue desarrollado utilizando tecnologías web de <span className="text-[#FF1E2D] font-black">VANGUARDIA</span>, integrando reconocimiento facial en tiempo real mediante IA que se ejecuta directamente en el navegador del cliente.
+          El sistema <span className="text-[#FF1E2D] font-black">SIBF-CAI</span> fue desarrollado utilizando tecnologías web de <span className="text-[#FF1E2D] font-black">VANGUARDIA</span>, integrando reconocimiento facial en tiempo real mediante IA que se ejecuta directamente en el navegador del cliente.
         </p>
       </div>
 
