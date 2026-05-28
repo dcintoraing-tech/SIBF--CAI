@@ -30,66 +30,66 @@ export default function Home() {
       {showRotationHint && (
         <div className="fixed inset-0 z-[200] bg-[#2B2B2B]/95 flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500 backdrop-blur-sm">
           <div className="animate-rotate-phone mb-8">
-            <Smartphone className="w-20 h-20 text-[#FF1E2D]" />
+            <Smartphone className="w-16 h-16 text-[#FF1E2D]" />
           </div>
-          <h2 className="text-2xl font-black text-center uppercase mb-2">Gire su dispositivo</h2>
-          <p className="text-gray-400 text-sm font-bold uppercase tracking-widest text-center">Mejor experiencia en horizontal</p>
+          <h2 className="text-xl font-black text-center uppercase mb-2">Gire su dispositivo</h2>
+          <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest text-center">Mejor experiencia en horizontal</p>
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto shadow-none bg-white">
+      <div className="max-w-7xl mx-auto bg-white">
         <Hero />
         
         <div className="divide-y divide-gray-100">
-          <section className="p-12 md:p-32 bg-white">
+          <section className="p-12 md:p-24 bg-white">
             <ProblemStatement />
           </section>
 
-          <section className="p-12 md:p-32 bg-slate-50/50">
+          <section className="p-12 md:p-24 bg-slate-50/50">
             <Objectives />
           </section>
           
-          <section className="p-12 md:p-32 bg-white">
+          <section className="p-12 md:p-24 bg-white">
             <Justification />
           </section>
 
-          <section className="p-12 md:p-32 bg-slate-50/50">
+          <section className="p-12 md:p-24 bg-slate-50/50">
             <Methodology />
           </section>
           
-          <section className="p-12 md:p-32 bg-white">
+          <section className="p-12 md:p-24 bg-white">
             <AnalysisPhase />
           </section>
 
-          <section className="p-12 md:p-32 bg-slate-50/50">
+          <section className="p-12 md:p-24 bg-slate-50/50">
             <DesignPhase />
           </section>
 
-          <section className="p-12 md:p-32 bg-white">
+          <section className="p-12 md:p-24 bg-[#0A0A0A]">
             <DevelopmentPhase />
           </section>
 
-          <section className="p-12 md:p-32 bg-slate-900">
+          <section className="p-12 md:p-24 bg-[#111111]">
             <QRSection />
           </section>
         </div>
 
-        <footer className="bg-[#2B2B2B] py-24 px-12 text-white border-t border-white/5">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div className="flex items-center gap-8">
+        <footer className="bg-[#1A1A1A] py-16 px-12 text-white border-t border-white/5">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex items-center gap-6">
               <img 
                 src="/images/logo.png" 
                 alt="Logo Institucional" 
-                className="h-20 w-auto object-contain brightness-0 invert"
+                className="h-12 w-auto object-contain brightness-0 invert"
               />
               <div>
-                <h2 className="text-3xl font-black tracking-widest text-white leading-tight uppercase italic">
+                <h2 className="text-xl font-black tracking-widest text-white leading-tight uppercase italic">
                   SIBF<span className="text-[#FF1E2D]">-CAI</span>
                 </h2>
-                <p className="text-gray-500 text-xs uppercase tracking-[0.4em] font-bold">Ingeniería de vanguardia</p>
+                <p className="text-gray-500 text-[8px] uppercase tracking-[0.4em] font-bold">Ingeniería de vanguardia</p>
               </div>
             </div>
-            <div className="text-gray-500 text-sm font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">
+            <div className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">
               &copy; {new Date().getFullYear()} LaUni - Sistemas Computacionales<br />
               Propuesta Tecnológica Ejecutiva
             </div>
