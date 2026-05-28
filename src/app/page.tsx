@@ -37,61 +37,61 @@ export default function Home() {
         </div>
       )}
 
-      <div className="max-w-6xl mx-auto border-x border-gray-100 shadow-2xl bg-white">
+      <div className="max-w-7xl mx-auto shadow-none bg-white">
         <Hero />
         
         <div className="divide-y divide-gray-100">
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-12 md:p-32 bg-white">
             <ProblemStatement />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50">
+          <section className="p-12 md:p-32 bg-slate-50/50">
             <Objectives />
           </section>
           
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-12 md:p-32 bg-white">
             <Justification />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50">
+          <section className="p-12 md:p-32 bg-slate-50/50">
             <Methodology />
           </section>
           
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-12 md:p-32 bg-white">
             <AnalysisPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50">
+          <section className="p-12 md:p-32 bg-slate-50/50">
             <DesignPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-12 md:p-32 bg-white">
             <DevelopmentPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50">
+          <section className="p-12 md:p-32 bg-slate-900">
             <QRSection />
           </section>
         </div>
 
-        <footer className="bg-[#2B2B2B] py-20 px-12 text-white">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+        <footer className="bg-[#2B2B2B] py-24 px-12 text-white border-t border-white/5">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-8">
               <img 
                 src="/images/logo.png" 
                 alt="Logo Institucional" 
-                className="h-16 w-auto object-contain brightness-0 invert"
+                className="h-20 w-auto object-contain brightness-0 invert"
               />
               <div>
-                <h2 className="text-2xl font-bold tracking-widest text-white leading-tight uppercase">
+                <h2 className="text-3xl font-black tracking-widest text-white leading-tight uppercase italic">
                   SIBF<span className="text-[#FF1E2D]">-CAI</span>
                 </h2>
-                <p className="text-gray-400 text-xs uppercase tracking-[0.3em] font-semibold">Ingeniería de vanguardia</p>
+                <p className="text-gray-500 text-xs uppercase tracking-[0.4em] font-bold">Ingeniería de vanguardia</p>
               </div>
             </div>
-            <div className="text-gray-500 text-sm font-medium uppercase tracking-widest text-center md:text-right">
+            <div className="text-gray-500 text-sm font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">
               &copy; {new Date().getFullYear()} LaUni - Sistemas Computacionales<br />
-              Documento de Propuesta Tecnológica
+              Propuesta Tecnológica Ejecutiva
             </div>
           </div>
         </footer>
