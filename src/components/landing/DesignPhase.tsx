@@ -1,141 +1,59 @@
 'use client';
 
-import { 
-  GitBranch, 
-  Users, 
-  Boxes, 
-  Database, 
-  Table as TableIcon, 
-  Network, 
-  Layout, 
-  Eye, 
-  ArrowRightLeft,
-  Activity,
-  FileCode
-} from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GitBranch, Database, Layout, Network } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function DesignPhase() {
-  const diagrams = [
-    { title: "Procesos", icon: Activity, tag: "UML" },
-    { title: "Casos de Uso", icon: Users, tag: "UML" },
-    { title: "Ficha Técnica", icon: FileCode, tag: "Spec" },
-    { title: "Clases", icon: Boxes, tag: "UML" },
-    { title: "Secuencia", icon: ArrowRightLeft, tag: "UML" },
-    { title: "Actividades", icon: GitBranch, tag: "UML" },
-  ];
-
   return (
-    <div id="diseno" className="space-y-16 py-12">
-      {/* Header */}
-      <div className="space-y-2">
-        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.6 Fase de Diseño</span>
-        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight">MODELADO Y ARQUITECTURA</h2>
+    <div id="diseno" className="space-y-20">
+      <div className="space-y-4">
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.6 FASE DE DISEÑO</span>
+        <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">ARQUITECTURA</h2>
       </div>
 
-      {/* Intro */}
-      <div className="prose prose-slate max-w-4xl border-l-4 border-[#FF1E2D] pl-6">
-        <p className="text-lg text-gray-600 leading-relaxed font-medium uppercase tracking-tight">
-          Transformación de requerimientos en <span className="text-[#FF1E2D] font-black">MODELOS TÉCNICOS</span>. Definición de la estructura, comportamiento y diseño visual bajo estándares de ingeniería de software.
-        </p>
-      </div>
+      <p className="text-2xl md:text-3xl text-gray-600 font-medium leading-tight max-w-4xl">
+        Transformamos requerimientos en <span className="text-[#FF1E2D] font-black underline">MODELOS TÉCNICOS</span> escalables bajo estándares de ingeniería.
+      </p>
 
-      {/* Grid Principal */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        {/* Bloque 1: Diagramas UML */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <GitBranch className="w-6 h-6 text-[#FF1E2D]" />
-            <h3 className="text-sm font-black uppercase tracking-widest text-[#2B2B2B]">Modelado Estructural (UML)</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="space-y-10">
+          <div className="flex items-center gap-4">
+            <GitBranch className="w-10 h-10 text-[#FF1E2D]" />
+            <h3 className="text-2xl font-black uppercase tracking-widest">MODELADO UML</h3>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {diagrams.map((d, i) => (
-              <div key={i} className="bg-white border border-gray-100 p-4 hover:border-[#FF1E2D] transition-all group flex flex-col items-center text-center gap-3 shadow-sm">
-                <d.icon className="w-5 h-5 text-gray-400 group-hover:text-[#FF1E2D] transition-colors" />
-                <span className="text-[9px] font-black uppercase text-gray-500 group-hover:text-[#2B2B2B]">{d.title}</span>
-                <Badge variant="outline" className="text-[7px] py-0 h-4 border-red-100 text-[#FF1E2D] font-black">{d.tag}</Badge>
+          <div className="grid grid-cols-2 gap-6">
+            {["PROCESOS", "CASOS USO", "CLASES", "SECUENCIA"].map((item, i) => (
+              <div key={i} className="bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] transition-all">
+                <span className="text-xs font-black text-gray-400 uppercase tracking-widest">DIAGRAMA</span>
+                <span className="text-lg font-black uppercase">{item}</span>
+                <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px]">UML V2.0</Badge>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Bloque 2: Modelado de Datos */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <Database className="w-6 h-6 text-[#FF1E2D]" />
-            <h3 className="text-sm font-black uppercase tracking-widest text-[#2B2B2B]">Modelado de Datos</h3>
+        <div className="space-y-10">
+          <div className="flex items-center gap-4">
+            <Database className="w-10 h-10 text-[#FF1E2D]" />
+            <h3 className="text-2xl font-black uppercase tracking-widest">ESTRUCTURA DE DATOS</h3>
           </div>
-          <div className="bg-[#2B2B2B] p-6 space-y-4">
-            <div className="flex items-center gap-4 text-white/90 p-3 border border-white/10 hover:bg-white/5 transition-colors">
-              <TableIcon className="w-5 h-5 text-[#FF1E2D]" />
-              <div className="flex flex-col">
-                <span className="text-[10px] font-black uppercase">Diagrama Entidad-Relación</span>
-                <span className="text-[8px] text-gray-400 uppercase">Mapeo Lógico de Entidades</span>
+          <div className="bg-[#2B2B2B] p-10 space-y-8 shadow-2xl h-full">
+            <div className="flex items-center gap-6 text-white p-6 border border-white/10 hover:bg-white/5 transition-colors">
+              <Network className="w-8 h-8 text-[#FF1E2D]" />
+              <div>
+                <span className="text-lg font-black uppercase">MAPEO ENTIDAD-RELACIÓN</span>
+                <p className="text-xs text-gray-500 uppercase font-bold">Base de datos centralizada</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 text-white/90 p-3 border border-white/10 hover:bg-white/5 transition-colors">
-              <Layout className="w-5 h-5 text-[#FF1E2D]" />
-              <div className="flex flex-col">
-                <span className="text-[10px] font-black uppercase">Esquema Relacional</span>
-                <span className="text-[8px] text-gray-400 uppercase">PK/FK e Integridad Referencial</span>
+            <div className="flex items-center gap-6 text-white p-6 border border-white/10 hover:bg-white/5 transition-colors">
+              <Layout className="w-8 h-8 text-[#FF1E2D]" />
+              <div>
+                <span className="text-lg font-black uppercase">DISEÑO DE INTERFAZ UX</span>
+                <p className="text-xs text-gray-500 uppercase font-bold">Prototipado de alta fidelidad</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Arquitectura y UX */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-100">
-        {/* Sitemap */}
-        <Card className="rounded-none border-t-4 border-[#FF1E2D] shadow-xl">
-          <CardHeader className="flex flex-row items-center gap-4 pb-2">
-            <div className="p-2 bg-red-50 text-[#FF1E2D]">
-              <Network className="w-5 h-5" />
-            </div>
-            <CardTitle className="text-xs font-black uppercase tracking-[0.2em]">Arquitectura de Información</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="relative p-4 border border-red-50 bg-red-50/20 text-center">
-              <span className="text-[9px] font-black text-[#FF1E2D] uppercase">Mapa de Navegación Jerárquico</span>
-              <p className="text-[8px] text-gray-400 font-bold uppercase mt-2 italic">Definición de rutas de usuario y flujos de navegación optimizados.</p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* UX/UI Design */}
-        <Card className="rounded-none border-t-4 border-[#2B2B2B] shadow-xl">
-          <CardHeader className="flex flex-row items-center gap-4 pb-2">
-            <div className="p-2 bg-gray-100 text-[#2B2B2B]">
-              <Layout className="w-5 h-5" />
-            </div>
-            <CardTitle className="text-xs font-black uppercase tracking-[0.2em]">Diseño de Interfaz (UX/UI)</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <div className="h-20 bg-gray-50 border border-dashed border-gray-200 flex items-center justify-center">
-                  <span className="text-[7px] font-black text-gray-300 uppercase">Wireframe</span>
-                </div>
-                <span className="text-[8px] font-black uppercase text-gray-400 block text-center">Bocetos</span>
-              </div>
-              <div className="space-y-2">
-                <div className="h-20 red-gradient flex items-center justify-center">
-                  <Eye className="w-4 h-4 text-white/50" />
-                </div>
-                <span className="text-[8px] font-black uppercase text-[#FF1E2D] block text-center">Look & Feel</span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Footer Fase */}
-      <div className="flex justify-end items-center bg-[#F5F5F5] p-6 border border-gray-100">
-        <button className="text-[9px] font-black uppercase text-[#FF1E2D] hover:underline tracking-tighter flex items-center gap-2">
-          Ver documentación técnica completa <FileCode className="w-3 h-3" />
-        </button>
       </div>
     </div>
   );

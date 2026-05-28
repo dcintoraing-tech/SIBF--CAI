@@ -2,52 +2,38 @@ import {
   Scan, 
   CircleCheckBig, 
   Database, 
-  LayoutList, 
-  FileSpreadsheet, 
-  Activity, 
-  TriangleAlert,
-  Target,
-  ChartColumn
+  FileSpreadsheet,
+  Target
 } from "lucide-react";
 
-const specificObjectives = [
-  { icon: Scan, title: "Biometría Facial", desc: "Módulo para identificación segura de usuarios." },
-  { icon: CircleCheckBig, title: "Captura Auto", desc: "Registro instantáneo de entradas y salidas." },
-  { icon: Database, title: "Base Central", desc: "Almacenamiento unificado y seguro." },
-  { icon: LayoutList, title: "Ordenación", desc: "Registros filtrables por usuario y fecha." },
-  { icon: FileSpreadsheet, title: "Reportes Excel", desc: "Generación automática de informes digitales." },
-  { icon: ChartColumn, title: "Validación", desc: "Garantía de confiabilidad mediante pruebas." },
-  { icon: Activity, title: "Análisis IA", desc: "Estudio de comportamiento institucional." },
-  { icon: TriangleAlert, title: "Alertas", desc: "Notificaciones para alumnos en riesgo." },
+const mainObjectives = [
+  { icon: Scan, title: "BIOMETRÍA", desc: "Seguridad total." },
+  { icon: CircleCheckBig, title: "AUTOMATIZACIÓN", desc: "Cero intervención." },
+  { icon: Database, title: "CENTRALIZACIÓN", desc: "Un solo punto." },
+  { icon: FileSpreadsheet, title: "REPORTES", desc: "Acceso inmediato." },
 ];
 
 export default function Objectives() {
   return (
-    <div id="objetivos" className="space-y-12">
-      <div className="space-y-2">
-        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">1.2 Objetivos del Proyecto</span>
-        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight">METAS ESTRATÉGICAS</h2>
+    <div id="objetivos" className="space-y-16">
+      <div className="space-y-4">
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.2 METAS ESTRATÉGICAS</span>
+        <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">OBJETIVOS</h2>
       </div>
 
-      {/* General Objective */}
-      <div className="red-gradient p-10 md:p-14 text-center">
-        <h4 className="text-[10px] font-bold text-white/70 uppercase tracking-[0.4em] mb-4">Objetivo General</h4>
-        <p className="text-xl md:text-2xl font-black text-white leading-tight uppercase italic max-w-4xl mx-auto">
-          "Desarrollar un sistema inteligente de control de asistencia basado en reconocimiento facial que automatice el registro, centralice la información y genere análisis en tiempo real, mejorando la precisión, seguridad y eficiencia operativa institucional."
+      <div className="red-gradient p-16 md:p-24 text-center shadow-2xl">
+        <h4 className="text-sm font-black text-white/60 uppercase tracking-[0.5em] mb-8">Propósito General</h4>
+        <p className="text-3xl md:text-5xl font-black text-white leading-[1.1] uppercase italic max-w-5xl mx-auto">
+          "OPTIMIZAR EL CONTROL INSTITUCIONAL MEDIANTE RECONOCIMIENTO FACIAL EN TIEMPO REAL."
         </p>
       </div>
 
-      {/* Specific Objectives Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {specificObjectives.map((obj, index) => (
-          <div key={index} className="bg-white p-6 border border-gray-100 hover:border-[#FF1E2D] transition-all group">
-            <div className="text-[#FF1E2D] mb-4 group-hover:scale-110 transition-transform">
-              <obj.icon className="w-6 h-6" />
-            </div>
-            <div className="space-y-1">
-              <h3 className="text-xs font-black text-[#2B2B2B] leading-tight uppercase tracking-widest">{obj.title}</h3>
-              <p className="text-[10px] text-gray-500 leading-tight font-bold uppercase tracking-tighter">{obj.desc}</p>
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {mainObjectives.map((obj, index) => (
+          <div key={index} className="bg-white p-10 border border-gray-100 hover:border-[#FF1E2D] transition-all group shadow-sm text-center">
+            <obj.icon className="w-12 h-12 text-[#FF1E2D] mx-auto mb-6 group-hover:scale-110 transition-transform" />
+            <h3 className="text-xl font-black text-[#2B2B2B] mb-2 uppercase">{obj.title}</h3>
+            <p className="text-sm text-gray-400 font-bold uppercase tracking-widest">{obj.desc}</p>
           </div>
         ))}
       </div>

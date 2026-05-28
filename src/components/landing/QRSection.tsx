@@ -1,48 +1,40 @@
 'use client';
 
-import { QrCode, ExternalLink } from "lucide-react";
+import { QrCode } from "lucide-react";
 
 export default function QRSection() {
   return (
-    <div id="qr-access" className="flex flex-col items-center justify-center space-y-8 text-center py-12 px-4">
-      <div className="space-y-2">
-        <span className="text-[#FF1E2D] font-bold text-sm tracking-[0.3em] uppercase">ACCESO DIGITAL</span>
-        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight">CONOCE NUESTRO SISTEMA</h2>
+    <div id="qr-access" className="flex flex-col items-center justify-center space-y-16 text-center py-24 px-10">
+      <div className="space-y-4">
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">ACCESO FINAL</span>
+        <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">ESCANEÉ EL CÓDIGO</h2>
       </div>
 
       <div className="relative group">
-        {/* Glow effect */}
-        <div className="absolute -inset-4 red-gradient blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-        
-        <div className="relative bg-white p-6 shadow-2xl border border-gray-100 rounded-xl flex items-center justify-center">
-          <div className="w-48 h-48 md:w-64 md:h-64 relative">
+        <div className="absolute -inset-10 red-gradient blur-3xl opacity-10 group-hover:opacity-30 transition duration-1000"></div>
+        <div className="relative bg-white p-12 shadow-2xl border border-gray-100 flex items-center justify-center">
+          <div className="w-64 h-64 md:w-96 md:h-96">
             <img 
               src="/images/QR.png" 
-              alt="Código QR de acceso al sistema SIBF-CAI"
+              alt="QR Code"
               className="w-full h-full object-contain"
             />
-          </div>
-          <div className="absolute top-2 right-2">
-            <ExternalLink className="w-5 h-5 text-[#FF1E2D] opacity-30 group-hover:opacity-100 transition-opacity" />
           </div>
         </div>
       </div>
 
-      <div className="max-w-md space-y-6">
-        <p className="text-sm text-gray-500 font-bold uppercase tracking-widest leading-relaxed">
-          ESCANEA EL CÓDIGO QR PARA NAVEGAR POR LA PROPUESTA <br />
-          <span className="text-[#FF1E2D] font-black">SIBF-CAI</span> DESDE TU DISPOSITIVO MÓVIL.
+      <div className="max-w-2xl space-y-10">
+        <p className="text-2xl text-gray-600 font-bold uppercase tracking-tight leading-relaxed">
+          ACCEDA A LA <span className="text-[#FF1E2D] font-black underline">DEMOSTRACIÓN INTERACTIVA</span> DESDE SU DISPOSITIVO MÓVIL.
         </p>
         
-        <div className="flex flex-col items-center gap-4 border-t border-gray-100 pt-6">
-          <div className="flex items-center gap-2 text-[10px] font-black text-[#2B2B2B] uppercase tracking-[0.2em]">
-            <QrCode className="w-4 h-4 text-[#FF1E2D]" />
-            Disponibilidad Inmediata
+        <div className="flex flex-col items-center gap-6">
+          <div className="flex items-center gap-4 text-sm font-black text-[#2B2B2B] uppercase tracking-[0.3em]">
+            <QrCode className="w-8 h-8 text-[#FF1E2D]" />
+            DISPONIBILIDAD INMEDIATA
           </div>
-          <div className="bg-[#F5F5F5] px-4 py-2 rounded-full">
-            <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">
-              v1.0 • Acceso Directo • Optimizado para Móvil
-            </span>
+          <div className="bg-[#2B2B2B] px-10 py-3 text-white text-[10px] font-black uppercase tracking-[0.5em]">
+            SIBF-CAI V1.0 • OPTIMIZADO PARA MÓVIL
           </div>
         </div>
       </div>
