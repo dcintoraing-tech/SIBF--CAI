@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 import Hero from "@/components/landing/Hero";
 import ProblemStatement from "@/components/landing/ProblemStatement";
-import AnalysisPhase from "@/components/landing/AnalysisPhase";
-import DesignPhase from "@/components/landing/DesignPhase";
-import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
 import Methodology from "@/components/landing/Methodology";
+import AnalysisPhase from "@/components/landing/AnalysisPhase";
+import DesignPhase from "@/components/landing/DesignPhase";
+import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
 import QRSection from "@/components/landing/QRSection";
 import { Smartphone } from "lucide-react";
 
@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white font-sans">
       {/* Mobile Rotation Hint */}
       {showRotationHint && (
         <div className="fixed inset-0 z-[200] bg-[#2B2B2B]/95 flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500 backdrop-blur-sm">
@@ -37,39 +37,39 @@ export default function Home() {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto bg-white">
+      <div className="max-w-7xl mx-auto bg-white shadow-2xl overflow-hidden">
         <Hero />
         
         <div className="divide-y divide-gray-100">
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-12 md:p-20 bg-white">
             <ProblemStatement />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50/50">
+          <section className="p-12 md:p-20 bg-slate-50/50">
             <Objectives />
           </section>
           
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-12 md:p-20 bg-white">
             <Justification />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50/50">
+          <section className="p-12 md:p-20 bg-slate-50/50">
             <Methodology />
           </section>
           
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-12 md:p-20 bg-white">
             <AnalysisPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50/50">
+          <section className="p-12 md:p-20 bg-slate-50/50">
             <DesignPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-[#0A0A0A]">
+          <section className="p-12 md:p-20 bg-[#0A0A0A] text-white">
             <DevelopmentPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-[#111111]">
+          <section className="p-12 md:p-20 bg-[#0A0A0A]">
             <QRSection />
           </section>
         </div>
