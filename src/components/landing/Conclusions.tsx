@@ -7,7 +7,7 @@ export default function Conclusions() {
     <div id="conclusiones" className="space-y-16">
       <div className="space-y-4">
         <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.8 CONCLUSIONES</span>
-        <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">CIERRE EJECUTIVO</h2>
+        <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">CIERRE</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
