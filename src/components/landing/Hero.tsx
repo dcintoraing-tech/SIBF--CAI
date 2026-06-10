@@ -12,11 +12,9 @@ export default function Hero() {
       <div className="relative z-10 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 w-full max-w-7xl mx-auto">
         <div className="flex-1 space-y-8">
           <div className="flex items-center gap-6">
-            <img 
-              src="/images/logo.png" 
-              alt="Logo Institucional" 
-              className="h-20 w-auto object-contain"
-            />
+            <div className="text-[#FF1E2D]">
+              <ShieldCheck className="w-12 h-12" />
+            </div>
             <div className="h-12 w-[2px] bg-gray-200 hidden md:block" />
             <Badge variant="outline" className="px-4 py-1 border-[#FF1E2D] text-[#FF1E2D] font-black uppercase tracking-[0.2em] text-[10px] rounded-none">
               PROPUESTA EJECUTIVA V1.0
@@ -54,10 +52,10 @@ export default function Hero() {
               <div className="absolute -inset-2 red-gradient blur-2xl opacity-10 transition duration-1000 group-hover:opacity-20"></div>
               <div className="relative w-64 h-[400px] bg-white border border-gray-100 flex items-center justify-center overflow-hidden shadow-2xl">
                 <img 
-                  src="https://picsum.photos/seed/face88/600/800" 
+                  src="https://picsum.photos/seed/face-auth-99/600/800" 
                   alt="Identificación Biométrica Facial" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
-                  data-ai-hint="facial recognition"
+                  data-ai-hint="face recognition"
                 />
                 <div className="absolute top-1/2 left-0 w-full h-[3px] bg-[#FF1E2D] shadow-[0_0_10px_#FF1E2D] animate-pulse"></div>
               </div>

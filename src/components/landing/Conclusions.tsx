@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Award, Target, Rocket } from "lucide-react";

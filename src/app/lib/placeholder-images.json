@@ -4,14 +4,14 @@
     {
       "id": "hero-bg",
       "description": "Abstract technology network background",
-      "imageUrl": "https://picsum.photos/seed/12/1920/1080",
+      "imageUrl": "https://picsum.photos/seed/tech-red/1920/1080",
       "imageHint": "technology abstract"
     },
     {
-      "id": "biometric-auth",
-      "description": "Facial recognition biometric visualization with a person",
-      "imageUrl": "https://picsum.photos/seed/face88/600/800",
-      "imageHint": "facial recognition"
+      "id": "biometric-face",
+      "description": "Person face for biometric recognition",
+      "imageUrl": "https://picsum.photos/seed/face-auth-99/600/800",
+      "imageHint": "face recognition"
     }
   ]
 }
