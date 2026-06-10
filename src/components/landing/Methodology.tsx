@@ -21,12 +21,12 @@ export default function Methodology() {
       end: 2, 
       progress: 100, 
       color: "#FF1E2D",
-      phases: "ANÁLISIS",
+      phases: "FASE DE ANÁLISIS",
       details: [
         "Levantamiento de Requerimientos",
-        "Historias de Usuario del Alumno (HU01, HU02, HU03)",
-        "Historia de Usuario del Docente (HU05, HU06, HU07)",
-        "Historia de Usuario del Administrador (HU08-HU11)",
+        "Historias de Usuario del Alumno (HU01, HU02, HU03 con RF y RNF)",
+        "Historia de Usuario del Docente (HU05, HU06, HU07 con RF y RNF)",
+        "Historia de Usuario del Administrador (HU08-HU11 con RF y RNF)",
         "Estudio de Usabilidad"
       ]
     },
@@ -36,13 +36,14 @@ export default function Methodology() {
       end: 5, 
       progress: 100, 
       color: "#2B2B2B",
-      phases: "ANÁLISIS + DISEÑO",
+      phases: "FASE DE ANÁLISIS / FASE DE DISEÑO",
       details: [
-        "HU: Gestión de usuarios y catálogos V1.1",
-        "HU: Supervisión y respaldo V1.1",
+        "Gestión de usuarios y catálogos institucionales V1.1",
+        "Supervisión y respaldo de información V1.1",
         "Diagramas: Procesos, Casos de Uso y Secuencia",
+        "Especificación de Casos de Uso",
         "Arquitectura MVC y Diagrama Entidad Relación",
-        "Arquitectura de Información"
+        "Arquitectura de información"
       ]
     },
     { 
@@ -51,13 +52,15 @@ export default function Methodology() {
       end: 8, 
       progress: 100, 
       color: "#FF1E2D",
-      phases: "DISEÑO + DEV + TEST",
+      phases: "FASE DE DISEÑO / FASE DE DESARROLLO / FASE DE PRUEBAS",
       details: [
-        "UI: Login, Dashboard, Reportes (Mockups)",
-        "Frontend: Next.js + Tailwind + ShadCN",
+        "Diseño UI: Login, Dashboard, Usuarios, Reportes, Respaldo",
+        "Implementación Frontend: Next.js + Tailwind + ShadCN",
+        "Formularios y validaciones (React Hook Form + Zod)",
+        "Integración backend, sesiones y roles",
         "CRUD de usuarios y catálogos",
-        "Integración con backend y sesiones",
-        "Pruebas de autenticación y CRUD"
+        "Módulo de respaldo y visualización de reportes",
+        "Pruebas CRUD y de autenticación"
       ]
     },
     { 
@@ -66,13 +69,14 @@ export default function Methodology() {
       end: 11, 
       progress: 90, 
       color: "#2B2B2B",
-      phases: "BACKEND + DB",
+      phases: "FASE DE DESARROLLO / FASE DE PRUEBAS",
       details: [
-        "Implementación DB SQL y API REST Node.js",
-        "Endpoints: Auth, Asistencias, Reportes",
+        "Implementación Base de Datos SQL",
+        "Creación de API REST (Node.js)",
+        "Endpoints: Auth, Usuarios, Asistencias, Catálogos",
         "Lógica de negocio y Seguridad JWT",
         "Pruebas de endpoints (Postman)",
-        "Validación de datos y seguridad"
+        "Validación de datos y acceso"
       ]
     },
     { 
@@ -81,10 +85,11 @@ export default function Methodology() {
       end: 14, 
       progress: 85, 
       color: "#FF1E2D",
-      phases: "INTEGRACIÓN IA",
+      phases: "FASE DE DESARROLLO / FASE DE PRUEBAS",
       details: [
-        "Integración con biométrico facial",
+        "Integración con lector biométrico facial",
         "Captura de asistencia en tiempo real",
+        "Asociación automática alumno-grupo",
         "Sincronización HW + FE + BE",
         "Pruebas de reconocimiento y precisión",
         "Validación en entorno real"
@@ -96,13 +101,13 @@ export default function Methodology() {
       end: 16, 
       progress: 0, 
       color: "#A3A3A3",
-      phases: "DESPLIEGUE + CIERRE",
+      phases: "FASE DE IMPLEMENTACIÓN",
       details: [
-        "Despliegue en producción y manuales",
-        "Capacitación a usuarios finales",
-        "Evaluación QA Final y correcciones",
-        "Entrega del sistema y retroalimentación",
-        "Documentación técnica final"
+        "Despliegue (Local/Nube) y Configuración Servidor",
+        "Capacitación, Manual de Usuario y Manual Técnico",
+        "Pruebas finales QA y Corrección de errores",
+        "Documentación final y Entrega del sistema",
+        "Retroalimentación"
       ]
     },
   ];
@@ -138,60 +143,72 @@ export default function Methodology() {
         
         <div className="bg-[#0A0A0A] p-6 md:p-12 shadow-2xl overflow-x-auto border-t-8 border-[#FF1E2D]">
           <TooltipProvider>
-            <div className="min-w-[900px]">
-              <div className="grid grid-cols-[180px_repeat(16,1fr)] gap-px border-b border-white/10 pb-6">
-                <div className="text-white/40 text-[10px] font-black uppercase tracking-widest self-end">HITOS / SEMANAS</div>
+            <div className="min-w-[1000px]">
+              <div className="grid grid-cols-[220px_repeat(16,1fr)] gap-px border-b border-white/10 pb-6">
+                <div className="text-white/40 text-[10px] font-black uppercase tracking-widest self-end">SPRINT / FASES / SEMANAS</div>
                 {weeks.map(w => (
                   <div key={w} className="text-center text-white/40 text-[10px] font-black">S{w}</div>
                 ))}
               </div>
 
-              <div className="relative mt-8 space-y-6">
+              <div className="relative mt-8 space-y-8">
                 {sprints.map((sprint, i) => (
-                  <div key={i} className="grid grid-cols-[180px_repeat(16,1fr)] items-center group">
+                  <div key={i} className="grid grid-cols-[220px_repeat(16,1fr)] items-center group">
                     <div className="pr-6">
                       <div className="text-white font-black text-sm uppercase tracking-tighter group-hover:text-[#FF1E2D] transition-colors">
                         {sprint.name}
                       </div>
-                      <div className="text-[#FF1E2D] text-[8px] font-black uppercase tracking-widest leading-none mt-1">
+                      <div className="text-[#FF1E2D] text-[8px] font-black uppercase tracking-widest leading-tight mt-1">
                         {sprint.phases}
                       </div>
                     </div>
-                    <div className="col-span-16 h-12 relative bg-white/5 flex items-center">
+                    <div className="col-span-16 h-14 relative bg-white/5 flex items-center">
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <div 
-                            className="absolute h-8 rounded-none flex items-center justify-center text-[10px] font-black text-white transition-all duration-300 hover:brightness-125 cursor-help overflow-hidden"
+                            className="absolute h-10 rounded-none flex items-center justify-center cursor-help overflow-hidden transition-all duration-300 hover:brightness-125"
                             style={{ 
                               left: `${((sprint.start - 1) / 16) * 100}%`,
                               width: `${((sprint.end - sprint.start + 1) / 16) * 100}%`,
                               backgroundColor: sprint.color,
-                              boxShadow: `0 0 20px ${sprint.color}33`
+                              boxShadow: `0 0 30px ${sprint.color}44`
                             }}
                           >
-                            <span className="relative z-10">{sprint.progress}%</span>
+                            <span className="relative z-10 text-[11px] font-black text-white px-2">
+                              {sprint.progress}%
+                            </span>
                             <div 
                               className="absolute inset-0 bg-white/20 transition-all duration-1000"
                               style={{ width: `${sprint.progress}%` }}
                             />
                           </div>
                         </TooltipTrigger>
-                        <TooltipContent side="top" className="bg-[#2B2B2B] border-[#FF1E2D] text-white p-6 max-w-sm rounded-none shadow-2xl">
-                          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FF1E2D] mb-3 border-b border-white/10 pb-2">Actividades realizadas:</p>
-                          <ul className="space-y-2">
-                            {sprint.details.map((detail, idx) => (
-                              <li key={idx} className="text-[11px] font-bold uppercase leading-tight flex gap-2">
-                                <span className="text-[#FF1E2D]">•</span> {detail}
-                              </li>
-                            ))}
-                          </ul>
+                        <TooltipContent side="top" className="bg-[#1A1A1A] border-[#FF1E2D] text-white p-6 max-w-md rounded-none shadow-2xl z-[100]">
+                          <div className="space-y-4">
+                            <div>
+                              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FF1E2D] border-b border-white/10 pb-2 mb-2">
+                                {sprint.name}: {sprint.phases}
+                              </p>
+                              <ul className="space-y-2">
+                                {sprint.details.map((detail, idx) => (
+                                  <li key={idx} className="text-[11px] font-bold uppercase leading-tight flex gap-2">
+                                    <span className="text-[#FF1E2D] text-lg leading-none">•</span> {detail}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div className="flex justify-between items-center pt-2 border-t border-white/5">
+                              <span className="text-[10px] font-black text-gray-500">SEMANAS {sprint.start}-{sprint.end}</span>
+                              <span className="text-[10px] font-black text-[#FF1E2D]">PROGRESO: {sprint.progress}%</span>
+                            </div>
+                          </div>
                         </TooltipContent>
                       </Tooltip>
                     </div>
                   </div>
                 ))}
 
-                <div className="absolute top-0 left-[180px] right-0 bottom-0 pointer-events-none flex">
+                <div className="absolute top-0 left-[220px] right-0 bottom-0 pointer-events-none flex">
                   {weeks.map(w => (
                     <div key={w} className="flex-1 border-l border-white/5 h-full" />
                   ))}
