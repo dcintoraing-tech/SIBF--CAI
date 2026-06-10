@@ -72,7 +72,7 @@ export default function Home() {
             <DesignPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-[#0A0A0A] text-white">
+          <section className="p-12 md:p-24 bg-slate-50/30">
             <DevelopmentPhase />
           </section>
 
