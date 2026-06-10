@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Hero from "@/components/landing/Hero";
+import Background from "@/components/landing/Background";
 import ProblemStatement from "@/components/landing/ProblemStatement";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
@@ -9,6 +10,8 @@ import Methodology from "@/components/landing/Methodology";
 import AnalysisPhase from "@/components/landing/AnalysisPhase";
 import DesignPhase from "@/components/landing/DesignPhase";
 import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
+import Conclusions from "@/components/landing/Conclusions";
+import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
 import { Smartphone } from "lucide-react";
 
@@ -41,35 +44,47 @@ export default function Home() {
         <Hero />
         
         <div className="divide-y divide-gray-100">
-          <section className="p-12 md:p-20 bg-white">
+          <section className="p-12 md:p-24 bg-white">
+            <Background />
+          </section>
+
+          <section className="p-12 md:p-24 bg-slate-50/50">
             <ProblemStatement />
           </section>
 
-          <section className="p-12 md:p-20 bg-slate-50/50">
+          <section className="p-12 md:p-24 bg-white">
             <Objectives />
           </section>
           
-          <section className="p-12 md:p-20 bg-white">
+          <section className="p-12 md:p-24 bg-slate-50/50">
             <Justification />
           </section>
 
-          <section className="p-12 md:p-20 bg-slate-50/50">
+          <section className="p-12 md:p-24 bg-white">
             <Methodology />
           </section>
           
-          <section className="p-12 md:p-20 bg-white">
+          <section className="p-12 md:p-24 bg-slate-50/50">
             <AnalysisPhase />
           </section>
 
-          <section className="p-12 md:p-20 bg-slate-50/50">
+          <section className="p-12 md:p-24 bg-white">
             <DesignPhase />
           </section>
 
-          <section className="p-12 md:p-20 bg-[#0A0A0A] text-white">
+          <section className="p-12 md:p-24 bg-[#0A0A0A] text-white">
             <DevelopmentPhase />
           </section>
 
-          <section className="p-12 md:p-20 bg-[#0A0A0A]">
+          <section className="p-12 md:p-24 bg-white">
+            <Conclusions />
+          </section>
+
+          <section className="p-12 md:p-24 bg-slate-50/30">
+            <Bibliography />
+          </section>
+
+          <section className="p-12 md:p-24 bg-[#0A0A0A]">
             <QRSection />
           </section>
         </div>
@@ -77,12 +92,7 @@ export default function Home() {
         <footer className="bg-[#1A1A1A] py-16 px-12 text-white border-t border-white/5">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-6">
-              <img 
-                src="/images/logo.png" 
-                alt="Logo Institucional" 
-                className="h-12 w-auto object-contain brightness-0 invert"
-              />
-              <div>
+              <div className="text-white">
                 <h2 className="text-xl font-black tracking-widest text-white leading-tight uppercase italic">
                   SIBF<span className="text-[#FF1E2D]">-CAI</span>
                 </h2>
@@ -90,8 +100,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">
-              &copy; {new Date().getFullYear()} LaUni - Sistemas Computacionales<br />
-              Propuesta Tecnológica Ejecutiva
+              &copy; {new Date().getFullYear()} Propuesta Tecnológica Ejecutiva
             </div>
           </div>
         </footer>
