@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Badge } from "@/components/ui/badge";
@@ -53,8 +54,8 @@ export default function Hero() {
               <div className="absolute -inset-2 red-gradient blur-2xl opacity-10 transition duration-1000 group-hover:opacity-20"></div>
               <div className="relative w-64 h-[400px] bg-white border border-gray-100 flex items-center justify-center overflow-hidden shadow-2xl">
                 <img 
-                  src="https://picsum.photos/seed/biometric/600/800" 
-                  alt="Identificación Biométrica" 
+                  src="https://picsum.photos/seed/face88/600/800" 
+                  alt="Identificación Biométrica Facial" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
                   data-ai-hint="facial recognition"
                 />

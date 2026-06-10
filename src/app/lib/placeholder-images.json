@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -7,9 +8,9 @@
       "imageHint": "technology abstract"
     },
     {
-      "id": "facial-recognition",
-      "description": "Facial recognition biometric visualization",
-      "imageUrl": "https://picsum.photos/seed/face/800/600",
+      "id": "biometric-auth",
+      "description": "Facial recognition biometric visualization with a person",
+      "imageUrl": "https://picsum.photos/seed/face88/600/800",
       "imageHint": "facial recognition"
     }
   ]
