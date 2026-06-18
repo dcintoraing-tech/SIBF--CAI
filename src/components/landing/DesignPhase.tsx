@@ -1,6 +1,6 @@
 'use client';
 
-import { GitBranch, Database, Layout, Network, Search, Maximize2 } from "lucide-react";
+import { GitBranch, Database, Layout, Network, Search, Maximize2, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -14,9 +14,10 @@ export default function DesignPhase() {
   const diagrams = [
     { 
       name: "PROCESOS", 
-      img: "/images/pgeneral.jpg", 
-      type: "DIAGRAMA",
-      desc: "Mapa de flujo operativo del sistema"
+      img: "/images/dp.pdf", 
+      type: "DOCUMENTO PDF",
+      desc: "Mapa de flujo operativo del sistema (Formato PDF)",
+      isPdf: true
     },
     { 
       name: "CASOS USO", 
@@ -76,12 +77,19 @@ export default function DesignPhase() {
                       <span className="text-lg font-black uppercase tracking-tighter">{item.name}</span>
                       
                       <div className="w-full h-32 bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden">
-                         <img 
-                          src={item.img} 
-                          alt={item.name} 
-                          className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                          style={{ imageRendering: 'auto' }}
-                         />
+                         {item.isPdf ? (
+                           <div className="flex flex-col items-center gap-2">
+                             <FileText className="w-12 h-12 text-[#FF1E2D] opacity-40 group-hover:opacity-100 transition-opacity" />
+                             <span className="text-[10px] font-black text-gray-400 uppercase">DOCUMENTO PDF</span>
+                           </div>
+                         ) : (
+                           <img 
+                            src={item.img} 
+                            alt={item.name} 
+                            className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                            style={{ imageRendering: 'auto' }}
+                           />
+                         )}
                       </div>
                       
                       <div className="text-[#FF1E2D] font-black text-[10px] uppercase tracking-widest flex items-center gap-2">
@@ -101,17 +109,27 @@ export default function DesignPhase() {
                         </div>
                       </DialogTitle>
                     </DialogHeader>
-                    <div className="flex-1 overflow-auto bg-[#F8F9FA] p-4 md:p-12 flex items-start justify-center relative bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]">
-                      <img 
-                        src={item.img} 
-                        alt={item.name} 
-                        className="max-w-none w-auto h-auto min-w-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-white border border-gray-200"
-                        style={{ 
-                          display: 'block',
-                          imageRendering: 'auto',
-                          WebkitOptimizeContrast: 'true'
-                        }}
-                      />
+                    <div className="flex-1 overflow-auto bg-[#F8F9FA] p-0 flex items-stretch justify-center relative bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]">
+                      {item.isPdf ? (
+                        <iframe 
+                          src={`${item.img}#toolbar=0&navpanes=0&scrollbar=1`} 
+                          className="w-full h-full border-none"
+                          title={item.name}
+                        />
+                      ) : (
+                        <div className="p-4 md:p-12 w-full flex justify-center items-start">
+                          <img 
+                            src={item.img} 
+                            alt={item.name} 
+                            className="max-w-none w-auto h-auto min-w-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-white border border-gray-200"
+                            style={{ 
+                              display: 'block',
+                              imageRendering: 'auto',
+                              WebkitOptimizeContrast: 'true'
+                            }}
+                          />
+                        </div>
+                      )}
                     </div>
                   </DialogContent>
                 </Dialog>
