@@ -1,13 +1,14 @@
 'use client';
 
-import { GitBranch, Database, Layout, Network, Eye } from "lucide-react";
+import { GitBranch, Database, Layout, Network, Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function DesignPhase() {
   const diagrams = [
@@ -34,40 +35,45 @@ export default function DesignPhase() {
             <GitBranch className="w-10 h-10 text-[#FF1E2D]" />
             <h3 className="text-2xl font-black uppercase tracking-widest">MODELADO UML</h3>
           </div>
-          <TooltipProvider>
-            <div className="grid grid-cols-2 gap-6">
-              {diagrams.map((item, i) => (
-                <Tooltip key={i} delayDuration={0}>
-                  <TooltipTrigger asChild>
-                    <div className={`bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] transition-all cursor-help relative group overflow-hidden`}>
-                      {item.img && (
-                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <Eye className="w-4 h-4 text-[#FF1E2D]" />
-                        </div>
-                      )}
+          
+          <div className="grid grid-cols-2 gap-6">
+            {diagrams.map((item, i) => (
+              item.img ? (
+                <Dialog key={i}>
+                  <DialogTrigger asChild>
+                    <button className="text-left bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] hover:scale-[1.02] transition-all relative group overflow-hidden">
+                      <div className="absolute top-2 right-2 text-[#FF1E2D] opacity-40 group-hover:opacity-100 transition-opacity">
+                        <Search className="w-5 h-5" />
+                      </div>
                       <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
                       <span className="text-lg font-black uppercase">{item.name}</span>
-                      <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px]">UML V2.5</Badge>
+                      <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px]">VER DETALLE</Badge>
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-[#FF1E2D] border-2 bg-white overflow-hidden">
+                    <DialogHeader className="p-4 bg-[#2B2B2B] text-white">
+                      <DialogTitle className="text-xl font-black uppercase italic tracking-widest">
+                        DIAGRAMA DE {item.name} - VISTA DETALLADA
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="p-2 overflow-auto flex items-center justify-center bg-slate-50">
+                      <img 
+                        src={item.img} 
+                        alt={item.name} 
+                        className="max-w-full h-auto object-contain cursor-zoom-in"
+                      />
                     </div>
-                  </TooltipTrigger>
-                  {item.img && (
-                    <TooltipContent side="top" className="p-0 border-none bg-transparent shadow-none" sideOffset={10}>
-                      <div className="w-[400px] h-auto bg-white p-2 shadow-2xl border-2 border-[#FF1E2D] animate-in zoom-in-95 duration-300">
-                        <img 
-                          src={item.img} 
-                          alt={item.name} 
-                          className="w-full h-auto object-contain"
-                        />
-                        <div className="bg-[#FF1E2D] text-white text-[10px] font-black p-2 uppercase text-center">
-                          VISTA PREVIA: {item.name} GENERAL
-                        </div>
-                      </div>
-                    </TooltipContent>
-                  )}
-                </Tooltip>
-              ))}
-            </div>
-          </TooltipProvider>
+                  </DialogContent>
+                </Dialog>
+              ) : (
+                <div key={i} className="bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl opacity-60">
+                  <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
+                  <span className="text-lg font-black uppercase">{item.name}</span>
+                  <Badge variant="outline" className="border-gray-200 text-gray-400 font-black text-[10px]">PENDIENTE</Badge>
+                </div>
+              )
+            ))}
+          </div>
         </div>
 
         <div className="space-y-10">
@@ -75,7 +81,7 @@ export default function DesignPhase() {
             <Database className="w-10 h-10 text-[#FF1E2D]" />
             <h3 className="text-2xl font-black uppercase tracking-widest">ESTRUCTURA DE DATOS</h3>
           </div>
-          <div className="bg-[#2B2B2B] p-10 space-y-8 shadow-2xl h-full">
+          <div className="bg-[#2B2B2B] p-10 space-y-8 shadow-2xl h-full flex flex-col justify-center">
             <div className="flex items-center gap-6 text-white p-6 border border-white/10 hover:bg-white/5 transition-colors">
               <Network className="w-8 h-8 text-[#FF1E2D]" />
               <div>

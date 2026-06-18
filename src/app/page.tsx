@@ -92,6 +92,11 @@ export default function Home() {
         <footer className="bg-[#1A1A1A] py-16 px-12 text-white border-t border-white/5">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-6">
+              <img 
+                src="/images/logo.png" 
+                alt="Logo" 
+                className="h-12 w-auto object-contain brightness-0 invert" 
+              />
               <div className="text-white">
                 <h2 className="text-xl font-black tracking-widest text-white leading-tight uppercase italic">
                   SIBF<span className="text-[#FF1E2D]">-CAI</span>
@@ -100,7 +105,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">
-              &copy; {new Date().getFullYear()} Propuesta Tecnológica Ejecutiva
+              &copy; {new Date().getFullYear()} SIBF-CAI • PROYECTO EJECUTIVO
             </div>
           </div>
         </footer>
