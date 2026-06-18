@@ -29,7 +29,7 @@ export default function Conclusions() {
           <Rocket className="w-16 h-16 text-[#FF1E2D]" />
           <h3 className="text-2xl font-black uppercase italic">ESCALABILIDAD</h3>
           <p className="text-gray-500 font-bold uppercase text-sm leading-relaxed">
-            Arquitectura escalable preparada para el crecimiento institucional; su alta capacidad permite integraciones futuras con nómina y gestión de talento humano bajo <span className="text-[#FF1E2D]">TRANSFORMACIÓN DIGITAL</span>.
+            Arquitectura escalable preparada para el crecimiento institucional; su alta capacidad permite integraciones futuras y adaptabilidad continua bajo <span className="text-[#FF1E2D]">TRANSFORMACIÓN DIGITAL</span>.
           </p>
         </div>
       </div>
