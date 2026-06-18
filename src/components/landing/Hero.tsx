@@ -51,7 +51,7 @@ export default function Hero() {
               <div className="absolute -inset-2 red-gradient blur-2xl opacity-10 transition duration-1000 group-hover:opacity-20"></div>
               <div className="relative w-64 h-[400px] bg-white border border-gray-100 flex items-center justify-center overflow-hidden shadow-2xl">
                 <img 
-                  src="/portada.png" 
+                  src="/images/portada.png" 
                   alt="Identificación Biométrica Facial SIBF-CAI" 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
                 />
