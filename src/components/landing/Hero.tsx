@@ -16,7 +16,7 @@ export default function Hero() {
             </div>
             <div className="h-12 w-[2px] bg-gray-200 hidden md:block" />
             <Badge variant="outline" className="px-4 py-1 border-[#FF1E2D] text-[#FF1E2D] font-black uppercase tracking-[0.2em] text-[10px] rounded-none">
-              PROPUESTA EJECUTIVA V1.0
+              TRANSFORMACIÓN DIGITAL V1.0
             </Badge>
           </div>
           
@@ -48,14 +48,15 @@ export default function Hero() {
 
         <div className="flex-none hidden lg:block">
            <div className="relative group">
-              <div className="absolute -inset-2 red-gradient blur-2xl opacity-10 transition duration-1000 group-hover:opacity-20"></div>
+              <div className="absolute -inset-4 red-gradient blur-3xl opacity-10"></div>
               <div className="relative w-64 h-[400px] bg-white border border-gray-100 flex items-center justify-center overflow-hidden shadow-2xl">
                 <img 
                   src="/images/portada.png" 
                   alt="Identificación Biométrica Facial SIBF-CAI" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
+                  className="w-full h-full object-cover animate-tech-pulse"
                 />
-                <div className="absolute top-1/2 left-0 w-full h-[3px] bg-[#FF1E2D] shadow-[0_0_10px_#FF1E2D] animate-pulse"></div>
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-[#FF1E2D] shadow-[0_0_15px_#FF1E2D] animate-scan-line z-20"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FF1E2D]/5 pointer-events-none"></div>
               </div>
            </div>
         </div>

@@ -47,8 +47,24 @@
   @apply bg-gradient-to-r from-[#FF1E2D] to-[#A30000] bg-clip-text text-transparent;
 }
 
-.presentation-card {
-  @apply bg-white shadow-2xl rounded-none md:rounded-lg overflow-hidden border-t-8 border-[#FF1E2D];
+@keyframes scan-line {
+  0% { top: 0%; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-scan-line {
+  animation: scan-line 3s linear infinite;
+}
+
+@keyframes tech-pulse {
+  0%, 100% { opacity: 0.7; filter: grayscale(100%) brightness(0.8); }
+  50% { opacity: 1; filter: grayscale(0%) brightness(1.2); }
+}
+
+.animate-tech-pulse {
+  animation: tech-pulse 1s ease-in-out infinite;
 }
 
 @keyframes rotate-phone {
@@ -59,4 +75,13 @@
 
 .animate-rotate-phone {
   animation: rotate-phone 2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
 }

@@ -96,7 +96,7 @@ export default function Home() {
                 <h2 className="text-xl font-black tracking-widest text-white leading-tight uppercase italic">
                   SIBF<span className="text-[#FF1E2D]">-CAI</span>
                 </h2>
-                <p className="text-gray-500 text-[8px] uppercase tracking-[0.4em] font-bold">Ingeniería de vanguardia</p>
+                <p className="text-gray-500 text-[8px] uppercase tracking-[0.4em] font-bold">Transformación Digital</p>
               </div>
             </div>
             <div className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">

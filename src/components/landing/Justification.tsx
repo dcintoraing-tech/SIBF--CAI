@@ -5,7 +5,7 @@ export default function Justification() {
     { icon: Zap, title: "AUTOMATIZACIÓN", desc: "Cero errores humanos." },
     { icon: ShieldCheck, title: "CERO FRAUDE", desc: "Seguridad biométrica." },
     { icon: ChartColumn, title: "DATA DRIVEN", desc: "Reportes en tiempo real." },
-    { icon: TrendingUp, title: "VANGUARDIA", desc: "Liderazgo tecnológico." }
+    { icon: TrendingUp, title: "TRANSFORMACIÓN", desc: "Liderazgo tecnológico." }
   ];
 
   return (
@@ -17,7 +17,7 @@ export default function Justification() {
 
       <div className="space-y-16">
         <p className="text-2xl md:text-3xl text-gray-600 font-medium leading-tight max-w-5xl">
-          El sistema posiciona a la institución en la <span className="text-[#FF1E2D] font-black underline">VANGUARDIA TECNOLÓGICA</span>, garantizando una gestión de asistencia de alto nivel.
+          El sistema posiciona a la institución en la <span className="text-[#FF1E2D] font-black underline">TRANSFORMACIÓN DIGITAL</span>, garantizando una gestión de asistencia de alto nivel.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
