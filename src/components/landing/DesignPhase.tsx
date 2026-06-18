@@ -1,9 +1,22 @@
 'use client';
 
-import { GitBranch, Database, Layout, Network } from "lucide-react";
+import { GitBranch, Database, Layout, Network, Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function DesignPhase() {
+  const diagrams = [
+    { name: "PROCESOS", img: "/images/pgeneral.jpg", type: "DIAGRAMA" },
+    { name: "CASOS USO", img: "/images/cugeneral.jpg", type: "DIAGRAMA" },
+    { name: "CLASES", img: null, type: "DIAGRAMA" },
+    { name: "SECUENCIA", img: null, type: "DIAGRAMA" },
+  ];
+
   return (
     <div id="diseno" className="space-y-20">
       <div className="space-y-4">
@@ -21,15 +34,40 @@ export default function DesignPhase() {
             <GitBranch className="w-10 h-10 text-[#FF1E2D]" />
             <h3 className="text-2xl font-black uppercase tracking-widest">MODELADO UML</h3>
           </div>
-          <div className="grid grid-cols-2 gap-6">
-            {["PROCESOS", "CASOS USO", "CLASES", "SECUENCIA"].map((item, i) => (
-              <div key={i} className="bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] transition-all">
-                <span className="text-xs font-black text-gray-400 uppercase tracking-widest">DIAGRAMA</span>
-                <span className="text-lg font-black uppercase">{item}</span>
-                <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px]">UML V2.0</Badge>
-              </div>
-            ))}
-          </div>
+          <TooltipProvider>
+            <div className="grid grid-cols-2 gap-6">
+              {diagrams.map((item, i) => (
+                <Tooltip key={i} delayDuration={0}>
+                  <TooltipTrigger asChild>
+                    <div className={`bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] transition-all cursor-help relative group overflow-hidden`}>
+                      {item.img && (
+                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <Eye className="w-4 h-4 text-[#FF1E2D]" />
+                        </div>
+                      )}
+                      <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
+                      <span className="text-lg font-black uppercase">{item.name}</span>
+                      <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px]">UML V2.5</Badge>
+                    </div>
+                  </TooltipTrigger>
+                  {item.img && (
+                    <TooltipContent side="top" className="p-0 border-none bg-transparent shadow-none" sideOffset={10}>
+                      <div className="w-[400px] h-auto bg-white p-2 shadow-2xl border-2 border-[#FF1E2D] animate-in zoom-in-95 duration-300">
+                        <img 
+                          src={item.img} 
+                          alt={item.name} 
+                          className="w-full h-auto object-contain"
+                        />
+                        <div className="bg-[#FF1E2D] text-white text-[10px] font-black p-2 uppercase text-center">
+                          VISTA PREVIA: {item.name} GENERAL
+                        </div>
+                      </div>
+                    </TooltipContent>
+                  )}
+                </Tooltip>
+              ))}
+            </div>
+          </TooltipProvider>
         </div>
 
         <div className="space-y-10">

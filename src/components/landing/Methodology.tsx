@@ -21,9 +21,9 @@ export default function Methodology() {
       phases: "Fase de Análisis",
       details: [
         "Levantamiento de Requerimientos",
-        "HU Alumno (HU01-HU03 con RF/RNF)",
-        "HU Docente (HU05-HU07 con RF/RNF)",
-        "HU Admin (HU08-HU11 con RF/RNF)",
+        "HU Alumno (HU01, HU02, HU03 con RF/RNF)",
+        "HU Docente (HU05, HU06, HU07 con RF/RNF)",
+        "HU Administrador (HU08-HU11 con RF/RNF)",
         "Estudio de Usabilidad"
       ],
       progress: 100,
@@ -32,14 +32,15 @@ export default function Methodology() {
     { 
       name: "SPRINT 2", 
       weeks: "Semanas 3 - 5",
-      phases: "Análisis y Diseño",
+      phases: "Fase de Análisis y Fase de Diseño",
       details: [
-        "HU Gestión usuarios V1.1",
-        "HU Administración catálogos V1.1",
-        "HU Supervisión y respaldo V1.1",
-        "Diagramas UML: Procesos, Casos Uso, Clases, Secuencia",
-        "Diagrama Entidad Relación",
-        "Arquitectura de información"
+        "HU: Gestión de usuarios del sistema V1.1",
+        "HU: Administración de catálogos V1.1",
+        "HU: Supervisión y respaldo V1.1",
+        "Diagrama de Procesos General",
+        "Diagrama de Casos de Uso General",
+        "Diagrama de Arquitectura MVC",
+        "Diagrama de Secuencia y Entidad Relación"
       ],
       progress: 100,
       color: "#2B2B2B"
@@ -49,12 +50,11 @@ export default function Methodology() {
       weeks: "Semanas 6 - 8",
       phases: "Diseño, Desarrollo y Pruebas",
       details: [
-        "UI Design: Login, Dashboard, Usuarios, Reportes, Respaldo",
-        "FE: Next.js + Tailwind + TypeScript",
-        "Validaciones con Hook Form + Zod",
-        "Integración backend, sesiones y roles",
-        "CRUD de usuarios y catálogos",
-        "Pruebas QA de autenticación y respaldo"
+        "Login, Dashboard, Reportes (mockups)",
+        "Implementación Frontend (Next.js + TS)",
+        "Formularios y Validaciones (Zod)",
+        "Integración Backend y CRUDs",
+        "Pruebas QA (Autenticación, CRUD, Respaldo)"
       ],
       progress: 100,
       color: "#FF1E2D"
@@ -62,13 +62,12 @@ export default function Methodology() {
     { 
       name: "SPRINT 4", 
       weeks: "Semanas 9 - 11",
-      phases: "Desarrollo y Pruebas Backend",
+      phases: "Fase de Desarrollo y Fase de Pruebas",
       details: [
-        "Implementación DB SQL",
-        "API REST (Node.js)",
-        "Endpoints: Auth, Usuarios, Asistencias",
-        "Lógica de negocio y JWT",
-        "Pruebas de endpoints (Postman)",
+        "Implementación Base de Datos (SQL)",
+        "Creación de API REST (Node.js)",
+        "Seguridad JWT y Roles",
+        "Pruebas de Endpoints (Postman)",
         "Validación de datos y seguridad"
       ],
       progress: 85,
@@ -77,12 +76,12 @@ export default function Methodology() {
     { 
       name: "SPRINT 5", 
       weeks: "Semanas 12 - 14",
-      phases: "Integración Hardware",
+      phases: "Fase de Desarrollo y Fase de Pruebas",
       details: [
-        "Integración lector biométrico facial",
+        "Integración con lector biométrico facial",
         "Captura asistencia tiempo real",
-        "Sincronización HW + FE + BE",
-        "Pruebas de reconocimiento y precisión",
+        "Asociación automática alumno-grupo",
+        "Pruebas de reconocimiento facial",
         "Validación en entorno real"
       ],
       progress: 85,
@@ -91,13 +90,13 @@ export default function Methodology() {
     { 
       name: "SPRINT 6", 
       weeks: "Semanas 15 - 16",
-      phases: "Implementación y Cierre",
+      phases: "Fase de Implementación",
       details: [
         "Despliegue y configuración servidor",
         "Manual de usuario y técnico",
         "Capacitación a usuarios",
-        "Pruebas finales QA",
-        "Entrega formal y Retroalimentación"
+        "Evaluación y Pruebas finales (QA)",
+        "Cierre del Proyecto y Retroalimentación"
       ],
       progress: 0,
       color: "#A3A3A3"
@@ -134,23 +133,20 @@ export default function Methodology() {
         <div className="relative pt-24 pb-32 px-4">
           <TooltipProvider>
             <div className="relative max-w-6xl mx-auto">
-              {/* Línea Principal */}
               <div className="absolute top-1/2 left-0 w-full h-[4px] bg-gray-200 -translate-y-1/2 rounded-full" />
               
               <div className="flex justify-between items-center relative">
                 {sprints.map((sprint, i) => (
                   <div key={i} className="flex flex-col items-center group relative">
-                    <Tooltip>
+                    <Tooltip delayDuration={0}>
                       <TooltipTrigger asChild>
                         <div className="relative cursor-pointer z-20">
-                          {/* Nodo de la línea */}
                           <div 
-                            className="w-10 h-10 rounded-full border-4 border-white shadow-xl transition-all duration-300 group-hover:scale-125 flex items-center justify-center text-[10px] font-black text-white"
+                            className="w-12 h-12 rounded-full border-4 border-white shadow-xl transition-all duration-300 group-hover:scale-125 flex items-center justify-center text-xs font-black text-white"
                             style={{ backgroundColor: sprint.color }}
                           >
                             {i + 1}
                           </div>
-                          {/* Efecto de pulsación para sprints en progreso */}
                           {sprint.progress > 0 && sprint.progress < 100 && (
                             <div 
                               className="absolute -inset-2 rounded-full border-2 animate-ping opacity-20"
@@ -180,23 +176,15 @@ export default function Methodology() {
                       </TooltipContent>
                     </Tooltip>
 
-                    {/* Etiquetas Inferiores - Letra más grande */}
                     <div className="absolute top-16 flex flex-col items-center text-center w-40 space-y-2">
-                      <span className="text-xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">{sprint.name}</span>
-                      <span className="text-xs font-black text-gray-400 uppercase tracking-[0.2em]">{sprint.weeks}</span>
+                      <span className="text-2xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">{sprint.name}</span>
+                      <span className="text-sm font-black text-gray-400 uppercase tracking-[0.2em]">{sprint.weeks}</span>
                       <div 
-                        className="px-3 py-1 text-[10px] font-black text-white rounded-full uppercase"
+                        className="px-4 py-1 text-xs font-black text-white rounded-full uppercase"
                         style={{ backgroundColor: sprint.color }}
                       >
                         {sprint.progress}%
                       </div>
-                    </div>
-
-                    {/* Etiqueta Superior de Fase */}
-                    <div className="absolute -top-16 flex flex-col items-center text-center w-48">
-                      <span className="text-[10px] font-black text-[#FF1E2D] uppercase tracking-[0.3em] line-clamp-1 border-b-2 border-[#FF1E2D] pb-1">
-                        {sprint.phases}
-                      </span>
                     </div>
                   </div>
                 ))}
@@ -204,10 +192,6 @@ export default function Methodology() {
             </div>
           </TooltipProvider>
         </div>
-        
-        <p className="text-center text-gray-400 text-[10px] font-black uppercase tracking-[0.5em] pt-24">
-          CRONOGRAMA ESTRATÉGICO • 16 SEMANAS DE EJECUCIÓN • TRANSFORMACIÓN DIGITAL SIBF-CAI
-        </p>
       </div>
     </div>
   );
