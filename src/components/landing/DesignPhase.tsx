@@ -56,7 +56,7 @@ export default function DesignPhase() {
                         DIAGRAMA DE {item.name} - VISTA DETALLADA
                       </DialogTitle>
                     </DialogHeader>
-                    <div className="p-2 overflow-auto flex items-center justify-center bg-slate-50">
+                    <div className="p-2 overflow-auto flex items-center justify-center bg-slate-50 max-h-[calc(90vh-60px)]">
                       <img 
                         src={item.img} 
                         alt={item.name} 
