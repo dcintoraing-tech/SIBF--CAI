@@ -24,7 +24,12 @@ export default function DesignPhase() {
       type: "DIAGRAMA",
       desc: "Interacciones de actores y sistema"
     },
-    { name: "CLASES", img: null, type: "DIAGRAMA", desc: "Estructura de objetos" },
+    { 
+      name: "CLASES", 
+      img: "/images/cgeneral.jpg", 
+      type: "DIAGRAMA",
+      desc: "Diagrama General de Clases y Estructura de Objetos" 
+    },
     { name: "SECUENCIA", img: null, type: "DIAGRAMA", desc: "Flujo de mensajes" },
   ];
 
@@ -52,7 +57,6 @@ export default function DesignPhase() {
                 <Dialog key={i}>
                   <DialogTrigger asChild>
                     <button className="relative group overflow-hidden bg-white border-2 border-gray-100 p-6 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] hover:scale-[1.02] transition-all duration-300">
-                      {/* Preview Overlay on Hover */}
                       <div className="absolute inset-0 bg-[#2B2B2B]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center p-4 text-center">
                         <Search className="w-8 h-8 text-[#FF1E2D] mb-2 animate-pulse" />
                         <span className="text-white font-black text-xs uppercase tracking-widest mb-1">CLIC PARA AMPLIAR</span>
