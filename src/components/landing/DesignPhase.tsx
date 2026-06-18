@@ -7,7 +7,7 @@ export default function DesignPhase() {
   return (
     <div id="diseno" className="space-y-20">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.6 FASE DE DISEÑO</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.7 FASE DE DISEÑO</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">ARQUITECTURA</h2>
       </div>
 

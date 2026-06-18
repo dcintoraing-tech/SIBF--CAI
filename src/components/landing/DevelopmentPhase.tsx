@@ -16,7 +16,7 @@ export default function DevelopmentPhase() {
   return (
     <div id="desarrollo" className="space-y-20">
       <div className="space-y-4 text-left">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.7 FASE DE DESARROLLO</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.8 FASE DE DESARROLLO</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">IMPLEMENTACIÓN SIBF-CAI</h2>
       </div>
 
@@ -45,7 +45,7 @@ export default function DevelopmentPhase() {
             <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#FF1E2D]" /> REAL-TIME SYNC</li>
           </ul>
         </div>
-        <div className="bg-white p-10 shadow-xl border-t-8 border-[#2B2B2B] space-y-6 group hover:border-[#FF1E2D] transition-all">
+        <div className="bg-white p-10 shadow-xl border-t-8 border-[#2B2B2B] group hover:border-[#FF1E2D] transition-all">
           <BrainCircuit className="w-10 h-10 text-[#FF1E2D]" />
           <h3 className="text-xl font-black text-[#2B2B2B] uppercase tracking-widest">MOTOR DE IA</h3>
           <div className="text-5xl font-black text-[#FF1E2D]">99%</div>
@@ -64,7 +64,7 @@ export default function DevelopmentPhase() {
           <div className="bg-gray-50 p-8 border-l-4 border-[#2B2B2B] group hover:border-[#FF1E2D] transition-all">
             <h4 className="text-sm font-black text-[#FF1E2D] mb-4 uppercase">BIOMETRÍA FACIAL</h4>
             <div className="font-mono text-[13px] text-gray-600 space-y-2">
-              <p><span className="text-blue-600">const</span> <span className="text-purple-600">faceDetect</span> = <span className="text-blue-600">async</span> () {'=>'} {"{ ... }"}</p>
+              <p><span className="text-blue-600">const</span> <span className="text-purple-600">faceDetect</span> = <span className="text-blue-600">async</span> () {"=>"} {"{ ... }"}</p>
               <p><span className="text-blue-600">const</span> <span className="text-purple-600">matchEmbed</span> = <span className="text-blue-600">await</span> ai.compare(f);</p>
             </div>
           </div>

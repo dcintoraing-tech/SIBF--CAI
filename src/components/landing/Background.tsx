@@ -6,7 +6,7 @@ export default function Background() {
   return (
     <div id="antecedentes" className="space-y-16">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">0.1 ANTECEDENTES</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.1 ANTECEDENTES</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">CONTEXTO HISTÓRICO</h2>
       </div>
 
@@ -37,7 +37,7 @@ export default function Background() {
           <Lightbulb className="w-16 h-16 text-[#FF1E2D] mb-8" />
           <h3 className="text-3xl font-black uppercase italic leading-none mb-6">VISIÓN DEL PROYECTO</h3>
           <p className="text-gray-400 font-bold uppercase text-sm leading-relaxed">
-            Integrar IA de vanguardia para transformar un proceso administrativo rutinario en un sistema de seguridad inteligente.
+            Integrar IA de vanguardia para transformar un proceso administrativo rutinario en un sistema de seguridad inteligente bajo una <span className="text-white">TRANSFORMACIÓN DIGITAL</span> real.
           </p>
         </div>
       </div>

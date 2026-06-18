@@ -6,7 +6,7 @@ export default function Conclusions() {
   return (
     <div id="conclusiones" className="space-y-16">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.8 CONCLUSIONES</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.9 CONCLUSIONES</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">CIERRE</h2>
       </div>
 
@@ -29,7 +29,7 @@ export default function Conclusions() {
           <Rocket className="w-16 h-16 text-[#FF1E2D]" />
           <h3 className="text-2xl font-black uppercase italic">ESCALABILIDAD</h3>
           <p className="text-gray-500 font-bold uppercase text-sm leading-relaxed">
-            Arquitectura lista para integrarse con módulos de nómina y gestión de talento humano avanzado.
+            Arquitectura lista para integrarse con módulos de nómina y gestión de talento humano avanzado bajo <span className="text-[#FF1E2D]">TRANSFORMACIÓN DIGITAL</span>.
           </p>
         </div>
       </div>

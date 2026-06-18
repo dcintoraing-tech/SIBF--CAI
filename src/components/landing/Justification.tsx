@@ -11,7 +11,7 @@ export default function Justification() {
   return (
     <div id="justificacion" className="space-y-20">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.3 JUSTIFICACIÓN</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.4 JUSTIFICACIÓN</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">VALOR REAL</h2>
       </div>
 

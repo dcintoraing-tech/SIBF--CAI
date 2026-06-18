@@ -59,12 +59,13 @@
 }
 
 @keyframes tech-pulse {
-  0%, 100% { opacity: 0.7; filter: grayscale(100%) brightness(0.8); }
+  0%, 100% { opacity: 0.6; filter: grayscale(100%) brightness(0.8); }
   50% { opacity: 1; filter: grayscale(0%) brightness(1.2); }
 }
 
+/* Animación más lenta (4s) para la portada */
 .animate-tech-pulse {
-  animation: tech-pulse 1s ease-in-out infinite;
+  animation: tech-pulse 4s ease-in-out infinite;
 }
 
 @keyframes rotate-phone {

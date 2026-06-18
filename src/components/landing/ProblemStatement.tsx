@@ -11,7 +11,7 @@ export default function ProblemStatement() {
   return (
     <div id="problema" className="space-y-16">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.1 DESAFÍO ACTUAL</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.2 DESAFÍO ACTUAL</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">EL PROBLEMA</h2>
       </div>
 
