@@ -17,11 +17,10 @@ export default function Methodology() {
   const sprints = [
     { 
       name: "SPRINT 1", 
-      start: 1, 
-      end: 2, 
+      weeks: "Semanas 1 - 2",
       progress: 100, 
       color: "#FF1E2D",
-      phases: "FASE DE ANÁLISIS",
+      phases: "Fase de Análisis",
       details: [
         "Levantamiento de Requerimientos",
         "Historias de Usuario del Alumno (HU01, HU02, HU03 con RF y RNF)",
@@ -32,60 +31,61 @@ export default function Methodology() {
     },
     { 
       name: "SPRINT 2", 
-      start: 3, 
-      end: 5, 
+      weeks: "Semanas 3 - 5",
       progress: 100, 
       color: "#2B2B2B",
-      phases: "FASE DE ANÁLISIS / FASE DE DISEÑO",
+      phases: "Análisis y Diseño",
       details: [
-        "Gestión de usuarios y catálogos institucionales V1.1",
-        "Supervisión y respaldo de información V1.1",
-        "Diagramas: Procesos, Casos de Uso y Secuencia",
+        "HU: Gestión de usuarios del sistema V1.1",
+        "HU: Administración de catálogos institucionales V1.1",
+        "HU: Supervisión y respaldo de información V1.1",
+        "Diagrama de Procesos General",
+        "Diagrama de Casos de Uso General",
         "Especificación de Casos de Uso",
-        "Arquitectura MVC y Diagrama Entidad Relación",
+        "Diagrama de Arquitectura MVC",
+        "Diagrama de Secuencia",
+        "Diagrama Entidad Relación",
         "Arquitectura de información"
       ]
     },
     { 
       name: "SPRINT 3", 
-      start: 6, 
-      end: 8, 
+      weeks: "Semanas 6 - 8",
       progress: 100, 
       color: "#FF1E2D",
-      phases: "FASE DE DISEÑO / FASE DE DESARROLLO / FASE DE PRUEBAS",
+      phases: "Diseño, Desarrollo y Pruebas",
       details: [
-        "Diseño UI: Login, Dashboard, Usuarios, Reportes, Respaldo",
-        "Implementación Frontend: Next.js + Tailwind + ShadCN",
+        "UI Design: Login, Dashboard, Usuarios, Reportes, Respaldo",
+        "Implementación Frontend (Next.js + Tailwind)",
         "Formularios y validaciones (React Hook Form + Zod)",
-        "Integración backend, sesiones y roles",
+        "Integración con backend, sesiones y roles",
         "CRUD de usuarios y catálogos",
-        "Módulo de respaldo y visualización de reportes",
-        "Pruebas CRUD y de autenticación"
+        "Visualización de reportes y módulo de respaldo",
+        "Pruebas de autenticación, CRUD y respaldo"
       ]
     },
     { 
       name: "SPRINT 4", 
-      start: 9, 
-      end: 11, 
-      progress: 90, 
+      weeks: "Semanas 9 - 11",
+      progress: 85, 
       color: "#2B2B2B",
-      phases: "FASE DE DESARROLLO / FASE DE PRUEBAS",
+      phases: "Desarrollo y Pruebas Backend",
       details: [
         "Implementación Base de Datos SQL",
         "Creación de API REST (Node.js)",
         "Endpoints: Auth, Usuarios, Asistencias, Catálogos",
-        "Lógica de negocio y Seguridad JWT",
+        "Implementación de lógica de negocio",
+        "Seguridad JWT (roles y permisos)",
         "Pruebas de endpoints (Postman)",
-        "Validación de datos y acceso"
+        "Validación de datos y seguridad"
       ]
     },
     { 
       name: "SPRINT 5", 
-      start: 12, 
-      end: 14, 
+      weeks: "Semanas 12 - 14",
       progress: 85, 
       color: "#FF1E2D",
-      phases: "FASE DE DESARROLLO / FASE DE PRUEBAS",
+      phases: "Integración Hardware",
       details: [
         "Integración con lector biométrico facial",
         "Captura de asistencia en tiempo real",
@@ -97,22 +97,20 @@ export default function Methodology() {
     },
     { 
       name: "SPRINT 6", 
-      start: 15, 
-      end: 16, 
+      weeks: "Semanas 15 - 16",
       progress: 0, 
       color: "#A3A3A3",
-      phases: "FASE DE IMPLEMENTACIÓN",
+      phases: "Implementación y Cierre",
       details: [
-        "Despliegue (Local/Nube) y Configuración Servidor",
-        "Capacitación, Manual de Usuario y Manual Técnico",
-        "Pruebas finales QA y Corrección de errores",
-        "Documentación final y Entrega del sistema",
-        "Retroalimentación"
+        "Despliegue y configuración de servidor",
+        "Configuración DB en producción",
+        "Manual de usuario y Manual técnico",
+        "Capacitación a usuarios",
+        "Pruebas finales QA",
+        "Entrega formal y Retroalimentación"
       ]
     },
   ];
-
-  const weeks = Array.from({ length: 16 }, (_, i) => i + 1);
 
   return (
     <div id="metodologia" className="space-y-20">
@@ -135,91 +133,81 @@ export default function Methodology() {
         ))}
       </div>
 
-      <div className="space-y-10">
+      <div className="space-y-16 py-12">
         <div className="flex items-center gap-6">
           <Clock className="w-10 h-10 text-[#FF1E2D]" />
-          <h3 className="text-3xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">CRONOGRAMA DE SPRINTS (GANTT)</h3>
+          <h3 className="text-3xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">LÍNEA DE TIEMPO DEL PROYECTO</h3>
         </div>
         
-        <div className="bg-[#0A0A0A] p-6 md:p-12 shadow-2xl overflow-x-auto border-t-8 border-[#FF1E2D]">
+        <div className="relative pt-12 pb-24 px-4 overflow-x-auto">
           <TooltipProvider>
-            <div className="min-w-[1000px]">
-              <div className="grid grid-cols-[220px_repeat(16,1fr)] gap-px border-b border-white/10 pb-6">
-                <div className="text-white/40 text-[10px] font-black uppercase tracking-widest self-end">SPRINT / FASES / SEMANAS</div>
-                {weeks.map(w => (
-                  <div key={w} className="text-center text-white/40 text-[10px] font-black">S{w}</div>
-                ))}
-              </div>
-
-              <div className="relative mt-8 space-y-8">
+            <div className="min-w-[1000px] relative">
+              {/* Main Timeline Line */}
+              <div className="absolute top-1/2 left-0 w-full h-[4px] bg-gray-200 -translate-y-1/2" />
+              
+              <div className="flex justify-between items-center relative">
                 {sprints.map((sprint, i) => (
-                  <div key={i} className="grid grid-cols-[220px_repeat(16,1fr)] items-center group">
-                    <div className="pr-6">
-                      <div className="text-white font-black text-sm uppercase tracking-tighter group-hover:text-[#FF1E2D] transition-colors">
-                        {sprint.name}
-                      </div>
-                      <div className="text-[#FF1E2D] text-[8px] font-black uppercase tracking-widest leading-tight mt-1">
-                        {sprint.phases}
+                  <div key={i} className="flex flex-col items-center group relative">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <div className="relative cursor-pointer">
+                          {/* Point on the line */}
+                          <div 
+                            className="w-8 h-8 rounded-full border-4 border-white shadow-xl transition-all duration-300 group-hover:scale-150 relative z-20"
+                            style={{ backgroundColor: sprint.color }}
+                          />
+                          {/* Progress Circle (Outer) */}
+                          <div 
+                            className="absolute -inset-2 rounded-full border-2 border-dashed opacity-20 group-hover:opacity-100 group-hover:animate-spin-slow"
+                            style={{ borderColor: sprint.color }}
+                          />
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent side="top" className="bg-[#1A1A1A] border-[#FF1E2D] text-white p-6 max-w-sm rounded-none shadow-2xl z-[100]">
+                        <div className="space-y-4">
+                          <div>
+                            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FF1E2D] border-b border-white/10 pb-2 mb-2">
+                              {sprint.name}: {sprint.phases}
+                            </p>
+                            <ul className="space-y-2">
+                              {sprint.details.map((detail, idx) => (
+                                <li key={idx} className="text-[11px] font-bold uppercase leading-tight flex gap-2">
+                                  <span className="text-[#FF1E2D] text-lg leading-none">•</span> {detail}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="flex justify-between items-center pt-2 border-t border-white/5">
+                            <span className="text-[10px] font-black text-[#FF1E2D]">PROGRESO: {sprint.progress}%</span>
+                          </div>
+                        </div>
+                      </TooltipContent>
+                    </Tooltip>
+
+                    {/* Sprint Label Below */}
+                    <div className="absolute top-12 flex flex-col items-center text-center w-32">
+                      <span className="text-sm font-black text-[#2B2B2B] uppercase italic">{sprint.name}</span>
+                      <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{sprint.weeks}</span>
+                      <div className="mt-2 px-2 py-0.5 bg-gray-100 text-[8px] font-black text-[#2B2B2B] rounded-full">
+                        {sprint.progress}% COMPLETADO
                       </div>
                     </div>
-                    <div className="col-span-16 h-14 relative bg-white/5 flex items-center">
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <div 
-                            className="absolute h-10 rounded-none flex items-center justify-center cursor-help overflow-hidden transition-all duration-300 hover:brightness-125"
-                            style={{ 
-                              left: `${((sprint.start - 1) / 16) * 100}%`,
-                              width: `${((sprint.end - sprint.start + 1) / 16) * 100}%`,
-                              backgroundColor: sprint.color,
-                              boxShadow: `0 0 30px ${sprint.color}44`
-                            }}
-                          >
-                            <span className="relative z-10 text-[11px] font-black text-white px-2">
-                              {sprint.progress}%
-                            </span>
-                            <div 
-                              className="absolute inset-0 bg-white/20 transition-all duration-1000"
-                              style={{ width: `${sprint.progress}%` }}
-                            />
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="bg-[#1A1A1A] border-[#FF1E2D] text-white p-6 max-w-md rounded-none shadow-2xl z-[100]">
-                          <div className="space-y-4">
-                            <div>
-                              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FF1E2D] border-b border-white/10 pb-2 mb-2">
-                                {sprint.name}: {sprint.phases}
-                              </p>
-                              <ul className="space-y-2">
-                                {sprint.details.map((detail, idx) => (
-                                  <li key={idx} className="text-[11px] font-bold uppercase leading-tight flex gap-2">
-                                    <span className="text-[#FF1E2D] text-lg leading-none">•</span> {detail}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="flex justify-between items-center pt-2 border-t border-white/5">
-                              <span className="text-[10px] font-black text-gray-500">SEMANAS {sprint.start}-{sprint.end}</span>
-                              <span className="text-[10px] font-black text-[#FF1E2D]">PROGRESO: {sprint.progress}%</span>
-                            </div>
-                          </div>
-                        </TooltipContent>
-                      </Tooltip>
+
+                    {/* Phase Label Above */}
+                    <div className="absolute -top-12 flex flex-col items-center text-center w-40">
+                      <span className="text-[10px] font-black text-[#FF1E2D] uppercase tracking-tighter line-clamp-1">
+                        {sprint.phases}
+                      </span>
                     </div>
                   </div>
                 ))}
-
-                <div className="absolute top-0 left-[220px] right-0 bottom-0 pointer-events-none flex">
-                  {weeks.map(w => (
-                    <div key={w} className="flex-1 border-l border-white/5 h-full" />
-                  ))}
-                </div>
               </div>
             </div>
           </TooltipProvider>
         </div>
         
-        <p className="text-center text-gray-400 text-[10px] font-black uppercase tracking-[0.5em] pt-4">
-          CICLO DE DESARROLLO: 16 SEMANAS • SIBF-CAI V1.0
+        <p className="text-center text-gray-400 text-[10px] font-black uppercase tracking-[0.5em] pt-12">
+          CRONOGRAMA ESTRATÉGICO • 16 SEMANAS DE EJECUCIÓN • SIBF-CAI V1.0
         </p>
       </div>
     </div>
