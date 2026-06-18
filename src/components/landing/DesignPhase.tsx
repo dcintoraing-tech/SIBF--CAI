@@ -1,6 +1,6 @@
 'use client';
 
-import { GitBranch, Database, Layout, Network, Search } from "lucide-react";
+import { GitBranch, Database, Layout, Network, Search, Maximize2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -28,20 +28,25 @@ export default function DesignPhase() {
       name: "CLASES", 
       img: "/images/cgeneral.jpg", 
       type: "DIAGRAMA",
-      desc: "Diagrama General de Clases y Estructura de Objetos" 
+      desc: "Estructura de objetos y lógica del sistema" 
     },
-    { name: "SECUENCIA", img: null, type: "DIAGRAMA", desc: "Flujo de mensajes" },
+    { 
+      name: "SECUENCIA", 
+      img: null, 
+      type: "DIAGRAMA", 
+      desc: "Flujo de mensajes y eventos" 
+    },
   ];
 
   return (
     <div id="diseno" className="space-y-20">
       <div className="space-y-4">
         <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.7 FASE DE DISEÑO</span>
-        <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">ARQUITECTURA</h2>
+        <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic text-shadow-sm">ARQUITECTURA</h2>
       </div>
 
       <p className="text-2xl md:text-3xl text-gray-600 font-medium leading-tight max-w-4xl">
-        Transformamos requerimientos en <span className="text-[#FF1E2D] font-black underline">MODELOS TÉCNICOS</span> escalables bajo estándares de ingeniería.
+        Transformamos requerimientos en <span className="text-[#FF1E2D] font-black underline decoration-2 underline-offset-8">MODELOS TÉCNICOS</span> de alta fidelidad bajo estándares de ingeniería.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -56,45 +61,65 @@ export default function DesignPhase() {
               item.img ? (
                 <Dialog key={i}>
                   <DialogTrigger asChild>
-                    <button className="relative group overflow-hidden bg-white border-2 border-gray-100 p-6 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] hover:scale-[1.02] transition-all duration-300">
+                    <button className="relative group overflow-hidden bg-white border-2 border-gray-100 p-6 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] hover:shadow-2xl hover:shadow-red-500/10 hover:scale-[1.02] transition-all duration-300 ease-out">
                       <div className="absolute inset-0 bg-[#2B2B2B]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center p-4 text-center">
-                        <Search className="w-8 h-8 text-[#FF1E2D] mb-2 animate-pulse" />
-                        <span className="text-white font-black text-xs uppercase tracking-widest mb-1">CLIC PARA AMPLIAR</span>
+                        <Maximize2 className="w-8 h-8 text-[#FF1E2D] mb-2 animate-pulse" />
+                        <span className="text-white font-black text-xs uppercase tracking-widest mb-1">VER EN ALTA CALIDAD</span>
                         <span className="text-gray-400 text-[9px] font-bold uppercase">{item.desc}</span>
                       </div>
 
-                      <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
-                      <span className="text-lg font-black uppercase">{item.name}</span>
-                      
-                      <div className="w-full h-32 bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden">
-                         <img src={item.img} alt={item.name} className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all" />
+                      <div className="w-full flex justify-between items-center mb-1">
+                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
+                        <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[8px] px-2 py-0">HD</Badge>
                       </div>
                       
-                      <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px]">VER DETALLE</Badge>
+                      <span className="text-lg font-black uppercase tracking-tighter">{item.name}</span>
+                      
+                      <div className="w-full h-32 bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden">
+                         <img 
+                          src={item.img} 
+                          alt={item.name} 
+                          className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                          style={{ imageRendering: 'auto' }}
+                         />
+                      </div>
+                      
+                      <div className="text-[#FF1E2D] font-black text-[10px] uppercase tracking-widest flex items-center gap-2">
+                        DETALLES <Search className="w-3 h-3" />
+                      </div>
                     </button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-[95vw] w-full h-[90vh] p-0 border-[#FF1E2D] border-2 bg-white overflow-hidden flex flex-col">
-                    <DialogHeader className="p-4 bg-[#2B2B2B] text-white shrink-0">
+                  <DialogContent className="max-w-[95vw] w-full h-[90vh] p-0 border-[#FF1E2D] border-2 bg-white overflow-hidden flex flex-col shadow-[0_0_100px_rgba(0,0,0,0.3)]">
+                    <DialogHeader className="p-4 bg-[#2B2B2B] text-white shrink-0 z-20 shadow-lg">
                       <DialogTitle className="text-xl font-black uppercase italic tracking-widest flex items-center justify-between">
-                        DIAGRAMA DE {item.name}
-                        <span className="text-[#FF1E2D] text-[10px] font-bold tracking-[0.2em] ml-4 bg-white/5 px-3 py-1">SIBF-CAI V1.0</span>
+                        <div className="flex items-center gap-4">
+                          <span className="text-[#FF1E2D]">|</span> {item.name}
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <span className="text-gray-500 text-[10px] font-bold tracking-[0.2em] hidden sm:block">RESOLUCIÓN ORIGINAL</span>
+                          <span className="text-[#FF1E2D] text-[10px] font-bold tracking-[0.2em] bg-white/5 px-3 py-1 border border-white/10">SIBF-CAI V1.0</span>
+                        </div>
                       </DialogTitle>
                     </DialogHeader>
-                    <div className="flex-1 overflow-auto bg-slate-100 p-4 md:p-8 flex items-start justify-center">
+                    <div className="flex-1 overflow-auto bg-[#F8F9FA] p-4 md:p-12 flex items-start justify-center relative bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]">
                       <img 
                         src={item.img} 
                         alt={item.name} 
-                        className="max-w-none w-auto h-auto min-w-full shadow-2xl bg-white"
-                        style={{ display: 'block' }}
+                        className="max-w-none w-auto h-auto min-w-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-white border border-gray-200"
+                        style={{ 
+                          display: 'block',
+                          imageRendering: 'auto',
+                          WebkitOptimizeContrast: 'true'
+                        }}
                       />
                     </div>
                   </DialogContent>
                 </Dialog>
               ) : (
-                <div key={i} className="bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl opacity-40 grayscale">
+                <div key={i} className="bg-white border-2 border-gray-100 p-8 flex flex-col items-center gap-4 shadow-xl opacity-40 grayscale select-none">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
                   <span className="text-lg font-black uppercase">{item.name}</span>
-                  <Badge variant="outline" className="border-gray-200 text-gray-400 font-black text-[10px]">EN PROCESO</Badge>
+                  <Badge variant="outline" className="border-gray-200 text-gray-400 font-black text-[10px]">PENDIENTE</Badge>
                 </div>
               )
             ))}
@@ -106,19 +131,19 @@ export default function DesignPhase() {
             <Database className="w-10 h-10 text-[#FF1E2D]" />
             <h3 className="text-2xl font-black uppercase tracking-widest">ESTRUCTURA DE DATOS</h3>
           </div>
-          <div className="bg-[#2B2B2B] p-10 space-y-8 shadow-2xl h-full flex flex-col justify-center">
-            <div className="flex items-center gap-6 text-white p-6 border border-white/10 hover:bg-white/5 transition-colors group">
+          <div className="bg-[#2B2B2B] p-10 space-y-8 shadow-2xl h-full flex flex-col justify-center border-r-8 border-[#FF1E2D]">
+            <div className="flex items-center gap-6 text-white p-6 border border-white/10 hover:bg-white/5 transition-colors group cursor-default">
               <Network className="w-8 h-8 text-[#FF1E2D] group-hover:scale-110 transition-transform" />
               <div>
-                <span className="text-lg font-black uppercase">MAPEO ENTIDAD-RELACIÓN</span>
-                <p className="text-xs text-gray-500 uppercase font-bold">Base de datos centralizada SQL</p>
+                <span className="text-lg font-black uppercase tracking-tight">MAPEO ENTIDAD-RELACIÓN</span>
+                <p className="text-xs text-gray-500 uppercase font-bold tracking-widest">Base de datos centralizada SQL</p>
               </div>
             </div>
-            <div className="flex items-center gap-6 text-white p-6 border border-white/10 hover:bg-white/5 transition-colors group">
+            <div className="flex items-center gap-6 text-white p-6 border border-white/10 hover:bg-white/5 transition-colors group cursor-default">
               <Layout className="w-8 h-8 text-[#FF1E2D] group-hover:scale-110 transition-transform" />
               <div>
-                <span className="text-lg font-black uppercase">DISEÑO DE INTERFAZ UX</span>
-                <p className="text-xs text-gray-500 uppercase font-bold">Prototipado de alta fidelidad</p>
+                <span className="text-lg font-black uppercase tracking-tight">DISEÑO DE INTERFAZ UX</span>
+                <p className="text-xs text-gray-500 uppercase font-bold tracking-widest">Prototipado funcional de alta fidelidad</p>
               </div>
             </div>
           </div>
