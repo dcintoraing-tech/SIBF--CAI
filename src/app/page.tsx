@@ -12,10 +12,11 @@ import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
 import Conclusions from "@/components/landing/Conclusions";
 import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
-import { Smartphone, Maximize, Minimize } from "lucide-react";
+import { Smartphone, Maximize, Minimize, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(true);
   const [showRotationHint, setShowRotationHint] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -49,8 +50,39 @@ export default function Home() {
     }
   };
 
+  if (showIntro) {
+    return (
+      <main className="h-screen w-screen bg-white flex flex-col items-center justify-center p-6 animate-in fade-in duration-1000">
+        <div className="max-w-2xl w-full space-y-12 flex flex-col items-center">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gray-50 rounded-full blur-2xl opacity-50 group-hover:opacity-100 transition-opacity" />
+            <img 
+              src="/images/qrqr.png" 
+              alt="SIBF-CAI QR" 
+              className="relative w-64 h-64 md:w-96 md:h-96 object-contain animate-float"
+            />
+          </div>
+          
+          <Button 
+            onClick={() => setShowIntro(false)}
+            variant="ghost"
+            className="group relative p-8 h-auto rounded-full hover:bg-red-50 transition-all duration-500 hover:scale-110 active:scale-95"
+          >
+            <div className="absolute inset-0 bg-red-100/30 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
+            <ArrowRight className="w-16 h-16 md:w-20 md:h-20 text-[#FF1E2D] relative z-10 transition-transform group-hover:translate-x-2" />
+          </Button>
+
+          <div className="text-center space-y-2">
+            <span className="text-[10px] font-black text-gray-300 uppercase tracking-[0.8em]">PRESENTACIÓN EJECUTIVA</span>
+            <p className="text-gray-400 font-bold uppercase tracking-widest text-xs">CLICK PARA INICIAR SIBF-CAI</p>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-white font-sans overflow-x-hidden relative">
+    <main className="min-h-screen bg-white font-sans overflow-x-hidden relative animate-in fade-in zoom-in-95 duration-1000">
       {/* Botón Global Fullscreen */}
       <div className="fixed top-6 left-6 z-[150] hidden md:block">
         <Button
