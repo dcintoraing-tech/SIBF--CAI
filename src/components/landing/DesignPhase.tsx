@@ -63,6 +63,7 @@ export default function DesignPhase() {
                 <Dialog key={i}>
                   <DialogTrigger asChild>
                     <button className="relative group overflow-hidden bg-white border-2 border-gray-100 p-6 flex flex-col items-center gap-4 shadow-xl hover:border-[#FF1E2D] hover:shadow-2xl hover:shadow-red-500/10 hover:scale-[1.02] transition-all duration-300 ease-out">
+                      {/* Overlay de preview al poner el cursor */}
                       <div className="absolute inset-0 bg-[#2B2B2B]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center p-4 text-center">
                         <Maximize2 className="w-8 h-8 text-[#FF1E2D] mb-2 animate-pulse" />
                         <span className="text-white font-black text-xs uppercase tracking-widest mb-1">VER EN ALTA CALIDAD</span>
