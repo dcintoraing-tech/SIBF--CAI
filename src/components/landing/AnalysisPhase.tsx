@@ -1,21 +1,17 @@
-
 'use client';
 
 import { 
   ClipboardList, 
   Users, 
   ShieldCheck, 
-  Fingerprint, 
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 
 export default function AnalysisPhase() {
   return (
     <div id="requerimientos" className="space-y-32">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-xl tracking-[0.4em] uppercase">REQUERIMIENTOS</span>
-        <h2 className="text-6xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic">LEVANTAMIENTO</h2>
+        <h2 className="text-6xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic">REQUERIMIENTOS</h2>
       </div>
 
       <p className="text-3xl md:text-5xl text-gray-600 font-medium leading-tight max-w-5xl">

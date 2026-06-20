@@ -1,6 +1,6 @@
 'use client';
 
-import { GitBranch, Database, Layout, Network, Search, Maximize2, FileText, Layers } from "lucide-react";
+import { GitBranch, Database, Layout, Network, Search, Maximize2, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -154,7 +154,6 @@ export default function DesignPhase() {
       </p>
 
       <div className="space-y-24">
-        {/* UML Modeling Section */}
         <div className="space-y-12">
           <div className="flex items-center gap-6">
             <GitBranch className="w-14 h-14 text-[#FF1E2D]" />
@@ -165,7 +164,6 @@ export default function DesignPhase() {
           </div>
         </div>
 
-        {/* Data Structure Section */}
         <div className="space-y-12">
           <div className="flex items-center gap-6">
             <Database className="w-14 h-14 text-[#FF1E2D]" />
