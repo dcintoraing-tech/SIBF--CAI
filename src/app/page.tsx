@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-sans overflow-x-hidden">
       {/* Mobile Rotation Hint */}
       {showRotationHint && (
         <div className="fixed inset-0 z-[200] bg-[#2B2B2B]/95 flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500 backdrop-blur-sm">
@@ -44,67 +44,67 @@ export default function Home() {
         <Hero />
         
         <div className="divide-y divide-gray-100">
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-white">
             <Background />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50/50">
+          <section className="p-8 md:p-24 bg-slate-50/50">
             <ProblemStatement />
           </section>
 
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-white">
             <Objectives />
           </section>
           
-          <section className="p-12 md:p-24 bg-slate-50/50">
+          <section className="p-8 md:p-24 bg-slate-50/50">
             <Justification />
           </section>
 
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-white">
             <Methodology />
           </section>
           
-          <section className="p-12 md:p-24 bg-slate-50/50">
+          <section className="p-8 md:p-24 bg-slate-50/50">
             <AnalysisPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-white">
             <DesignPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50/30">
+          <section className="p-8 md:p-24 bg-slate-50/30">
             <DevelopmentPhase />
           </section>
 
-          <section className="p-12 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-white">
             <Conclusions />
           </section>
 
-          <section className="p-12 md:p-24 bg-slate-50/30">
+          <section className="p-8 md:p-24 bg-slate-50/30">
             <Bibliography />
           </section>
 
-          <section className="p-12 md:p-24 bg-[#0A0A0A]">
+          <section className="p-8 md:p-24 bg-[#0A0A0A]">
             <QRSection />
           </section>
         </div>
 
-        <footer className="bg-[#1A1A1A] py-16 px-12 text-white border-t border-white/5">
+        <footer className="bg-[#1A1A1A] py-12 px-8 text-white border-t border-white/5">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-6">
               <img 
                 src="/images/logo.png" 
                 alt="Logo" 
-                className="h-12 w-auto object-contain brightness-0 invert" 
+                className="h-10 md:h-12 w-auto object-contain brightness-0 invert" 
               />
               <div className="text-white">
-                <h2 className="text-xl font-black tracking-widest text-white leading-tight uppercase italic">
+                <h2 className="text-lg md:text-xl font-black tracking-widest text-white leading-tight uppercase italic">
                   SIBF<span className="text-[#FF1E2D]">-CAI</span>
                 </h2>
                 <p className="text-gray-500 text-[8px] uppercase tracking-[0.4em] font-bold">Transformación Digital</p>
               </div>
             </div>
-            <div className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">
+            <div className="text-gray-500 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-center md:text-right leading-loose">
               &copy; {new Date().getFullYear()} SIBF-CAI • PROYECTO EJECUTIVO
             </div>
           </div>
