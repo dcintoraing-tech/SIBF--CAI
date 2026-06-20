@@ -30,6 +30,7 @@ export default function DesignPhase() {
     "/images/5.jpg",
     "/images/6.jpg",
     "/images/7.png",
+    "/images/8.png",
   ];
 
   // Auto-play for the card preview
