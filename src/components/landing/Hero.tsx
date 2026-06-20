@@ -16,10 +16,6 @@ export default function Hero() {
               alt="Logo Institucional" 
               className="h-16 md:h-20 w-auto object-contain"
             />
-            <div className="h-12 w-[2px] bg-gray-200 hidden lg:block" />
-            <Badge variant="outline" className="px-4 py-1 border-[#FF1E2D] text-[#FF1E2D] font-black uppercase tracking-[0.2em] text-[10px] rounded-none">
-              TRANSFORMACIÓN DIGITAL V1.0
-            </Badge>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#2B2B2B] tracking-tighter leading-[0.95] uppercase italic">
