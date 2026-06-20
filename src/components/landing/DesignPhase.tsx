@@ -1,7 +1,9 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import { GitBranch, Database, Layout, Network, Search, Maximize2, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Dialog,
   DialogContent,
@@ -18,6 +20,26 @@ import {
 } from "@/components/ui/carousel";
 
 export default function DesignPhase() {
+  const [currentUxIdx, setCurrentUxIdx] = useState(0);
+
+  const uxImages = [
+    "/images/1.jpeg",
+    "/images/2.jpeg",
+    "/images/3.jpg",
+    "/images/4.jpg",
+    "/images/5.jpg",
+    "/images/6.jpg",
+    "/images/7.png",
+  ];
+
+  // Auto-play for the card preview
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentUxIdx((prev) => (prev + 1) % uxImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [uxImages.length]);
+
   const umlDiagrams = [
     { 
       name: "PROCESOS", 
@@ -46,16 +68,6 @@ export default function DesignPhase() {
       desc: "Jerarquía y flujo de datos",
       pending: true
     },
-  ];
-
-  const uxImages = [
-    "/images/1.jpeg",
-    "/images/2.jpeg",
-    "/images/3.jpg",
-    "/images/4.jpg",
-    "/images/5.jpg",
-    "/images/6.jpg",
-    "/images/7.png",
   ];
 
   const dataDiagrams = [
@@ -110,10 +122,15 @@ export default function DesignPhase() {
             <div className={`w-full ${isLarge ? 'h-64' : 'h-40'} bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden`}>
                {item.isCarousel ? (
                  <div className="relative w-full h-full flex items-center justify-center bg-gray-100">
-                    <img src={item.images[0]} alt={item.name} className="w-full h-full object-cover opacity-60" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                      <Layout className="w-12 h-12 text-[#FF1E2D]" />
-                      <span className="text-[10px] font-black uppercase text-gray-400">Gallería Interactiva</span>
+                    <img 
+                      key={currentUxIdx}
+                      src={item.images[currentUxIdx]} 
+                      alt={item.name} 
+                      className="w-full h-full object-cover opacity-60 animate-in fade-in duration-700" 
+                    />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none">
+                      <Layout className="w-12 h-12 text-[#FF1E2D] drop-shadow-lg" />
+                      <span className="text-[10px] font-black uppercase text-gray-600 bg-white/80 px-4 py-1">Gallería Automática</span>
                     </div>
                  </div>
                ) : item.previewImg ? (
@@ -155,7 +172,14 @@ export default function DesignPhase() {
           <div className="flex-1 overflow-auto bg-[#F8F9FA] p-0 flex items-stretch justify-center relative bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:30px_30px]">
             {item.isCarousel ? (
               <div className="w-full h-full flex items-center justify-center p-4 md:p-12">
-                <Carousel className="w-full max-w-5xl">
+                <Carousel 
+                  className="w-full max-w-5xl"
+                  plugins={[
+                    Autoplay({
+                      delay: 3000,
+                    }),
+                  ]}
+                >
                   <CarouselContent>
                     {item.images.map((img: string, idx: number) => (
                       <CarouselItem key={idx} className="flex items-center justify-center">
