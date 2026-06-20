@@ -15,6 +15,7 @@ export default function DesignPhase() {
     { 
       name: "PROCESOS", 
       img: "/images/dp.pdf", 
+      previewImg: "/images/pgeneral.jpg",
       type: "PDF",
       desc: "Flujo operativo institucional",
       isPdf: true
@@ -89,7 +90,13 @@ export default function DesignPhase() {
             <span className={`${isLarge ? 'text-4xl' : 'text-2xl'} font-black uppercase tracking-tighter text-center leading-tight`}>{item.name}</span>
             
             <div className={`w-full ${isLarge ? 'h-64' : 'h-40'} bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden`}>
-               {item.isPdf ? (
+               {item.previewImg ? (
+                 <img 
+                  src={item.previewImg} 
+                  alt={item.name} 
+                  className="w-full h-full object-cover opacity-80"
+                 />
+               ) : item.isPdf ? (
                  <div className="flex flex-col items-center gap-4">
                    <FileText className="w-16 h-16 text-[#FF1E2D] opacity-40" />
                    <span className="text-xs font-black text-gray-400 uppercase">DOC. TÉCNICO</span>
