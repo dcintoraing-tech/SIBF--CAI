@@ -12,7 +12,6 @@ import {
   Info,
   Maximize2,
   X,
-  Smartphone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -116,15 +115,40 @@ export default function Methodology() {
     }
   };
 
-  const startPresentation = () => {
+  const startPresentation = async () => {
+    try {
+      if (document.documentElement.requestFullscreen) {
+        await document.documentElement.requestFullscreen();
+      }
+    } catch (err) {
+      console.warn("Fullscreen error:", err);
+    }
     setCurrentStep(0);
     setIsFullMode(true);
   };
 
-  const exitPresentation = () => {
+  const exitPresentation = async () => {
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) {
+        await document.exitFullscreen();
+      }
+    } catch (err) {
+      console.warn("Exit fullscreen error:", err);
+    }
     setIsFullMode(false);
     setCurrentStep(-1);
   };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullMode) {
+        setIsFullMode(false);
+        setCurrentStep(-1);
+      }
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, [isFullMode]);
 
   useEffect(() => {
     if (isFullMode) {
@@ -212,80 +236,80 @@ export default function Methodology() {
       {/* FULL SCREEN PRESENTATION OVERLAY */}
       {isFullMode && (
         <div className="fixed inset-0 z-[200] bg-[#0A0A0A] text-white flex flex-col animate-in fade-in zoom-in duration-500 overflow-hidden">
-          <div className="p-8 flex justify-between items-center bg-[#111] border-b border-white/5 z-50">
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-16 red-gradient flex items-center justify-center shadow-[0_0_40px_rgba(255,30,45,0.4)]">
-                <Clock className="w-8 h-8 text-white" />
+          <div className="p-4 md:p-6 flex justify-between items-center bg-[#111] border-b border-white/5 z-50">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 red-gradient flex items-center justify-center shadow-[0_0_40px_rgba(255,30,45,0.4)]">
+                <Clock className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-black uppercase italic tracking-widest leading-none">
+                <h2 className="text-xl md:text-2xl font-black uppercase italic tracking-widest leading-none">
                   SIBF-CAI <span className="text-[#FF1E2D]">SCRUM</span>
                 </h2>
-                <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.4em] mt-2">Fase del Proyecto {currentStep + 1} de {sprints.length}</p>
+                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.4em] mt-1">Fase {currentStep + 1} / {sprints.length}</p>
               </div>
             </div>
             <Button 
               variant="ghost" 
               onClick={exitPresentation}
-              className="text-white hover:text-[#FF1E2D] hover:bg-white/5 rounded-none p-6 h-auto"
+              className="text-white hover:text-[#FF1E2D] hover:bg-white/5 rounded-none p-4 h-auto"
             >
-              <X className="w-12 h-12" />
+              <X className="w-8 h-8 md:w-10 md:h-10" />
             </Button>
           </div>
 
-          <div className="flex-1 flex flex-col md:flex-row items-stretch justify-center p-6 lg:p-12 gap-8 overflow-y-auto">
-            <div className="w-full md:w-1/2 flex flex-col items-center justify-center space-y-8 lg:space-y-12 shrink-0">
+          <div className="flex-1 flex flex-col md:flex-row items-stretch justify-center p-4 lg:p-8 gap-6 overflow-y-auto">
+            <div className="w-full md:w-2/5 flex flex-col items-center justify-center space-y-6 lg:space-y-8 shrink-0">
               <div className="relative">
                 <div 
-                  className="w-48 h-48 md:w-80 md:h-80 rounded-full border-[12px] border-white/5 flex items-center justify-center text-7xl md:text-9xl font-black shadow-2xl animate-in zoom-in-50 duration-700 relative z-10"
+                  className="w-40 h-40 md:w-64 md:h-64 rounded-full border-[8px] border-white/5 flex items-center justify-center text-6xl md:text-8xl font-black shadow-2xl animate-in zoom-in-50 duration-700 relative z-10"
                   style={{ 
                     backgroundColor: sprints[currentStep].color, 
-                    boxShadow: `0 0 120px ${sprints[currentStep].color}44` 
+                    boxShadow: `0 0 100px ${sprints[currentStep].color}44` 
                   }}
                 >
                   {currentStep + 1}
                 </div>
-                <div className="absolute -inset-12 rounded-full border-2 border-[#FF1E2D]/20 animate-spin-slow pointer-events-none" />
+                <div className="absolute -inset-8 rounded-full border-2 border-[#FF1E2D]/20 animate-spin-slow pointer-events-none" />
               </div>
-              <div className="text-center space-y-6">
-                <h3 className="text-5xl md:text-[7rem] font-black text-white uppercase italic tracking-tighter">
+              <div className="text-center space-y-4">
+                <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase italic tracking-tighter">
                   {sprints[currentStep].name}
                 </h3>
-                <div className="flex items-center justify-center gap-6">
-                  <span className="px-6 py-2 bg-white/5 text-white text-xs font-black uppercase tracking-[0.4em] border border-white/10">
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  <span className="px-4 py-1.5 bg-white/5 text-white text-[10px] font-black uppercase tracking-[0.4em] border border-white/10">
                     {sprints[currentStep].weeks}
                   </span>
-                  <span className="px-6 py-2 bg-[#FF1E2D] text-white text-xs font-black uppercase tracking-[0.4em] shadow-[0_0_30px_rgba(255,30,45,0.4)]">
-                    {sprints[currentStep].progress}% COMPLETADO
+                  <span className="px-4 py-1.5 bg-[#FF1E2D] text-white text-[10px] font-black uppercase tracking-[0.4em] shadow-[0_0_30px_rgba(255,30,45,0.4)]">
+                    {sprints[currentStep].progress}% OK
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="w-full md:w-1/2 flex flex-col justify-center max-w-4xl mx-auto">
-              <div className="bg-[#1A1A1A] border-l-[8px] border-[#FF1E2D] p-8 lg:p-12 shadow-2xl animate-in slide-in-from-right-20 duration-700 w-full">
-                <div className="space-y-10">
-                  <div className="space-y-4">
-                    <span className="text-[#FF1E2D] font-black text-sm tracking-[0.6em] uppercase">MÓDULO DE TRABAJO</span>
-                    <h4 className="text-4xl lg:text-6xl font-black text-white uppercase italic tracking-tighter border-b-2 border-white/10 pb-6">
+            <div className="w-full md:w-3/5 flex flex-col justify-center max-w-5xl">
+              <div className="bg-[#1A1A1A] border-l-[6px] border-[#FF1E2D] p-6 lg:p-10 shadow-2xl animate-in slide-in-from-right-20 duration-700 w-full">
+                <div className="space-y-8">
+                  <div className="space-y-2">
+                    <span className="text-[#FF1E2D] font-black text-[10px] tracking-[0.6em] uppercase">MÓDULO DE TRABAJO</span>
+                    <h4 className="text-3xl lg:text-5xl font-black text-white uppercase italic tracking-tighter border-b-2 border-white/10 pb-4">
                       {sprints[currentStep].phases}
                     </h4>
                   </div>
-                  <div className="space-y-10">
-                    <div className="flex items-center gap-6">
-                      <div className="p-2 bg-[#FF1E2D]/10 rounded-sm">
-                        <Info className="w-6 h-6 text-[#FF1E2D]" />
+                  <div className="space-y-8">
+                    <div className="flex items-center gap-4">
+                      <div className="p-1.5 bg-[#FF1E2D]/10 rounded-sm">
+                        <Info className="w-5 h-5 text-[#FF1E2D]" />
                       </div>
-                      <span className="text-lg font-black text-white uppercase tracking-widest">ACTIVIDADES CRÍTICAS</span>
+                      <span className="text-sm font-black text-white uppercase tracking-widest">ACTIVIDADES CRÍTICAS</span>
                     </div>
-                    <ul className="grid grid-cols-1 gap-6">
+                    <ul className="grid grid-cols-1 gap-4">
                       {sprints[currentStep].details.map((detail, idx) => (
                         <li 
                           key={idx} 
-                          className="text-xl lg:text-2xl font-bold text-gray-300 uppercase flex gap-5 items-start animate-in fade-in slide-in-from-left-4" 
+                          className="text-lg lg:text-xl font-bold text-gray-300 uppercase flex gap-4 items-start animate-in fade-in slide-in-from-left-4" 
                           style={{ transitionDelay: `${idx * 150}ms` }}
                         >
-                          <div className="w-4 h-4 rounded-full bg-[#FF1E2D] mt-2.5 shrink-0 shadow-[0_0_15px_#FF1E2D]" /> 
+                          <div className="w-3 h-3 rounded-full bg-[#FF1E2D] mt-2 shrink-0 shadow-[0_0_15px_#FF1E2D]" /> 
                           <span className="leading-tight">{detail}</span>
                         </li>
                       ))}
@@ -296,24 +320,24 @@ export default function Methodology() {
             </div>
           </div>
 
-          <div className="p-8 bg-[#111] border-t border-white/5 flex flex-col gap-6 shrink-0 z-50">
+          <div className="p-4 bg-[#111] border-t border-white/5 flex flex-col gap-4 shrink-0 z-50">
             <div className="flex items-center justify-between max-w-6xl mx-auto w-full">
               <Button 
                 onClick={handlePrev}
                 disabled={currentStep === -1}
-                className="rounded-none bg-white/5 hover:bg-[#FF1E2D] text-white px-10 py-5 h-auto transition-all flex items-center gap-4 font-black uppercase tracking-widest border border-white/10 text-base disabled:opacity-20"
+                className="rounded-none bg-white/5 hover:bg-[#FF1E2D] text-white px-8 py-4 h-auto transition-all flex items-center gap-3 font-black uppercase tracking-widest border border-white/10 text-sm disabled:opacity-20"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-5 h-5" />
                 <span>ANTERIOR</span>
               </Button>
-              <div className="hidden md:flex items-center gap-3">
+              <div className="hidden md:flex items-center gap-2">
                 {sprints.map((_, i) => (
                   <button 
                     key={i} 
                     onClick={() => setCurrentStep(i)}
                     className={cn(
-                      "w-3 h-3 rounded-full transition-all duration-500",
-                      currentStep === i ? "bg-[#FF1E2D] w-16" : "bg-white/10"
+                      "w-2 h-2 rounded-full transition-all duration-500",
+                      currentStep === i ? "bg-[#FF1E2D] w-12" : "bg-white/10"
                     )}
                   />
                 ))}
@@ -321,10 +345,10 @@ export default function Methodology() {
               <Button 
                 onClick={handleNext}
                 disabled={currentStep === sprints.length - 1}
-                className="rounded-none bg-[#FF1E2D] hover:bg-white hover:text-[#FF1E2D] text-white px-10 py-5 h-auto transition-all flex items-center gap-4 font-black uppercase tracking-widest shadow-[0_0_40px_rgba(255,30,45,0.3)] text-base disabled:opacity-20"
+                className="rounded-none bg-[#FF1E2D] hover:bg-white hover:text-[#FF1E2D] text-white px-8 py-4 h-auto transition-all flex items-center gap-3 font-black uppercase tracking-widest shadow-[0_0_40px_rgba(255,30,45,0.3)] text-sm disabled:opacity-20"
               >
                 <span>SIGUIENTE</span>
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-5 h-5" />
               </Button>
             </div>
           </div>
