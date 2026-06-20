@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from "react";
@@ -13,10 +12,12 @@ import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
 import Conclusions from "@/components/landing/Conclusions";
 import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
-import { Smartphone } from "lucide-react";
+import { Smartphone, Maximize, Minimize } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [showRotationHint, setShowRotationHint] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
@@ -25,10 +26,48 @@ export default function Home() {
       const timer = setTimeout(() => setShowRotationHint(false), 3500);
       return () => clearTimeout(timer);
     }
+
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
+  const toggleFullscreen = async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          await document.exitFullscreen();
+        }
+      }
+    } catch (err) {
+      console.warn("Error al cambiar modo pantalla completa:", err);
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-white font-sans overflow-x-hidden">
+    <main className="min-h-screen bg-white font-sans overflow-x-hidden relative">
+      {/* Botón Global Fullscreen */}
+      <div className="fixed top-6 left-6 z-[150] hidden md:block">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={toggleFullscreen}
+          className="bg-white/80 hover:bg-[#FF1E2D] hover:text-white backdrop-blur-md transition-all rounded-none w-12 h-12 shadow-xl border border-gray-100 group"
+          title={isFullscreen ? "Salir de pantalla completa" : "Modo presentación (Pantalla completa)"}
+        >
+          {isFullscreen ? (
+            <Minimize className="w-6 h-6 transition-transform group-active:scale-90" />
+          ) : (
+            <Maximize className="w-6 h-6 transition-transform group-hover:scale-110 group-active:scale-90" />
+          )}
+        </Button>
+      </div>
+
       {/* Mobile Rotation Hint */}
       {showRotationHint && (
         <div className="fixed inset-0 z-[200] bg-[#2B2B2B]/95 flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500 backdrop-blur-sm">
@@ -48,7 +87,6 @@ export default function Home() {
             <ProblemAnalysis />
           </section>
 
-          {/* Requerimientos movido arriba, después de Planteamiento del Problema */}
           <section className="p-10 md:p-32 bg-slate-50/50">
             <AnalysisPhase />
           </section>

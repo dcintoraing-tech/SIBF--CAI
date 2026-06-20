@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -115,41 +114,15 @@ export default function Methodology() {
     }
   };
 
-  const startPresentation = async () => {
-    try {
-      // Intenta activar el modo pantalla completa del navegador
-      if (document.documentElement.requestFullscreen) {
-        await document.documentElement.requestFullscreen();
-      }
-    } catch (err) {
-      console.warn("No se pudo activar pantalla completa:", err);
-    }
+  const startPresentation = () => {
     setCurrentStep(0);
     setIsFullMode(true);
   };
 
-  const exitPresentation = async () => {
-    try {
-      if (document.fullscreenElement && document.exitFullscreen) {
-        await document.exitFullscreen();
-      }
-    } catch (err) {
-      console.warn("No se pudo salir de pantalla completa:", err);
-    }
+  const exitPresentation = () => {
     setIsFullMode(false);
     setCurrentStep(-1);
   };
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      if (!document.fullscreenElement && isFullMode) {
-        setIsFullMode(false);
-        setCurrentStep(-1);
-      }
-    };
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, [isFullMode]);
 
   useEffect(() => {
     if (isFullMode) {
@@ -174,7 +147,7 @@ export default function Methodology() {
             className="rounded-none bg-[#2B2B2B] hover:bg-[#FF1E2D] text-white font-black uppercase tracking-widest px-12 py-8 h-auto shadow-2xl transition-all flex items-center gap-6 group text-lg"
           >
             <Maximize2 className="w-6 h-6 group-hover:scale-125 transition-transform" />
-            PRESENTACIÓN FULL SCREEN
+            MAPA DE RUTA INTERACTIVO
           </Button>
         </div>
       </div>
