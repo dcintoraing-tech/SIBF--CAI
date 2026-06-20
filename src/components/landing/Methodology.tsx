@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils";
 const sprints = [
   { 
     name: "SPRINT 1", 
+    phase: "FASE DE ANÁLISIS",
     weeks: "Sem. 1-2",
     goal: "Elicitación de requerimientos y diseño de la arquitectura base del sistema.",
     epics: [
@@ -38,6 +39,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 2", 
+    phase: "FASE DE DISEÑO",
     weeks: "Sem. 3-5",
     goal: "Prototipado de alta fidelidad y desarrollo del núcleo de autenticación.",
     epics: [
@@ -56,6 +58,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 3", 
+    phase: "FASE DE DESARROLLO (CORE IA)",
     weeks: "Sem. 6-8",
     goal: "Implementación del motor de visión artificial y biometría facial.",
     epics: [
@@ -74,6 +77,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 4", 
+    phase: "FASE DE DESARROLLO (INTEGRACIÓN)",
     weeks: "Sem. 9-11",
     goal: "Desarrollo del sistema de control de asistencia y sincronización Cloud.",
     epics: [
@@ -92,6 +96,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 5", 
+    phase: "FASE DE CALIDAD Y OPTIMIZACIÓN",
     weeks: "Sem. 12-14",
     goal: "Panel administrativo avanzado, reportes y auditoría de seguridad.",
     epics: [
@@ -110,6 +115,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 6", 
+    phase: "FASE DE DESPLIEGUE Y CIERRE",
     weeks: "Sem. 15-16",
     goal: "Despliegue productivo, optimización final y entrega institucional.",
     epics: [
@@ -279,6 +285,9 @@ export default function Methodology() {
               </div>
               
               <div className="text-center space-y-6">
+                <span className="text-[#FF1E2D] font-black text-xs md:text-sm tracking-[0.6em] uppercase">
+                  {sprints[currentStep].phase}
+                </span>
                 <h3 className="text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase italic tracking-tighter">
                   {sprints[currentStep].name}
                 </h3>
