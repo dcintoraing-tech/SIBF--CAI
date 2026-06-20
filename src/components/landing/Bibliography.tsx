@@ -32,21 +32,21 @@ export default function Bibliography() {
   ];
 
   return (
-    <div id="bibliografia" className="space-y-12">
-      <div className="flex items-center gap-6">
-        <BookOpen className="w-10 h-10 text-[#FF1E2D]" />
-        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight uppercase italic">1.9 REFERENCIAS BIBLIOGRÁFICAS</h2>
+    <div id="bibliografia" className="space-y-16">
+      <div className="flex items-center gap-10">
+        <BookOpen className="w-16 h-16 text-[#FF1E2D]" />
+        <h2 className="text-5xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">REFERENCIAS</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {references.map((ref, i) => (
-          <div key={i} className="p-6 bg-white border-l-4 border-[#FF1E2D] shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex justify-between items-start mb-2">
-              <span className="text-[10px] font-black text-[#FF1E2D] uppercase tracking-widest">{ref.author} ({ref.year})</span>
-              <LinkIcon className="w-4 h-4 text-gray-300" />
+          <div key={i} className="p-10 bg-white border-l-[12px] border-[#FF1E2D] shadow-2xl hover:shadow-red-500/5 transition-all">
+            <div className="flex justify-between items-start mb-6">
+              <span className="text-sm font-black text-[#FF1E2D] uppercase tracking-[0.4em]">{ref.author} ({ref.year})</span>
+              <LinkIcon className="w-6 h-6 text-gray-300" />
             </div>
-            <h4 className="text-sm font-black uppercase text-[#2B2B2B] leading-tight mb-2">{ref.title}</h4>
-            <p className="text-[10px] text-gray-400 font-bold uppercase">{ref.source}</p>
+            <h4 className="text-2xl font-black uppercase text-[#2B2B2B] leading-tight mb-6">{ref.title}</h4>
+            <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">{ref.source}</p>
           </div>
         ))}
       </div>
