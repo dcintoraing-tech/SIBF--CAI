@@ -27,7 +27,7 @@ export default function DesignPhase() {
     },
     { 
       name: "CLASES", 
-      img: "/images/cgeneral.jpg", 
+      img: "/images/cla.jpeg", 
       type: "DIAGRAMA",
       desc: "Lógica y estructura de objetos" 
     },
@@ -43,11 +43,11 @@ export default function DesignPhase() {
   const dataDiagrams = [
     {
       name: "ENTIDAD RELACIÓN",
-      img: null,
+      img: "/images/er.jpeg",
       type: "BASE DATOS",
-      desc: "Mapeo centralizado SQL",
+      desc: "Mapeo centralizado NoSQL",
       icon: Network,
-      pending: true
+      pending: false
     },
     {
       name: "DISEÑO UX/UI",
@@ -59,12 +59,13 @@ export default function DesignPhase() {
     }
   ];
 
-  const renderCard = (item: any, i: number) => {
+  const renderCard = (item: any, i: number, isLarge: boolean = false) => {
     if (item.pending) {
       return (
-        <div key={i} className="bg-white border-2 border-gray-100 p-10 flex flex-col items-center gap-6 shadow-2xl opacity-40 grayscale select-none">
+        <div key={i} className={`bg-white border-2 border-gray-100 p-10 flex flex-col items-center gap-6 shadow-2xl opacity-40 grayscale select-none ${isLarge ? 'p-16 border-4 border-[#2B2B2B]' : ''}`}>
+          {item.icon && <item.icon className={isLarge ? "w-24 h-24 text-[#FF1E2D] mb-4" : "w-12 h-12 text-gray-300"} />}
           <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
-          <span className="text-2xl font-black uppercase text-center leading-tight">{item.name}</span>
+          <span className={`${isLarge ? 'text-4xl' : 'text-2xl'} font-black uppercase text-center leading-tight`}>{item.name}</span>
           <Badge variant="outline" className="border-gray-200 text-gray-400 font-black text-xs px-4 py-1">PENDIENTE</Badge>
         </div>
       );
@@ -73,7 +74,7 @@ export default function DesignPhase() {
     return (
       <Dialog key={i}>
         <DialogTrigger asChild>
-          <button className="relative group overflow-hidden bg-white border-4 border-gray-100 p-10 flex flex-col items-center gap-6 shadow-2xl transition-all duration-300 animate-executive-pulse" style={{ animationDelay: `${i * 300}ms` }}>
+          <button className={`relative group overflow-hidden bg-white border-4 border-gray-100 p-10 flex flex-col items-center gap-6 shadow-2xl transition-all duration-300 animate-executive-pulse ${isLarge ? 'p-16 border-[#2B2B2B]' : ''}`} style={{ animationDelay: `${i * 300}ms` }}>
             <div className="absolute inset-0 bg-[#2B2B2B]/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center p-8 text-center">
               <Maximize2 className="w-12 h-12 text-[#FF1E2D] mb-4 animate-pulse" />
               <span className="text-white font-black text-sm uppercase tracking-widest mb-2">DETALLES ALTA RESOLUCIÓN</span>
@@ -85,20 +86,22 @@ export default function DesignPhase() {
               <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px] px-3 py-1 animate-glow-pulse">HD</Badge>
             </div>
             
-            <span className="text-2xl font-black uppercase tracking-tighter text-center leading-tight">{item.name}</span>
+            <span className={`${isLarge ? 'text-4xl' : 'text-2xl'} font-black uppercase tracking-tighter text-center leading-tight`}>{item.name}</span>
             
-            <div className="w-full h-40 bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden">
+            <div className={`w-full ${isLarge ? 'h-64' : 'h-40'} bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden`}>
                {item.isPdf ? (
                  <div className="flex flex-col items-center gap-4">
                    <FileText className="w-16 h-16 text-[#FF1E2D] opacity-40" />
                    <span className="text-xs font-black text-gray-400 uppercase">DOC. TÉCNICO</span>
                  </div>
-               ) : (
+               ) : item.img ? (
                  <img 
                   src={item.img} 
                   alt={item.name} 
                   className="w-full h-full object-cover opacity-80"
                  />
+               ) : (
+                 <item.icon className="w-20 h-20 text-[#FF1E2D] opacity-20" />
                )}
             </div>
             
@@ -169,18 +172,7 @@ export default function DesignPhase() {
             <h3 className="text-4xl font-black uppercase tracking-widest italic">ESTRUCTURA Y UX</h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
-            {dataDiagrams.map((item, i) => (
-              <div key={i} className="bg-white border-4 border-[#2B2B2B] p-16 flex flex-col items-center text-center gap-10 shadow-2xl relative overflow-hidden transition-colors animate-executive-pulse" style={{ animationDelay: `${i * 600}ms` }}>
-                <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF1E2D] -mr-12 -mt-12 rotate-45 opacity-10 animate-glow-pulse" />
-                <item.icon className="w-24 h-24 text-[#FF1E2D]" />
-                <div className="space-y-6">
-                  <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
-                  <h4 className="text-4xl font-black uppercase tracking-tighter">{item.name}</h4>
-                  <p className="text-xl text-gray-500 font-bold uppercase tracking-widest">{item.desc}</p>
-                </div>
-                <Badge className="bg-[#2B2B2B] text-white rounded-none px-10 py-2 text-sm animate-pulse">FASE 2: IMPLEMENTACIÓN</Badge>
-              </div>
-            ))}
+            {dataDiagrams.map((item, i) => renderCard(item, i, true))}
           </div>
         </div>
       </div>
