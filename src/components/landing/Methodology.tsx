@@ -87,7 +87,7 @@ const sprints = [
       "Optimización de consultas indexadas para la recuperación de logs masivos.",
       "Implementación de mecanismos de caché offline (Service Workers/PWA)."
     ],
-    progress: 85,
+    progress: 100,
     color: "#2B2B2B"
   },
   { 
@@ -105,7 +105,7 @@ const sprints = [
       "Pruebas de estrés (Load Testing) para simulación de concurrencia institucional.",
       "Refuerzo de seguridad mediante escaneo de vulnerabilidades y OWASP Top 10."
     ],
-    progress: 85,
+    progress: 100,
     color: "#FF1E2D"
   },
   { 
@@ -123,7 +123,7 @@ const sprints = [
       "Transferencia de conocimiento y capacitación técnica al personal institucional.",
       "Configuración de monitoreo proactivo y alertas de salud del sistema (SRE)."
     ],
-    progress: 0,
+    progress: 53,
     color: "#A3A3A3"
   },
 ];
@@ -221,7 +221,7 @@ export default function Methodology() {
                 <div 
                   className={cn(
                     "w-16 h-16 rounded-full border-4 border-[#0A0A0A] shadow-2xl flex items-center justify-center text-xl font-black text-white transition-all duration-500",
-                    i === 5 ? "bg-[#333] grayscale" : "bg-[#FF1E2D] shadow-[0_0_30px_#FF1E2D]",
+                    sprint.progress < 100 ? "bg-[#333] grayscale" : "bg-[#FF1E2D] shadow-[0_0_30px_#FF1E2D]",
                     "group-hover:scale-125 group-hover:shadow-[0_0_50px_#FF1E2D]"
                   )}
                 >
@@ -269,8 +269,8 @@ export default function Methodology() {
                 <div 
                   className="w-48 h-48 md:w-72 md:h-72 rounded-full border-[8px] border-white/5 flex items-center justify-center text-7xl md:text-9xl font-black shadow-2xl animate-in zoom-in-50 duration-700 relative z-10"
                   style={{ 
-                    backgroundColor: sprints[currentStep].color, 
-                    boxShadow: `0 0 100px ${sprints[currentStep].color}44` 
+                    backgroundColor: sprints[currentStep].progress === 100 ? "#FF1E2D" : "#2B2B2B", 
+                    boxShadow: `0 0 100px ${sprints[currentStep].progress === 100 ? "#FF1E2D" : "#2B2B2B"}44` 
                   }}
                 >
                   {currentStep + 1}
@@ -286,7 +286,10 @@ export default function Methodology() {
                   <span className="px-6 py-2 bg-white/5 text-white text-xs font-black uppercase tracking-[0.4em] border border-white/10">
                     {sprints[currentStep].weeks}
                   </span>
-                  <span className="px-6 py-2 bg-[#FF1E2D] text-white text-xs font-black uppercase tracking-[0.4em] shadow-[0_0_30px_rgba(255,30,45,0.4)]">
+                  <span className={cn(
+                    "px-6 py-2 text-white text-xs font-black uppercase tracking-[0.4em] shadow-[0_0_30px_rgba(255,30,45,0.4)]",
+                    sprints[currentStep].progress === 100 ? "bg-[#FF1E2D]" : "bg-amber-600"
+                  )}>
                     {sprints[currentStep].progress}% COMPLETADO
                   </span>
                 </div>
