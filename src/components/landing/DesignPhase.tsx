@@ -64,10 +64,10 @@ export default function DesignPhase() {
     },
     { 
       name: "ARQ. INFO", 
-      img: null, 
+      img: "/images/ar.png", 
       type: "DIAGRAMA", 
       desc: "Jerarquía y flujo de datos",
-      pending: true
+      pending: false
     },
   ];
 
@@ -131,7 +131,7 @@ export default function DesignPhase() {
                     />
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none">
                       <Layout className="w-12 h-12 text-[#FF1E2D] drop-shadow-lg" />
-                      <span className="text-[10px] font-black uppercase text-gray-600 bg-white/80 px-4 py-1">Gallería Automática</span>
+                      <span className="text-[10px] font-black uppercase text-gray-600 bg-white/80 px-4 py-1">Galería Automática</span>
                     </div>
                  </div>
                ) : item.previewImg ? (
