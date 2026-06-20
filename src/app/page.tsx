@@ -48,22 +48,23 @@ export default function Home() {
             <ProblemAnalysis />
           </section>
 
+          {/* Requerimientos movido arriba, después de Planteamiento del Problema */}
           <section className="p-10 md:p-32 bg-slate-50/50">
-            <Objectives />
-          </section>
-          
-          <section className="p-10 md:p-32 bg-white">
-            <Justification />
-          </section>
-
-          <section className="p-10 md:p-32 bg-slate-50/50">
-            <Methodology />
-          </section>
-          
-          <section className="p-10 md:p-32 bg-white">
             <AnalysisPhase />
           </section>
 
+          <section className="p-10 md:p-32 bg-white">
+            <Objectives />
+          </section>
+          
+          <section className="p-10 md:p-32 bg-slate-50/50">
+            <Justification />
+          </section>
+
+          <section className="p-10 md:p-32 bg-white">
+            <Methodology />
+          </section>
+          
           <section className="p-10 md:p-32 bg-slate-50/50">
             <DesignPhase />
           </section>

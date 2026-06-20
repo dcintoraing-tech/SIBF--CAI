@@ -1,3 +1,4 @@
+
 'use client';
 
 import { 
@@ -11,7 +12,7 @@ import { Progress } from "@/components/ui/progress";
 
 export default function AnalysisPhase() {
   return (
-    <div id="analisis" className="space-y-32">
+    <div id="requerimientos" className="space-y-32">
       <div className="space-y-4">
         <span className="text-[#FF1E2D] font-bold text-xl tracking-[0.4em] uppercase">REQUERIMIENTOS</span>
         <h2 className="text-6xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic">LEVANTAMIENTO</h2>
