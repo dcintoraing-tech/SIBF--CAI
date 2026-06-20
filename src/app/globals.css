@@ -103,3 +103,13 @@
 .animate-spin-slow {
   animation: spin-slow 12s linear infinite;
 }
+
+@keyframes icon-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(8deg); }
+  75% { transform: rotate(-8deg); }
+}
+
+.animate-icon-tilt {
+  animation: icon-tilt 4s ease-in-out infinite;
+}

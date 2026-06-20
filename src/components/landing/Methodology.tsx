@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -160,8 +159,8 @@ export default function Methodology() {
           { icon: RotateCw, title: "SPRINTS", text: "ENTREGAS DE VALOR" },
           { icon: CheckCircle2, title: "CALIDAD", text: "QA INTEGRADO" }
         ].map((item, i) => (
-          <div key={i} className="p-12 bg-slate-50 border-t-[12px] border-[#FF1E2D] text-center space-y-6 shadow-2xl group">
-            <item.icon className="w-16 h-16 text-[#FF1E2D] mx-auto group-hover:rotate-12 transition-transform" />
+          <div key={i} className="p-12 bg-slate-50 border-t-[12px] border-[#FF1E2D] text-center space-y-6 shadow-2xl animate-executive-pulse" style={{ animationDelay: `${i * 300}ms` }}>
+            <item.icon className="w-16 h-16 text-[#FF1E2D] mx-auto animate-icon-tilt" style={{ animationDelay: `${i * 600}ms` }} />
             <h3 className="text-3xl font-black text-[#2B2B2B] uppercase italic">{item.title}</h3>
             <p className="text-xs text-gray-500 font-black uppercase tracking-widest">{item.text}</p>
           </div>
