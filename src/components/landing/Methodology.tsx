@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -139,7 +140,7 @@ export default function Methodology() {
     <div id="metodologia" className="space-y-12 md:space-y-20 relative">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div className="space-y-4">
-          <span className="text-[#FF1E2D] font-bold text-base md:text-lg tracking-[0.4em] uppercase">1.5 METODOLOGÍA</span>
+          <span className="text-[#FF1E2D] font-bold text-base md:text-lg tracking-[0.4em] uppercase">1.4 METODOLOGÍA</span>
           <h2 className="text-4xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">ESTRUCTURA ÁGIL</h2>
         </div>
 
@@ -168,7 +169,7 @@ export default function Methodology() {
         ))}
       </div>
 
-      {/* Static View Timeline "Encendida" */}
+      {/* Static View Timeline */}
       <div className="py-16 relative overflow-hidden hidden md:block bg-[#0A0A0A] p-12 shadow-inner border border-white/5">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FF1E2D] to-transparent opacity-50" />
         <div className="flex items-center gap-6 mb-20">
@@ -177,7 +178,6 @@ export default function Methodology() {
         </div>
         
         <div className="relative px-20">
-          {/* Linea encendida con glow */}
           <div className="absolute top-1/2 left-20 right-20 h-[3px] bg-[#1A1A1A] -translate-y-1/2 rounded-full overflow-hidden shadow-[0_0_15px_rgba(255,30,45,0.1)]">
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF1E2D] to-[#A30000] opacity-50 shadow-[0_0_20px_#FF1E2D]" />
           </div>
@@ -218,7 +218,6 @@ export default function Methodology() {
       {/* FULL SCREEN PRESENTATION OVERLAY */}
       {isFullMode && (
         <div className="fixed inset-0 z-[200] bg-[#0A0A0A] text-white flex flex-col animate-in fade-in zoom-in duration-500 overflow-hidden">
-          {/* Header */}
           <div className="p-4 md:p-8 flex justify-between items-center bg-[#111] border-b border-white/5 z-50">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 red-gradient flex items-center justify-center shadow-[0_0_30px_rgba(255,30,45,0.4)]">
@@ -240,10 +239,7 @@ export default function Methodology() {
             </Button>
           </div>
 
-          {/* Main Slide Content - Optimizado para evitar pérdida de texto */}
           <div className="flex-1 flex flex-col md:flex-row items-stretch justify-center p-6 md:p-12 lg:p-20 gap-8 md:gap-16 overflow-y-auto">
-            
-            {/* Visual Part */}
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center space-y-8 md:space-y-12 shrink-0">
               <div className="relative">
                 <div 
@@ -255,11 +251,9 @@ export default function Methodology() {
                 >
                   {currentStep + 1}
                 </div>
-                {/* Tech Ring Animado */}
                 <div className="absolute -inset-10 rounded-full border-2 border-[#FF1E2D]/20 animate-spin-slow pointer-events-none" />
                 <div className="absolute -inset-16 rounded-full border border-white/5 animate-spin-slow [animation-direction:reverse] pointer-events-none" />
               </div>
-              
               <div className="text-center space-y-4">
                 <h3 className="text-5xl md:text-8xl font-black text-white uppercase italic tracking-tighter">
                   {sprints[currentStep].name}
@@ -275,7 +269,6 @@ export default function Methodology() {
               </div>
             </div>
 
-            {/* Content Part - Con scroll independiente y mejor padding */}
             <div className="w-full md:w-1/2 flex flex-col justify-center">
               <div className="bg-[#1A1A1A] border-l-[12px] border-[#FF1E2D] p-8 md:p-12 lg:p-16 shadow-2xl animate-in slide-in-from-right-20 duration-700 w-full">
                 <div className="space-y-10">
@@ -285,7 +278,6 @@ export default function Methodology() {
                       {sprints[currentStep].phases}
                     </h4>
                   </div>
-
                   <div className="space-y-10">
                     <div className="flex items-center gap-4">
                       <div className="p-2 bg-[#FF1E2D]/10 rounded-sm">
@@ -311,7 +303,6 @@ export default function Methodology() {
             </div>
           </div>
 
-          {/* Navigation Controls */}
           <div className="p-6 md:p-10 bg-[#111] border-t border-white/5 flex flex-col gap-6 shrink-0 z-50">
             <div className="flex items-center justify-between max-w-5xl mx-auto w-full">
               <Button 
@@ -322,7 +313,6 @@ export default function Methodology() {
                 <ChevronLeft className="w-6 h-6" />
                 <span className="hidden sm:inline">ANTERIOR</span>
               </Button>
-
               <div className="hidden md:flex items-center gap-3">
                 {sprints.map((_, i) => (
                   <button 
@@ -335,7 +325,6 @@ export default function Methodology() {
                   />
                 ))}
               </div>
-
               <Button 
                 onClick={handleNext}
                 disabled={currentStep === sprints.length - 1}
