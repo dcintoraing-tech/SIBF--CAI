@@ -117,11 +117,12 @@ export default function Methodology() {
 
   const startPresentation = async () => {
     try {
+      // Intenta activar el modo pantalla completa del navegador
       if (document.documentElement.requestFullscreen) {
         await document.documentElement.requestFullscreen();
       }
     } catch (err) {
-      console.warn("Fullscreen error:", err);
+      console.warn("No se pudo activar pantalla completa:", err);
     }
     setCurrentStep(0);
     setIsFullMode(true);
@@ -133,7 +134,7 @@ export default function Methodology() {
         await document.exitFullscreen();
       }
     } catch (err) {
-      console.warn("Exit fullscreen error:", err);
+      console.warn("No se pudo salir de pantalla completa:", err);
     }
     setIsFullMode(false);
     setCurrentStep(-1);
@@ -192,7 +193,6 @@ export default function Methodology() {
         ))}
       </div>
 
-      {/* Static View Timeline */}
       <div className="py-24 relative overflow-hidden hidden md:block bg-[#0A0A0A] p-20 shadow-inner border border-white/5">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FF1E2D] to-transparent opacity-50" />
         <div className="flex items-center gap-8 mb-24">
@@ -233,7 +233,6 @@ export default function Methodology() {
         </div>
       </div>
 
-      {/* FULL SCREEN PRESENTATION OVERLAY */}
       {isFullMode && (
         <div className="fixed inset-0 z-[200] bg-[#0A0A0A] text-white flex flex-col animate-in fade-in zoom-in duration-500 overflow-hidden">
           <div className="p-4 md:p-6 flex justify-between items-center bg-[#111] border-b border-white/5 z-50">
