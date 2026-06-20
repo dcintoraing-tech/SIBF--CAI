@@ -1,9 +1,9 @@
+
 'use client';
 
 import { useState, useEffect } from "react";
 import Hero from "@/components/landing/Hero";
-import Background from "@/components/landing/Background";
-import ProblemStatement from "@/components/landing/ProblemStatement";
+import ProblemAnalysis from "@/components/landing/ProblemAnalysis";
 import Objectives from "@/components/landing/Objectives";
 import Justification from "@/components/landing/Justification";
 import Methodology from "@/components/landing/Methodology";
@@ -45,42 +45,38 @@ export default function Home() {
         
         <div className="divide-y divide-gray-100">
           <section className="p-8 md:p-24 bg-white">
-            <Background />
+            <ProblemAnalysis />
           </section>
 
           <section className="p-8 md:p-24 bg-slate-50/50">
-            <ProblemStatement />
-          </section>
-
-          <section className="p-8 md:p-24 bg-white">
             <Objectives />
           </section>
           
-          <section className="p-8 md:p-24 bg-slate-50/50">
+          <section className="p-8 md:p-24 bg-white">
             <Justification />
           </section>
 
-          <section className="p-8 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-slate-50/50">
             <Methodology />
           </section>
           
-          <section className="p-8 md:p-24 bg-slate-50/50">
+          <section className="p-8 md:p-24 bg-white">
             <AnalysisPhase />
           </section>
 
-          <section className="p-8 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-slate-50/50">
             <DesignPhase />
           </section>
 
-          <section className="p-8 md:p-24 bg-slate-50/30">
+          <section className="p-8 md:p-24 bg-white">
             <DevelopmentPhase />
           </section>
 
-          <section className="p-8 md:p-24 bg-white">
+          <section className="p-8 md:p-24 bg-slate-50/30">
             <Conclusions />
           </section>
 
-          <section className="p-8 md:p-24 bg-slate-50/30">
+          <section className="p-8 md:p-24 bg-white">
             <Bibliography />
           </section>
 

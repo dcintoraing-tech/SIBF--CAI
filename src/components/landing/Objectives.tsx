@@ -1,3 +1,6 @@
+
+'use client';
+
 import { 
   Scan, 
   CircleCheckBig, 
@@ -16,13 +19,13 @@ export default function Objectives() {
   return (
     <div id="objetivos" className="space-y-16">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-black text-sm tracking-[0.4em] uppercase">1.3 METAS ESTRATÉGICAS</span>
-        <h2 className="text-4xl md:text-5xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">OBJETIVOS</h2>
+        <span className="text-[#FF1E2D] font-black text-sm tracking-[0.4em] uppercase">1.2 METAS ESTRATÉGICAS</span>
+        <h2 className="text-4xl md:text-6xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">OBJETIVOS</h2>
       </div>
 
       <div className="bg-white border-2 border-gray-100 p-12 md:p-16 text-center shadow-2xl border-l-[12px] border-[#FF1E2D]">
         <h4 className="text-[14px] font-black text-[#FF1E2D] uppercase tracking-[0.5em] mb-6">Objetivo General</h4>
-        <p className="text-xl md:text-2xl font-medium text-gray-700 leading-relaxed italic max-w-5xl mx-auto">
+        <p className="text-xl md:text-3xl font-medium text-gray-700 leading-relaxed italic max-w-5xl mx-auto">
           <strong>Desarrollar un sistema de información para el control y gestión de asistencia mediante reconocimiento facial, que permita la identificación biométrica de las personas y el registro automatizado de entradas, asistencias y salidas, con el propósito de optimizar los procesos administrativos, mejorar la precisión de la información y fortalecer la eficiencia operativa de la institución.</strong>
         </p>
       </div>

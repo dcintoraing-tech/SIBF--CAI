@@ -1,3 +1,4 @@
+
 'use client';
 
 import { 
@@ -14,7 +15,7 @@ export default function DevelopmentPhase() {
   return (
     <div id="desarrollo" className="space-y-20">
       <div className="space-y-4 text-left">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.8 FASE DE DESARROLLO</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.7 FASE DE DESARROLLO</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">IMPLEMENTACIÓN SIBF-CAI</h2>
       </div>
 

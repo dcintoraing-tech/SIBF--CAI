@@ -1,3 +1,4 @@
+
 'use client';
 
 import { BookOpen, Link as LinkIcon } from "lucide-react";
@@ -34,7 +35,7 @@ export default function Bibliography() {
     <div id="bibliografia" className="space-y-12">
       <div className="flex items-center gap-6">
         <BookOpen className="w-10 h-10 text-[#FF1E2D]" />
-        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight uppercase italic">REFERENCIAS BIBLIOGRÁFICAS</h2>
+        <h2 className="text-3xl font-black text-[#2B2B2B] tracking-tight uppercase italic">1.9 REFERENCIAS BIBLIOGRÁFICAS</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

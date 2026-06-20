@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Award, Target, Rocket } from "lucide-react";
@@ -6,7 +7,7 @@ export default function Conclusions() {
   return (
     <div id="conclusiones" className="space-y-16">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.9 CONCLUSIONES</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.8 CONCLUSIONES</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">CIERRE</h2>
       </div>
 
@@ -29,13 +30,13 @@ export default function Conclusions() {
           <Rocket className="w-16 h-16 text-[#FF1E2D]" />
           <h3 className="text-2xl font-black uppercase italic">ESCALABILIDAD</h3>
           <p className="text-gray-500 font-bold uppercase text-sm leading-relaxed">
-            Arquitectura escalable preparada para el crecimiento institucional; su alta capacidad permite integraciones futuras y adaptabilidad continua bajo <span className="text-[#FF1E2D]">TRANSFORMACIÓN DIGITAL</span>.
+            Arquitectura escalable preparada para el crecimiento institucional; su alta capacidad permite integraciones futuras y adaptabilidad continua.
           </p>
         </div>
       </div>
 
       <div className="bg-[#2B2B2B] p-12 text-center shadow-2xl border-b-8 border-[#FF1E2D]">
-        <p className="text-2xl md:text-3xl text-white font-black uppercase italic leading-tight">
+        <p className="text-2xl md:text-4xl text-white font-black uppercase italic leading-tight">
           "SIBF-CAI REPRESENTA EL FUTURO DE LA GESTIÓN INSTITUCIONAL INTELIGENTE."
         </p>
       </div>

@@ -1,3 +1,6 @@
+
+'use client';
+
 import { TrendingUp, ShieldCheck, Zap, ChartColumn } from "lucide-react";
 
 export default function Justification() {
@@ -11,13 +14,13 @@ export default function Justification() {
   return (
     <div id="justificacion" className="space-y-20">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.4 JUSTIFICACIÓN</span>
+        <span className="text-[#FF1E2D] font-bold text-lg tracking-[0.4em] uppercase">1.3 JUSTIFICACIÓN</span>
         <h2 className="text-5xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic">VALOR REAL</h2>
       </div>
 
       <div className="space-y-16">
-        <p className="text-2xl md:text-3xl text-gray-600 font-medium leading-tight max-w-5xl">
-          El sistema posiciona a la institución en la <span className="text-[#FF1E2D] font-black underline">TRANSFORMACIÓN DIGITAL</span>, garantizando una gestión de asistencia de alto nivel.
+        <p className="text-2xl md:text-4xl text-gray-600 font-medium leading-[1.1] max-w-5xl">
+          El sistema posiciona a la institución en la <span className="text-[#FF1E2D] font-black underline decoration-4">TRANSFORMACIÓN DIGITAL</span>, garantizando una gestión de asistencia de alto nivel competitiva.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
