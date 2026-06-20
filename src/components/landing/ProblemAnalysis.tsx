@@ -15,7 +15,7 @@ export default function ProblemAnalysis() {
       {/* PÁGINA 1: EVOLUCIÓN */}
       <div className="min-h-[60vh] flex flex-col justify-center space-y-16">
         <div className="space-y-4">
-          <span className="text-[#FF1E2D] font-bold text-xl tracking-[0.4em] uppercase">ANÁLISIS DEL PROBLEMA</span>
+          <span className="text-[#FF1E2D] font-bold text-xl tracking-[0.4em] uppercase">PLANTEAMIENTO DEL PROBLEMA</span>
           <h2 className="text-6xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">EVOLUCIÓN Y CONTEXTO</h2>
         </div>
 

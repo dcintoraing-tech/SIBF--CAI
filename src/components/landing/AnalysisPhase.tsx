@@ -1,4 +1,3 @@
-
 'use client';
 
 import { 
@@ -14,8 +13,8 @@ export default function AnalysisPhase() {
   return (
     <div id="analisis" className="space-y-32">
       <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-xl tracking-[0.4em] uppercase">FASE DE ANÁLISIS</span>
-        <h2 className="text-6xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic">REQUERIMIENTOS</h2>
+        <span className="text-[#FF1E2D] font-bold text-xl tracking-[0.4em] uppercase">REQUERIMIENTOS</span>
+        <h2 className="text-6xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic">LEVANTAMIENTO</h2>
       </div>
 
       <p className="text-3xl md:text-5xl text-gray-600 font-medium leading-tight max-w-5xl">
@@ -23,7 +22,7 @@ export default function AnalysisPhase() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <Card className="rounded-none border-t-[12px] border-[#FF1E2D] shadow-2xl p-10">
+        <Card className="rounded-none border-t-[12px] border-[#FF1E2D] shadow-2xl p-10 animate-executive-pulse">
           <CardHeader>
             <ClipboardList className="w-16 h-16 text-[#FF1E2D] mb-6" />
             <CardTitle className="text-3xl font-black uppercase tracking-widest">Proceso de Negocio</CardTitle>
@@ -35,7 +34,7 @@ export default function AnalysisPhase() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-none border-t-[12px] border-[#2B2B2B] shadow-2xl p-10">
+        <Card className="rounded-none border-t-[12px] border-[#2B2B2B] shadow-2xl p-10 animate-executive-pulse [animation-delay:500ms]">
           <CardHeader>
             <ShieldCheck className="w-16 h-16 text-[#2B2B2B] mb-6" />
             <CardTitle className="text-3xl font-black uppercase tracking-widest">Atributos de Calidad</CardTitle>
