@@ -1,4 +1,3 @@
-
 'use client';
 
 import { GitBranch, Database, Layout, Network, Search, Maximize2, FileText, Layers } from "lucide-react";
@@ -74,7 +73,7 @@ export default function DesignPhase() {
     return (
       <Dialog key={i}>
         <DialogTrigger asChild>
-          <button className="relative group overflow-hidden bg-white border-4 border-gray-100 p-10 flex flex-col items-center gap-6 shadow-2xl hover:border-[#FF1E2D] hover:scale-[1.02] transition-all duration-300">
+          <button className="relative group overflow-hidden bg-white border-4 border-gray-100 p-10 flex flex-col items-center gap-6 shadow-2xl transition-all duration-300 animate-executive-pulse" style={{ animationDelay: `${i * 300}ms` }}>
             <div className="absolute inset-0 bg-[#2B2B2B]/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center p-8 text-center">
               <Maximize2 className="w-12 h-12 text-[#FF1E2D] mb-4 animate-pulse" />
               <span className="text-white font-black text-sm uppercase tracking-widest mb-2">DETALLES ALTA RESOLUCIÓN</span>
@@ -83,7 +82,7 @@ export default function DesignPhase() {
 
             <div className="w-full flex justify-between items-center mb-2">
               <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
-              <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px] px-3 py-1">HD</Badge>
+              <Badge variant="outline" className="border-red-100 text-[#FF1E2D] font-black text-[10px] px-3 py-1 animate-glow-pulse">HD</Badge>
             </div>
             
             <span className="text-2xl font-black uppercase tracking-tighter text-center leading-tight">{item.name}</span>
@@ -98,13 +97,13 @@ export default function DesignPhase() {
                  <img 
                   src={item.img} 
                   alt={item.name} 
-                  className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 transition-all"
+                  className="w-full h-full object-cover opacity-80"
                  />
                )}
             </div>
             
             <div className="text-[#FF1E2D] font-black text-xs uppercase tracking-widest flex items-center gap-3 mt-4">
-              EXPANDIR <Search className="w-4 h-4" />
+              EXPANDIR <Search className="w-4 h-4 animate-bounce" />
             </div>
           </button>
         </DialogTrigger>
@@ -171,15 +170,15 @@ export default function DesignPhase() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
             {dataDiagrams.map((item, i) => (
-              <div key={i} className="bg-white border-4 border-[#2B2B2B] p-16 flex flex-col items-center text-center gap-10 shadow-2xl relative overflow-hidden group hover:border-[#FF1E2D] transition-colors">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF1E2D] -mr-12 -mt-12 rotate-45 opacity-10 group-hover:opacity-100 transition-opacity" />
+              <div key={i} className="bg-white border-4 border-[#2B2B2B] p-16 flex flex-col items-center text-center gap-10 shadow-2xl relative overflow-hidden transition-colors animate-executive-pulse" style={{ animationDelay: `${i * 600}ms` }}>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF1E2D] -mr-12 -mt-12 rotate-45 opacity-10 animate-glow-pulse" />
                 <item.icon className="w-24 h-24 text-[#FF1E2D]" />
                 <div className="space-y-6">
                   <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.type}</span>
                   <h4 className="text-4xl font-black uppercase tracking-tighter">{item.name}</h4>
                   <p className="text-xl text-gray-500 font-bold uppercase tracking-widest">{item.desc}</p>
                 </div>
-                <Badge className="bg-[#2B2B2B] text-white rounded-none px-10 py-2 text-sm">FASE 2: IMPLEMENTACIÓN</Badge>
+                <Badge className="bg-[#2B2B2B] text-white rounded-none px-10 py-2 text-sm animate-pulse">FASE 2: IMPLEMENTACIÓN</Badge>
               </div>
             ))}
           </div>

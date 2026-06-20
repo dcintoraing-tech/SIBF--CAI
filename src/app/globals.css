@@ -63,9 +63,26 @@
   50% { opacity: 1; filter: grayscale(0%) brightness(1.2); }
 }
 
-/* Animación más lenta (4s) para la portada */
 .animate-tech-pulse {
   animation: tech-pulse 4s ease-in-out infinite;
+}
+
+@keyframes executive-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 30, 45, 0); }
+  50% { transform: scale(1.02); box-shadow: 0 10px 40px rgba(255, 30, 45, 0.1); }
+}
+
+.animate-executive-pulse {
+  animation: executive-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
 }
 
 @keyframes rotate-phone {

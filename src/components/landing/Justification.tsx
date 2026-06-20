@@ -1,4 +1,3 @@
-
 'use client';
 
 import { TrendingUp, ShieldCheck, Zap, ChartColumn } from "lucide-react";
@@ -25,8 +24,8 @@ export default function Justification() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {values.map((v, i) => (
-            <div key={i} className="flex gap-12 p-16 bg-slate-50 border-t-[12px] border-transparent hover:border-[#FF1E2D] transition-all group shadow-2xl">
-              <v.icon className="w-20 h-20 text-[#FF1E2D] group-hover:scale-110 transition-transform shrink-0" />
+            <div key={i} className="flex gap-12 p-16 bg-slate-50 border-t-[12px] border-transparent border-[#FF1E2D] transition-all shadow-2xl animate-executive-pulse" style={{ animationDelay: `${i * 400}ms` }}>
+              <v.icon className="w-20 h-20 text-[#FF1E2D] shrink-0" />
               <div className="space-y-6">
                 <h4 className="text-3xl font-black text-[#2B2B2B] uppercase tracking-widest">{v.title}</h4>
                 <p className="text-xl text-gray-400 font-bold uppercase tracking-widest leading-relaxed">{v.desc}</p>
