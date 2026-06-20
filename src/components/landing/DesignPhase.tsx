@@ -27,7 +27,7 @@ export default function DesignPhase() {
     },
     { 
       name: "CLASES", 
-      img: "/images/cla.jpeg", 
+      img: "/images/CLA.jpeg", 
       type: "DIAGRAMA",
       desc: "Lógica y estructura de objetos" 
     },
@@ -43,7 +43,7 @@ export default function DesignPhase() {
   const dataDiagrams = [
     {
       name: "ENTIDAD RELACIÓN",
-      img: "/images/er.jpeg",
+      img: "/images/ER.jpeg",
       type: "BASE DATOS",
       desc: "Mapeo centralizado NoSQL",
       icon: Network,
