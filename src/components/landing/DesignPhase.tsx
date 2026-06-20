@@ -9,6 +9,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function DesignPhase() {
   const umlDiagrams = [
@@ -41,6 +48,16 @@ export default function DesignPhase() {
     },
   ];
 
+  const uxImages = [
+    "/images/1.jpeg",
+    "/images/2.jpeg",
+    "/images/3.jpg",
+    "/images/4.jpg",
+    "/images/5.jpg",
+    "/images/6.jpg",
+    "/images/7.png",
+  ];
+
   const dataDiagrams = [
     {
       name: "ENTIDAD RELACIÓN",
@@ -52,11 +69,12 @@ export default function DesignPhase() {
     },
     {
       name: "DISEÑO UX/UI",
-      img: null,
+      images: uxImages,
       type: "PROTOTIPO",
       desc: "Alta fidelidad funcional",
       icon: Layout,
-      pending: true
+      isCarousel: true,
+      pending: false
     }
   ];
 
@@ -90,7 +108,15 @@ export default function DesignPhase() {
             <span className={`${isLarge ? 'text-4xl' : 'text-2xl'} font-black uppercase tracking-tighter text-center leading-tight`}>{item.name}</span>
             
             <div className={`w-full ${isLarge ? 'h-64' : 'h-40'} bg-slate-50 border border-gray-100 flex items-center justify-center overflow-hidden`}>
-               {item.previewImg ? (
+               {item.isCarousel ? (
+                 <div className="relative w-full h-full flex items-center justify-center bg-gray-100">
+                    <img src={item.images[0]} alt={item.name} className="w-full h-full object-cover opacity-60" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                      <Layout className="w-12 h-12 text-[#FF1E2D]" />
+                      <span className="text-[10px] font-black uppercase text-gray-400">Gallería Interactiva</span>
+                    </div>
+                 </div>
+               ) : item.previewImg ? (
                  <img 
                   src={item.previewImg} 
                   alt={item.name} 
@@ -127,7 +153,32 @@ export default function DesignPhase() {
             </DialogTitle>
           </DialogHeader>
           <div className="flex-1 overflow-auto bg-[#F8F9FA] p-0 flex items-stretch justify-center relative bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:30px_30px]">
-            {item.isPdf ? (
+            {item.isCarousel ? (
+              <div className="w-full h-full flex items-center justify-center p-4 md:p-12">
+                <Carousel className="w-full max-w-5xl">
+                  <CarouselContent>
+                    {item.images.map((img: string, idx: number) => (
+                      <CarouselItem key={idx} className="flex items-center justify-center">
+                        <div className="p-2 md:p-4 bg-white shadow-2xl border border-gray-100">
+                          <img 
+                            src={img} 
+                            alt={`${item.name} slide ${idx + 1}`} 
+                            className="max-h-[70vh] w-auto object-contain mx-auto" 
+                          />
+                          <div className="mt-4 text-center">
+                            <span className="text-xs font-black text-[#FF1E2D] uppercase tracking-widest">PROTOTIPO {idx + 1} DE {item.images.length}</span>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="hidden md:block">
+                    <CarouselPrevious className="left-0 -translate-x-1/2 bg-[#2B2B2B] text-white border-none hover:bg-[#FF1E2D]" />
+                    <CarouselNext className="right-0 translate-x-1/2 bg-[#2B2B2B] text-white border-none hover:bg-[#FF1E2D]" />
+                  </div>
+                </Carousel>
+              </div>
+            ) : item.isPdf ? (
               <iframe 
                 src={`${item.img}#toolbar=0&navpanes=0&scrollbar=1`} 
                 className="w-full h-full border-none"
