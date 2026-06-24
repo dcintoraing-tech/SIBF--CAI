@@ -233,7 +233,7 @@ export default function DesignPhase() {
       </div>
 
       <p className="text-3xl md:text-5xl text-gray-600 font-medium leading-tight max-w-5xl">
-        Transformamos requerimientos en <span className="text-[#FF1E2D] font-black underline decoration-8 underline-offset-[16px]">MODELOS TÉCNICOS</span> escalables bajo estándares de ingeniería.
+        Transformamos requerimientos en <span className="text-[#FF1E2D] font-black text-4xl md:text-7xl">MODELOS TÉCNICOS</span> escalables bajo estándares de ingeniería.
       </p>
 
       <div className="space-y-24">

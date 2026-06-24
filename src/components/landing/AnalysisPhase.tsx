@@ -15,7 +15,7 @@ export default function AnalysisPhase() {
       </div>
 
       <p className="text-3xl md:text-5xl text-gray-600 font-medium leading-tight max-w-5xl">
-        Identificamos necesidades críticas mediante <span className="text-[#FF1E2D] font-black underline decoration-8 underline-offset-[12px]">ENTREVISTAS DIRECTAS</span> y análisis institucional.
+        Identificamos necesidades críticas mediante <span className="text-[#FF1E2D] font-black text-4xl md:text-7xl">ENTREVISTAS DIRECTAS</span> y análisis institucional.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

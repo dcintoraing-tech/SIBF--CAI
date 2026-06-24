@@ -13,7 +13,7 @@ export default function Background() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div className="space-y-8">
           <p className="text-2xl text-gray-600 leading-tight">
-            La gestión de asistencia ha evolucionado desde registros en papel hasta sistemas biométricos complejos. Sin embargo, muchas instituciones aún operan bajo modelos <span className="text-[#FF1E2D] font-black underline">INEFICIENTES</span>.
+            La gestión de asistencia ha evolucionado desde registros en papel hasta sistemas biométricos complejos. Sin embargo, muchas instituciones aún operan bajo modelos <span className="text-[#FF1E2D] font-black text-4xl md:text-5xl italic">INEFICIENTES</span>.
           </p>
           <div className="space-y-6">
             <div className="flex gap-6 items-start">
@@ -37,7 +37,7 @@ export default function Background() {
           <Lightbulb className="w-16 h-16 text-[#FF1E2D] mb-8" />
           <h3 className="text-3xl font-black uppercase italic leading-none mb-6">VISIÓN DEL PROYECTO</h3>
           <p className="text-gray-400 font-bold uppercase text-sm leading-relaxed">
-            Integrar IA de vanguardia para transformar un proceso administrativo rutinario en un sistema de seguridad inteligente bajo una <span className="text-white">TRANSFORMACIÓN DIGITAL</span> real.
+            Integrar IA de vanguardia para transformar un proceso administrativo rutinario en un sistema de seguridad inteligente bajo una <span className="text-white text-xl md:text-2xl font-black">TRANSFORMACIÓN DIGITAL</span> real.
           </p>
         </div>
       </div>

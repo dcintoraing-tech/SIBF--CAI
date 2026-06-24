@@ -19,7 +19,7 @@ export default function Justification() {
 
       <div className="space-y-24">
         <p className="text-3xl md:text-6xl text-gray-600 font-medium leading-[1.1] max-w-6xl">
-          El sistema garantiza una gestión de asistencia de alto nivel competitiva bajo la <span className="text-[#FF1E2D] font-black underline decoration-[12px] underline-offset-[16px]">TRANSFORMACIÓN DIGITAL</span>.
+          El sistema garantiza una gestión de asistencia de alto nivel competitiva bajo la <span className="text-[#FF1E2D] font-black text-4xl md:text-7xl">TRANSFORMACIÓN DIGITAL</span>.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

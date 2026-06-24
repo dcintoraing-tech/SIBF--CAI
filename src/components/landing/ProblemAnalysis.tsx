@@ -25,7 +25,7 @@ export default function ProblemAnalysis() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-start">
           <div className="space-y-8 md:space-y-12">
             <p className="text-xl md:text-5xl text-gray-600 leading-tight font-medium">
-              Históricamente, el control de asistencia ha dependido de procesos <span className="text-[#FF1E2D] font-black">ANALÓGICOS</span> que hoy resultan obsoletos ante la demanda de seguridad institucional.
+              Históricamente, el control de asistencia ha dependido de procesos <span className="text-[#FF1E2D] font-black text-4xl md:text-7xl">ANALÓGICOS</span> que hoy resultan obsoletos ante la demanda de seguridad institucional.
             </p>
             <div className="h-[2px] w-20 md:w-40 bg-[#FF1E2D]" />
           </div>
@@ -61,7 +61,7 @@ export default function ProblemAnalysis() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 items-center">
           <div className="lg:col-span-6 space-y-10 md:space-y-16">
             <p className="text-xl md:text-5xl text-gray-600 leading-[1.2] md:leading-[1.1] font-medium">
-              La falta de integridad nace de sistemas que permiten la <span className="text-[#2B2B2B] font-black underline decoration-4 md:decoration-[12px] underline-offset-4 md:underline-offset-[16px]">SUPLANTACIÓN</span> de identidad.
+              La falta de integridad nace de sistemas que permiten la <span className="text-[#2B2B2B] font-black text-4xl md:text-7xl">SUPLANTACIÓN</span> de identidad.
             </p>
             <div className="p-8 md:p-16 bg-[#2B2B2B] border-b-[10px] md:border-b-[20px] border-[#FF1E2D] shadow-2xl transform -rotate-1">
               <p className="text-2xl md:text-6xl font-black text-white uppercase italic leading-[0.85] tracking-tighter text-center">
