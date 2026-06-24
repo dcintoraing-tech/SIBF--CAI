@@ -40,11 +40,12 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
   return (
     <div className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden animate-in fade-in duration-500">
       {/* Minimal Floating Header */}
-      <div className="absolute top-0 left-0 w-full p-2 md:p-4 flex justify-between items-center z-50">
-        <div className="flex items-center gap-2 bg-white/80 backdrop-blur-md px-3 py-1 shadow-sm border border-gray-100">
-          <img src="/images/logo.png" alt="Logo" className="h-5 md:h-6 w-auto" />
-          <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-[#FF1E2D]">
-            SIBF-CAI
+      <div className="absolute top-0 left-0 w-full p-3 md:p-6 flex justify-between items-center z-50">
+        <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2 shadow-xl border border-gray-100 rounded-none">
+          <img src="/images/logo.png" alt="Logo" className="h-6 md:h-8 w-auto" />
+          <div className="h-6 w-[1px] bg-gray-200 mx-2 hidden sm:block"></div>
+          <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-[#FF1E2D] hidden sm:block">
+            SIBF-CAI PRESENTACIÓN
           </span>
         </div>
         
@@ -52,62 +53,64 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
           variant="ghost" 
           size="icon" 
           onClick={onClose} 
-          className="bg-white/80 hover:bg-red-500 hover:text-white backdrop-blur-md transition-all rounded-none w-8 h-8 md:w-10 md:h-10 border border-gray-100"
+          className="bg-white/90 hover:bg-[#FF1E2D] hover:text-white backdrop-blur-md transition-all rounded-none w-10 h-10 md:w-14 md:h-14 border border-gray-100 shadow-xl group"
         >
-          <X className="w-4 h-4 md:w-5 md:h-5" />
+          <X className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-90 transition-transform duration-300" />
         </Button>
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 relative flex flex-col items-center justify-center bg-slate-50/30 overflow-hidden">
+      <div className="flex-1 relative flex flex-col items-center justify-center bg-[#F8F9FA] overflow-hidden p-2 md:p-6 lg:p-12">
         <div 
           key={currentSlide} 
-          className="w-full h-full max-w-6xl mx-auto md:p-6 lg:p-12 animate-in fade-in slide-in-from-right-8 duration-500 flex flex-col"
+          className="w-full h-full max-w-[1600px] mx-auto animate-in fade-in slide-in-from-right-10 duration-500 flex flex-col"
         >
-          <div className="flex-1 bg-white shadow-xl md:shadow-2xl border-t-4 border-[#FF1E2D] flex flex-col overflow-hidden md:rounded-lg">
-            <div className="flex-1 overflow-y-auto p-4 md:p-0 scrollbar-hide">
+          <div className="flex-1 bg-white shadow-2xl border-t-[8px] md:border-t-[16px] border-[#FF1E2D] flex flex-col overflow-hidden">
+            <div className="flex-1 overflow-y-auto p-6 md:p-12 lg:p-24 scroll-smooth">
               {sections[currentSlide].component}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile-Optimized Navigation */}
-      <div className="w-full bg-white border-t border-gray-100 p-2 md:p-4 flex flex-col gap-2 z-50">
-        <div className="max-w-xl mx-auto w-full flex justify-between items-center gap-4">
-          <div className="flex items-center gap-1">
+      {/* Navigation Bar */}
+      <div className="w-full bg-white border-t border-gray-100 p-4 md:p-8 flex flex-col gap-6 z-50">
+        <div className="max-w-4xl mx-auto w-full flex justify-between items-center gap-8">
+          <div className="flex items-center gap-3 md:gap-6">
             <Button 
               variant="outline" 
-              size="icon" 
               onClick={prevSlide} 
               disabled={currentSlide === 0}
-              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white disabled:opacity-20 rounded-none w-10 h-10 border-gray-200"
+              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white disabled:opacity-20 rounded-none h-12 md:h-16 px-6 md:px-10 border-2 border-gray-100 font-black uppercase tracking-widest text-xs md:text-sm flex gap-3 transition-all"
             >
               <ChevronLeft className="w-5 h-5" />
+              <span className="hidden sm:inline">ANTERIOR</span>
             </Button>
             <Button 
               variant="outline" 
-              size="icon" 
               onClick={nextSlide} 
               disabled={currentSlide === sections.length - 1}
-              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white disabled:opacity-20 rounded-none w-10 h-10 border-gray-200"
+              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white disabled:opacity-20 rounded-none h-12 md:h-16 px-6 md:px-10 border-2 border-gray-100 font-black uppercase tracking-widest text-xs md:text-sm flex gap-3 transition-all"
             >
+              <span className="hidden sm:inline">SIGUIENTE</span>
               <ChevronRight className="w-5 h-5" />
             </Button>
           </div>
 
-          <div className="flex-1 text-center hidden sm:block">
-            <h3 className="text-[#2B2B2B] font-black uppercase tracking-[0.2em] text-[10px] italic truncate">
-              {sections[currentSlide].title || "BIENVENIDA"}
+          <div className="flex-1 text-center hidden md:block">
+            <h3 className="text-[#2B2B2B] font-black uppercase tracking-[0.5em] text-xs italic truncate">
+              {sections[currentSlide].title || "INICIO"}
             </h3>
           </div>
 
-          <div className="text-[10px] font-bold text-[#FF1E2D] uppercase tracking-widest min-w-[50px] text-right">
-            {currentSlide + 1} / {sections.length}
+          <div className="text-xs md:text-sm font-black text-[#FF1E2D] uppercase tracking-[0.3em] bg-slate-50 px-6 py-2 border border-gray-100">
+            {currentSlide + 1} <span className="text-gray-300 mx-2">/</span> {sections.length}
           </div>
         </div>
-        <div className="max-w-xl mx-auto w-full">
-          <Progress value={progress} className="h-[3px] bg-gray-100 rounded-none" />
+        <div className="max-w-4xl mx-auto w-full">
+          <Progress value={progress} className="h-1 md:h-2 bg-gray-100 rounded-none overflow-hidden">
+            <div className="h-full red-gradient transition-all duration-500" style={{ width: `${progress}%` }} />
+          </Progress>
         </div>
       </div>
     </div>
