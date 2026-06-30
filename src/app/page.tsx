@@ -60,22 +60,22 @@ export default function Home() {
             <img 
               src="/images/qrqr.png" 
               alt="SIBF-CAI QR" 
-              className="relative w-64 h-64 md:w-96 md:h-96 object-contain animate-float"
+              className="relative w-48 h-48 md:w-96 md:h-96 object-contain animate-float"
             />
           </div>
           
           <Button 
             onClick={() => setShowIntro(false)}
             variant="ghost"
-            className="group relative p-8 h-auto rounded-full hover:bg-red-50 transition-all duration-500 hover:scale-110 active:scale-95"
+            className="group relative p-6 md:p-8 h-auto rounded-full hover:bg-red-50 transition-all duration-500 hover:scale-110 active:scale-95"
           >
             <div className="absolute inset-0 bg-red-100/30 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
-            <ArrowRight className="w-16 h-16 md:w-20 md:h-20 text-[#FF1E2D] relative z-10 transition-transform group-hover:translate-x-2" />
+            <ArrowRight className="w-12 h-12 md:w-20 md:h-20 text-[#FF1E2D] relative z-10 transition-transform group-hover:translate-x-2" />
           </Button>
 
           <div className="text-center space-y-2">
             <span className="text-[10px] font-black text-gray-300 uppercase tracking-[0.8em]">PRESENTACIÓN EJECUTIVA</span>
-            <p className="text-gray-400 font-bold uppercase tracking-widest text-xs">CLICK PARA INICIAR SIBF-CAI</p>
+            <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px]">CLICK PARA INICIAR SIBF-CAI</p>
           </div>
         </div>
       </main>
@@ -85,18 +85,18 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white font-sans overflow-x-hidden relative animate-in fade-in zoom-in-95 duration-1000">
       {/* Botón Global Fullscreen */}
-      <div className="fixed top-6 left-6 z-[150] hidden md:block">
+      <div className="fixed top-4 right-4 md:top-6 md:left-6 z-[150]">
         <Button
           variant="outline"
           size="icon"
           onClick={toggleFullscreen}
-          className="bg-white/80 hover:bg-[#FF1E2D] hover:text-white backdrop-blur-md transition-all rounded-none w-12 h-12 shadow-xl border border-gray-100 group"
-          title={isFullscreen ? "Salir de pantalla completa" : "Modo presentación (Pantalla completa)"}
+          className="bg-white/80 hover:bg-[#FF1E2D] hover:text-white backdrop-blur-md transition-all rounded-none w-10 h-10 md:w-12 md:h-12 shadow-xl border border-gray-100 group"
+          title={isFullscreen ? "Salir" : "Pantalla Completa"}
         >
           {isFullscreen ? (
-            <Minimize className="w-6 h-6 transition-transform group-active:scale-90" />
+            <Minimize className="w-5 h-5 md:w-6 md:h-6 transition-transform group-active:scale-90" />
           ) : (
-            <Maximize className="w-6 h-6 transition-transform group-hover:scale-110 group-active:scale-90" />
+            <Maximize className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:scale-110 group-active:scale-90" />
           )}
         </Button>
       </div>
@@ -116,66 +116,66 @@ export default function Home() {
         <Hero />
         
         <div className="divide-y divide-gray-100">
-          <section className="p-10 md:p-32 bg-white">
+          <section className="p-6 md:p-32 bg-white">
             <ProblemAnalysis />
           </section>
 
-          <section className="p-10 md:p-32 bg-slate-50/50">
+          <section className="p-6 md:p-32 bg-slate-50/50">
             <AnalysisPhase />
           </section>
 
-          <section className="p-10 md:p-32 bg-white">
+          <section className="p-6 md:p-32 bg-white">
             <Objectives />
           </section>
           
-          <section className="p-10 md:p-32 bg-slate-50/50">
+          <section className="p-6 md:p-32 bg-slate-50/50">
             <Justification />
           </section>
 
-          <section className="p-10 md:p-32 bg-white">
+          <section className="p-6 md:p-32 bg-white">
             <Methodology />
           </section>
           
-          <section className="p-10 md:p-32 bg-slate-50/50">
+          <section className="p-6 md:p-32 bg-slate-50/50">
             <DesignPhase />
           </section>
 
-          <section className="p-10 md:p-32 bg-white">
+          <section className="p-6 md:p-32 bg-white">
             <DevelopmentPhase />
           </section>
 
-          <section className="p-10 md:p-32 bg-slate-50/30">
+          <section className="p-6 md:p-32 bg-slate-50/30">
             <BusinessProcess />
           </section>
 
-          <section className="p-10 md:p-32 bg-white">
+          <section className="p-6 md:p-32 bg-white">
             <Conclusions />
           </section>
 
-          <section className="p-10 md:p-32 bg-slate-50/30">
+          <section className="p-6 md:p-32 bg-slate-50/30">
             <Bibliography />
           </section>
 
-          <section className="p-10 md:p-32 bg-[#0A0A0A]">
+          <section className="p-6 md:p-32 bg-[#0A0A0A]">
             <QRSection />
           </section>
         </div>
 
-        <footer className="bg-[#1A1A1A] py-16 px-12 text-white border-t border-white/5">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div className="flex items-center gap-8">
+        <footer className="bg-[#1A1A1A] py-12 px-6 md:py-16 md:px-12 text-white border-t border-white/5">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
               <img 
                 src="/images/logo.png" 
                 alt="Logo" 
-                className="h-14 md:h-16 w-auto object-contain brightness-0 invert" 
+                className="h-10 md:h-16 w-auto object-contain brightness-0 invert" 
               />
               <div className="text-white">
-                <h2 className="text-2xl md:text-3xl font-black tracking-widest text-white leading-tight uppercase italic">
+                <h2 className="text-xl md:text-3xl font-black tracking-widest text-white leading-tight uppercase italic">
                   SIBF<span className="text-[#FF1E2D]">-CAI</span>
                 </h2>
               </div>
             </div>
-            <div className="text-gray-500 text-xs font-bold uppercase tracking-[0.4em] text-center md:text-right leading-loose">
+            <div className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-center md:text-right leading-loose">
               &copy; {new Date().getFullYear()} SIBF-CAI • PROYECTO EJECUTIVO
             </div>
           </div>
