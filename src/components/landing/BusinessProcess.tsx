@@ -2,11 +2,11 @@
 
 import { 
   TrendingDown, 
-  ArrowRight, 
   CheckCircle2, 
   XCircle,
   Zap,
-  BarChart3
+  BarChart3,
+  ShieldCheck
 } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -74,6 +74,17 @@ export default function BusinessProcess() {
             <div className="flex items-center gap-4 p-4 bg-white border border-gray-100 shadow-xl">
               <CheckCircle2 className="w-5 h-5 text-[#FF1E2D] shrink-0" />
               <p className="text-[11px] md:text-xs font-black text-gray-500 uppercase tracking-tighter">MODELO POR SUSCRIPCIÓN ESCALABLE.</p>
+            </div>
+            
+            {/* Nueva Política de Mantenimiento */}
+            <div className="mt-4 bg-[#FF1E2D]/5 border-l-4 border-[#FF1E2D] p-5 shadow-inner">
+              <div className="flex items-center gap-3 mb-2">
+                <ShieldCheck className="w-5 h-5 text-[#FF1E2D]" />
+                <span className="text-xs font-black text-[#2B2B2B] uppercase tracking-widest">PÓLIZA DE MANTENIMIENTO</span>
+              </div>
+              <p className="text-[10px] md:text-[11px] font-bold text-gray-600 uppercase leading-relaxed tracking-tight">
+                MANTENIMIENTO <span className="text-[#FF1E2D]">GRATUITO DURANTE 6 MESES</span>. POSTERIORMENTE, SE REALIZARÁ UN PRESUPUESTO ACORDE A LAS NECESIDADES ESPECÍFICAS DE LA INSTITUCIÓN.
+              </p>
             </div>
           </div>
         </div>
