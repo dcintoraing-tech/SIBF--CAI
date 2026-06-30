@@ -73,7 +73,7 @@ export default function DesignPhase() {
 
   const dataDiagrams = [
     {
-      name: "ENTIDAD RELACIÓN",
+      name: "MODELO DE DATOS",
       img: "/images/ER.jpeg",
       type: "BASE DATOS",
       desc: "Mapeo centralizado NoSQL",
