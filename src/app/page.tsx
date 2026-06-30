@@ -9,6 +9,7 @@ import Methodology from "@/components/landing/Methodology";
 import AnalysisPhase from "@/components/landing/AnalysisPhase";
 import DesignPhase from "@/components/landing/DesignPhase";
 import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
+import BusinessProcess from "@/components/landing/BusinessProcess";
 import Conclusions from "@/components/landing/Conclusions";
 import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
@@ -144,10 +145,14 @@ export default function Home() {
           </section>
 
           <section className="p-10 md:p-32 bg-slate-50/30">
-            <Conclusions />
+            <BusinessProcess />
           </section>
 
           <section className="p-10 md:p-32 bg-white">
+            <Conclusions />
+          </section>
+
+          <section className="p-10 md:p-32 bg-slate-50/30">
             <Bibliography />
           </section>
 
