@@ -1,6 +1,15 @@
+
 'use client';
 
-import { QrCode, Smartphone, ArrowUpRight } from "lucide-react";
+import { Smartphone, ArrowUpRight, Play, Video } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function QRSection() {
   return (
@@ -35,9 +44,46 @@ export default function QRSection() {
           </div>
         </div>
         
-        <p className="text-2xl md:text-3xl text-gray-400 font-bold uppercase tracking-tight leading-snug">
-          ESCANEÉ PARA PROBAR EL <span className="text-white border-b-4 border-[#FF1E2D]">RECONOCIMIENTO FACIAL</span> EN TIEMPO REAL.
-        </p>
+        <div className="space-y-10">
+          <p className="text-2xl md:text-3xl text-gray-400 font-bold uppercase tracking-tight leading-snug">
+            ESCANEÉ PARA PROBAR EL <span className="text-white border-b-4 border-[#FF1E2D]">RECONOCIMIENTO FACIAL</span> EN TIEMPO REAL.
+          </p>
+
+          {/* Botón de Video Tutorial */}
+          <div className="flex justify-center">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="rounded-none border-2 border-[#FF1E2D] bg-transparent hover:bg-[#FF1E2D] text-white font-black uppercase tracking-widest px-8 py-6 md:px-12 md:py-10 h-auto text-base md:text-xl transition-all flex items-center gap-4 group shadow-[0_0_30px_rgba(255,30,45,0.1)] hover:shadow-[0_0_50px_rgba(255,30,45,0.3)]"
+                >
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF1E2D] group-hover:bg-white flex items-center justify-center transition-colors">
+                    <Play className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:text-[#FF1E2D] fill-current" />
+                  </div>
+                  VER VIDEO TUTORIAL
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl p-0 bg-black border-[#FF1E2D] border-2 md:border-4 overflow-hidden shadow-2xl">
+                <DialogHeader className="p-4 md:p-6 bg-[#1A1A1A] text-white border-b border-white/5">
+                  <DialogTitle className="text-base md:text-2xl font-black uppercase italic tracking-widest flex items-center gap-4">
+                    <Video className="w-6 h-6 md:w-8 md:h-8 text-[#FF1E2D]" />
+                    <span className="text-[#FF1E2D]">|</span> TUTORIAL DE REGISTRO
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="aspect-video w-full bg-black relative">
+                  <video 
+                    controls 
+                    className="w-full h-full"
+                    autoPlay={false}
+                  >
+                    <source src="/video/video.mp4" type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
+        </div>
         
         <div className="bg-white/5 px-10 py-4 text-white/40 text-xs font-black uppercase tracking-[0.8em] border border-white/10">
           SIBF-CAI V1.0 • SEGURIDAD BIOMÉTRICA
