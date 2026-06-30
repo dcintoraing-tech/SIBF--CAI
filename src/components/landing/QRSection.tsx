@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Smartphone, ArrowUpRight, Play, Video } from "lucide-react";
+import { Smartphone, ArrowUpRight, Play, Video, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -32,7 +32,7 @@ export default function QRSection() {
         </div>
       </div>
 
-      <div className="max-w-2xl space-y-12">
+      <div className="max-w-4xl w-full space-y-12">
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
           <div className="flex items-center gap-4 text-sm font-black text-white uppercase tracking-[0.2em]">
             <Smartphone className="w-8 h-8 text-[#FF1E2D]" />
@@ -49,25 +49,26 @@ export default function QRSection() {
             ESCANEÉ PARA PROBAR EL <span className="text-white border-b-4 border-[#FF1E2D]">RECONOCIMIENTO FACIAL</span> EN TIEMPO REAL.
           </p>
 
-          {/* Botón de Video Tutorial */}
-          <div className="flex justify-center">
+          {/* Contenedor de Botones de Video */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            {/* Botón de Video Tutorial */}
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
                   variant="outline" 
-                  className="rounded-none border-2 border-[#FF1E2D] bg-transparent hover:bg-[#FF1E2D] text-white font-black uppercase tracking-widest px-8 py-6 md:px-12 md:py-10 h-auto text-base md:text-xl transition-all flex items-center gap-4 group shadow-[0_0_30px_rgba(255,30,45,0.1)] hover:shadow-[0_0_50px_rgba(255,30,45,0.3)]"
+                  className="w-full sm:w-auto rounded-none border-2 border-[#FF1E2D] bg-transparent hover:bg-[#FF1E2D] text-white font-black uppercase tracking-widest px-8 py-6 md:px-10 md:py-8 h-auto text-sm md:text-lg transition-all flex items-center gap-4 group shadow-[0_0_30px_rgba(255,30,45,0.1)] hover:shadow-[0_0_50px_rgba(255,30,45,0.3)]"
                 >
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF1E2D] group-hover:bg-white flex items-center justify-center transition-colors">
-                    <Play className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:text-[#FF1E2D] fill-current" />
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FF1E2D] group-hover:bg-white flex items-center justify-center transition-colors">
+                    <Play className="w-4 h-4 md:w-5 md:h-5 text-white group-hover:text-[#FF1E2D] fill-current" />
                   </div>
-                  VER VIDEO TUTORIAL
+                  TUTORIAL DE REGISTRO
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-5xl p-0 bg-black border-[#FF1E2D] border-2 md:border-4 overflow-hidden shadow-2xl">
                 <DialogHeader className="p-4 md:p-6 bg-[#1A1A1A] text-white border-b border-white/5">
                   <DialogTitle className="text-base md:text-2xl font-black uppercase italic tracking-widest flex items-center gap-4">
                     <Video className="w-6 h-6 md:w-8 md:h-8 text-[#FF1E2D]" />
-                    <span className="text-[#FF1E2D]">|</span> TUTORIAL DE REGISTRO
+                    <span className="text-[#FF1E2D]">|</span> TUTORIAL DE ALTA
                   </DialogTitle>
                 </DialogHeader>
                 <div className="aspect-video w-full bg-black relative">
@@ -77,6 +78,39 @@ export default function QRSection() {
                     autoPlay={false}
                   >
                     <source src="/video/video.mp4" type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            {/* Botón de Video Demo Pase de Lista */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="w-full sm:w-auto rounded-none border-2 border-white/20 bg-transparent hover:bg-white hover:text-[#0A0A0A] text-white font-black uppercase tracking-widest px-8 py-6 md:px-10 md:py-8 h-auto text-sm md:text-lg transition-all flex items-center gap-4 group shadow-xl"
+                >
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 group-hover:bg-[#0A0A0A] flex items-center justify-center transition-colors">
+                    <ClipboardCheck className="w-4 h-4 md:w-5 md:h-5 text-white group-hover:text-white" />
+                  </div>
+                  DEMO PASE DE LISTA
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl p-0 bg-black border-white border-2 md:border-4 overflow-hidden shadow-2xl">
+                <DialogHeader className="p-4 md:p-6 bg-[#1A1A1A] text-white border-b border-white/5">
+                  <DialogTitle className="text-base md:text-2xl font-black uppercase italic tracking-widest flex items-center gap-4">
+                    <Video className="w-6 h-6 md:w-8 md:h-8 text-[#FF1E2D]" />
+                    <span className="text-[#FF1E2D]">|</span> DEMO PASE DE LISTA
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="aspect-video w-full bg-black relative">
+                  <video 
+                    controls 
+                    className="w-full h-full"
+                    autoPlay={false}
+                  >
+                    <source src="/video/video2.mp4" type="video/mp4" />
                     Tu navegador no soporta el elemento de video.
                   </video>
                 </div>
