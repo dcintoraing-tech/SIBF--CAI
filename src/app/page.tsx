@@ -13,6 +13,7 @@ import BusinessProcess from "@/components/landing/BusinessProcess";
 import Conclusions from "@/components/landing/Conclusions";
 import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
+import PresentationMode from "@/components/landing/PresentationMode";
 import { Smartphone, Maximize, Minimize, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -51,6 +52,21 @@ export default function Home() {
     }
   };
 
+  const sections = [
+    { id: "hero", title: "PORTADA", component: <Hero /> },
+    { id: "problema", title: "PLANTEAMIENTO DEL PROBLEMA", component: <ProblemAnalysis /> },
+    { id: "requerimientos", title: "ANÁLISIS DE REQUERIMIENTOS", component: <AnalysisPhase /> },
+    { id: "objetivos", title: "OBJETIVOS DEL PROYECTO", component: <Objectives /> },
+    { id: "justificacion", title: "JUSTIFICACIÓN TÉCNICA", component: <Justification /> },
+    { id: "metodologia", title: "METODOLOGÍA SCRUM", component: <Methodology /> },
+    { id: "diseno", title: "DISEÑO Y ARQUITECTURA", component: <DesignPhase /> },
+    { id: "desarrollo", title: "IMPLEMENTACIÓN Y STACK", component: <DevelopmentPhase /> },
+    { id: "negocio", title: "PROCESO DE NEGOCIO", component: <BusinessProcess /> },
+    { id: "conclusiones", title: "CONCLUSIONES FINALES", component: <Conclusions /> },
+    { id: "bibliografia", title: "BIBLIOGRAFÍA", component: <Bibliography /> },
+    { id: "qr", title: "DEMO INTERACTIVA", component: <div className="bg-[#0A0A0A] -m-6 md:-m-24 p-6 md:p-24"><QRSection /></div> },
+  ];
+
   if (showIntro) {
     return (
       <main className="h-screen w-screen bg-white flex flex-col items-center justify-center p-6 animate-in fade-in duration-1000">
@@ -83,20 +99,19 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-white font-sans overflow-x-hidden relative animate-in fade-in zoom-in-95 duration-1000">
+    <main className="min-h-screen bg-white font-sans overflow-hidden relative animate-in fade-in zoom-in-95 duration-1000">
       {/* Botón Global Fullscreen */}
-      <div className="fixed top-4 right-4 md:top-6 md:left-6 z-[150]">
+      <div className="fixed top-4 right-4 z-[150]">
         <Button
           variant="outline"
           size="icon"
           onClick={toggleFullscreen}
           className="bg-white/80 hover:bg-[#FF1E2D] hover:text-white backdrop-blur-md transition-all rounded-none w-10 h-10 md:w-12 md:h-12 shadow-xl border border-gray-100 group"
-          title={isFullscreen ? "Salir" : "Pantalla Completa"}
         >
           {isFullscreen ? (
-            <Minimize className="w-5 h-5 md:w-6 md:h-6 transition-transform group-active:scale-90" />
+            <Minimize className="w-5 h-5 md:w-6 md:h-6" />
           ) : (
-            <Maximize className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:scale-110 group-active:scale-90" />
+            <Maximize className="w-5 h-5 md:w-6 md:h-6" />
           )}
         </Button>
       </div>
@@ -112,75 +127,7 @@ export default function Home() {
         </div>
       )}
 
-      <div className="max-w-[1600px] mx-auto bg-white shadow-2xl overflow-hidden">
-        <Hero />
-        
-        <div className="divide-y divide-gray-100">
-          <section className="p-6 md:p-32 bg-white">
-            <ProblemAnalysis />
-          </section>
-
-          <section className="p-6 md:p-32 bg-slate-50/50">
-            <AnalysisPhase />
-          </section>
-
-          <section className="p-6 md:p-32 bg-white">
-            <Objectives />
-          </section>
-          
-          <section className="p-6 md:p-32 bg-slate-50/50">
-            <Justification />
-          </section>
-
-          <section className="p-6 md:p-32 bg-white">
-            <Methodology />
-          </section>
-          
-          <section className="p-6 md:p-32 bg-slate-50/50">
-            <DesignPhase />
-          </section>
-
-          <section className="p-6 md:p-32 bg-white">
-            <DevelopmentPhase />
-          </section>
-
-          <section className="p-6 md:p-32 bg-slate-50/30">
-            <BusinessProcess />
-          </section>
-
-          <section className="p-6 md:p-32 bg-white">
-            <Conclusions />
-          </section>
-
-          <section className="p-6 md:p-32 bg-slate-50/30">
-            <Bibliography />
-          </section>
-
-          <section className="p-6 md:p-32 bg-[#0A0A0A]">
-            <QRSection />
-          </section>
-        </div>
-
-        <footer className="bg-[#1A1A1A] py-12 px-6 md:py-16 md:px-12 text-white border-t border-white/5">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12">
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
-              <img 
-                src="/images/logo.png" 
-                alt="Logo" 
-                className="h-10 md:h-16 w-auto object-contain brightness-0 invert" 
-              />
-              <div className="text-white">
-                <h2 className="text-xl md:text-3xl font-black tracking-widest text-white leading-tight uppercase italic">
-                  SIBF<span className="text-[#FF1E2D]">-CAI</span>
-                </h2>
-              </div>
-            </div>
-            <div className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-center md:text-right leading-loose">
-              &copy; {new Date().getFullYear()} SIBF-CAI • PROYECTO EJECUTIVO
-            </div>
-          </div>
-        </footer>
-      </div>
+      <PresentationMode sections={sections} onClose={() => setShowIntro(true)} />
     </main>
   );
 }
