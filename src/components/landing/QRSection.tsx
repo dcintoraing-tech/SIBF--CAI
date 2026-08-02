@@ -42,7 +42,7 @@ export default function QRSection() {
                 VER TUTORIAL REGISTRO
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-[90vw] md:max-w-5xl p-0 bg-black border-4 border-[#FF1E2D] overflow-hidden z-[500] rounded-[30px] shadow-2xl">
+            <DialogContent className="max-w-[95vw] md:max-w-5xl p-0 bg-black border-4 border-[#FF1E2D] overflow-hidden z-[500] rounded-[30px] shadow-2xl">
               <DialogHeader className="p-6 bg-[#1A1A1A] text-white border-b border-[#FF1E2D]/20">
                 <DialogTitle className="text-xl md:text-3xl font-black uppercase italic flex items-center gap-6">
                   <Video className="w-8 h-8 text-[#FF1E2D]" /> TUTORIAL DE ALTA
@@ -64,7 +64,7 @@ export default function QRSection() {
                 DEMO PASE LISTA
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-[90vw] md:max-w-5xl p-0 bg-black border-4 border-[#2B2B2B] overflow-hidden z-[500] rounded-[30px] shadow-2xl">
+            <DialogContent className="max-w-[95vw] md:max-w-5xl p-0 bg-black border-4 border-[#2B2B2B] overflow-hidden z-[500] rounded-[30px] shadow-2xl">
               <DialogHeader className="p-6 bg-[#1A1A1A] text-white border-b border-white/10">
                 <DialogTitle className="text-xl md:text-3xl font-black uppercase italic flex items-center gap-6">
                   <Video className="w-8 h-8 text-[#FF1E2D]" /> DEMOSTRACIÓN PASE LISTA

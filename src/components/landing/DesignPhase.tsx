@@ -17,6 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
 export default function DesignPhase() {
   const uxImages = [
@@ -31,8 +32,9 @@ export default function DesignPhase() {
     { name: "ARQUITECTURA INFO.", img: "/images/ar.png" },
   ];
 
+  // Auto-play cada 1 segundo (1000ms) y sin detenerse al interactuar
   const plugin = React.useRef(
-    Autoplay({ delay: 1000, stopOnInteraction: false })
+    Autoplay({ delay: 1000, stopOnInteraction: false, stopOnMouseEnter: false })
   );
 
   const renderCard = (item: any, i: number) => {
@@ -50,7 +52,7 @@ export default function DesignPhase() {
             <span className="text-[10px] md:text-sm font-black uppercase text-[#2B2B2B] italic text-center truncate w-full">{item.name}</span>
           </button>
         </DialogTrigger>
-        <DialogContent className="max-w-[95vw] w-full h-[90vh] p-0 overflow-hidden flex flex-col bg-white border-none shadow-2xl z-[400]">
+        <DialogContent className="max-w-[95vw] w-full h-[90vh] p-0 overflow-hidden flex flex-col bg-white border-none shadow-2xl z-[500]">
           <DialogHeader className="p-4 bg-[#2B2B2B] text-white border-b-4 border-[#FF1E2D]">
             <DialogTitle className="text-xl md:text-3xl font-black uppercase italic tracking-widest text-center">
               {item.name}
@@ -104,7 +106,7 @@ export default function DesignPhase() {
                 </div>
               </button>
             </DialogTrigger>
-            <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 overflow-hidden flex flex-col bg-white border-none z-[400] shadow-2xl">
+            <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 overflow-hidden flex flex-col bg-white border-none z-[500] shadow-2xl">
               <DialogHeader className="p-4 bg-[#2B2B2B] text-white border-b-4 border-[#FF1E2D]">
                 <DialogTitle className="text-xl md:text-3xl font-black uppercase italic text-center">UX/UI PROTOTYPES - SIBF-CAI</DialogTitle>
               </DialogHeader>
@@ -115,8 +117,6 @@ export default function DesignPhase() {
                     loop: true,
                   }}
                   className="w-full h-full flex items-center justify-center"
-                  onMouseEnter={plugin.current.stop}
-                  onMouseLeave={plugin.current.reset}
                 >
                   <CarouselContent className="h-full">
                     {uxImages.map((img, i) => (
@@ -124,15 +124,18 @@ export default function DesignPhase() {
                         <div className="relative w-full h-full flex items-center justify-center bg-white">
                           <img 
                             src={img} 
-                            className="max-h-[85vh] w-auto max-w-full object-contain shadow-2xl rounded-2xl border-2 border-slate-100" 
+                            className={cn(
+                              "h-[80vh] md:h-[85vh] w-auto max-w-full object-contain shadow-2xl rounded-2xl border-2 border-slate-100 transition-transform duration-300",
+                              i === 0 && "rotate-90" // Rotar la primera imagen hacia la derecha
+                            )} 
                             alt={`Interface ${i + 1}`} 
                           />
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="left-4 md:left-10 h-16 w-16 bg-white/80 border-2 border-slate-200 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-2xl rounded-full z-50" />
-                  <CarouselNext className="right-4 md:right-10 h-16 w-16 bg-white/80 border-2 border-slate-200 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-2xl rounded-full z-50" />
+                  <CarouselPrevious className="left-4 md:left-10 h-16 w-16 bg-white/80 border-2 border-slate-200 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-2xl rounded-full z-[600]" />
+                  <CarouselNext className="right-4 md:right-10 h-16 w-16 bg-white/80 border-2 border-slate-200 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-2xl rounded-full z-[600]" />
                 </Carousel>
               </div>
             </DialogContent>

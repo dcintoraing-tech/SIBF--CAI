@@ -42,6 +42,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
       {/* Cabecera Totalmente Transparente */}
       <div className="absolute top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-[200] pointer-events-none">
         <div className="pointer-events-auto opacity-70 hover:opacity-100 transition-opacity">
+          {/* Logo institucional limpio y transparente */}
           <img src="/images/logo.png" alt="Logo" className="h-8 md:h-12 w-auto object-contain" />
         </div>
         <div className="pointer-events-auto">
@@ -49,14 +50,14 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
             variant="ghost" 
             size="icon" 
             onClick={onClose} 
-            className="hover:bg-red-50 text-[#2B2B2B] transition-all w-10 h-10 md:w-14 md:h-14 group rounded-full border border-black/5 bg-white/5 backdrop-blur-sm"
+            className="hover:bg-red-50 text-[#2B2B2B] transition-all w-10 h-10 md:w-14 md:h-14 group rounded-full border border-black/5 bg-white/5 backdrop-blur-sm shadow-xl"
           >
             <X className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-90 transition-transform duration-300" />
           </Button>
         </div>
       </div>
 
-      {/* Área de Visualización Centrada con Zonas de Seguridad */}
+      {/* Área de Visualización con Zonas de Seguridad para evitar encimes */}
       <div className="flex-1 relative flex items-center justify-center px-6 md:px-16 pt-24 pb-32">
         <div 
           key={currentSlide} 
@@ -66,7 +67,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
         </div>
       </div>
 
-      {/* Navegación Inferior Transparente */}
+      {/* Navegación Inferior 100% Transparente */}
       <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 z-[200] pointer-events-none">
         <div className="flex justify-between items-center pointer-events-auto max-w-[1400px] mx-auto">
           <div className="flex gap-4">
@@ -90,11 +91,11 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
             </Button>
           </div>
 
-          <div className="text-[9px] md:text-xs font-black text-[#FF1E2D] uppercase tracking-widest bg-white/10 backdrop-blur-xl px-6 py-2 md:px-8 md:py-3 rounded-full border border-black/5 shadow-xl">
+          <div className="text-[9px] md:text-xs font-black text-[#FF1E2D] uppercase tracking-widest bg-white/20 backdrop-blur-xl px-6 py-2 md:px-8 md:py-3 rounded-full border border-black/5 shadow-2xl">
             {currentSlide + 1} <span className="text-[#2B2B2B]/30 mx-2">/</span> {sections.length}
           </div>
         </div>
-        <div className="mt-6 px-10 opacity-10 max-w-[1400px] mx-auto">
+        <div className="mt-6 px-10 opacity-20 max-w-[1400px] mx-auto">
           <Progress value={progress} className="h-0.5 bg-slate-300" />
         </div>
       </div>
