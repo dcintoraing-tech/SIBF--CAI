@@ -39,10 +39,10 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
 
   return (
     <div className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden animate-in fade-in duration-500">
-      {/* Cabecera Minimalista con solo Logo */}
+      {/* Cabecera Minimalista con Logo Transparente */}
       <div className="absolute top-0 left-0 w-full p-2 md:p-6 flex justify-between items-center z-50 pointer-events-none">
-        <div className="bg-white/80 backdrop-blur-md px-4 py-3 shadow-xl border border-gray-100 pointer-events-auto">
-          <img src="/images/logo.png" alt="Logo" className="h-8 md:h-14 w-auto object-contain" />
+        <div className="bg-transparent px-4 py-3 pointer-events-auto">
+          <img src="/images/logo.png" alt="Logo" className="h-8 md:h-16 w-auto object-contain" />
         </div>
         
         <Button 
@@ -55,7 +55,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
         </Button>
       </div>
 
-      {/* Área Principal - Ocupa todo el espacio sin scroll */}
+      {/* Área Principal */}
       <div className="flex-1 relative bg-white overflow-hidden">
         <div 
           key={currentSlide} 
@@ -69,7 +69,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
         </div>
       </div>
 
-      {/* Navegación Inferior Compacta */}
+      {/* Navegación Inferior */}
       <div className="w-full bg-white border-t border-gray-100 p-2 md:p-6 flex flex-col gap-3 z-50 shrink-0">
         <div className="w-full flex justify-between items-center px-4">
           <div className="flex items-center gap-3">
