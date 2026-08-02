@@ -39,10 +39,10 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
 
   return (
     <div className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden animate-in fade-in duration-500">
-      {/* Cabecera con Logo Transparente */}
-      <div className="absolute top-0 left-0 w-full p-2 md:p-6 flex justify-between items-center z-50 pointer-events-none">
-        <div className="bg-transparent px-4 py-3 pointer-events-auto">
-          <img src="/images/logo.png" alt="Logo" className="h-8 md:h-14 w-auto object-contain" />
+      {/* Cabecera con Logo - Ahora 100% Transparente y sin tapar */}
+      <div className="absolute top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-50 pointer-events-none">
+        <div className="bg-transparent pointer-events-auto">
+          <img src="/images/logo.png" alt="Logo" className="h-10 md:h-16 w-auto object-contain" />
         </div>
         
         <div className="flex gap-2 pointer-events-auto">
@@ -58,12 +58,12 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
       </div>
 
       {/* Área Principal - Diapositiva */}
-      <div className="flex-1 relative bg-white overflow-hidden">
+      <div className="flex-1 relative bg-white overflow-hidden flex items-center justify-center">
         <div 
           key={currentSlide} 
           className="w-full h-full animate-in fade-in slide-in-from-right-5 duration-700 flex flex-col items-center justify-center"
         >
-          <div className="w-full h-full max-w-[1800px] p-6 md:p-12 lg:p-20 flex flex-col justify-center items-stretch">
+          <div className="w-full h-full max-w-[1800px] p-6 md:p-12 lg:p-20 flex flex-col justify-center items-stretch overflow-hidden">
             {sections[currentSlide].component}
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
               variant="outline" 
               onClick={prevSlide} 
               disabled={currentSlide === 0}
-              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white h-8 md:h-12 px-4 md:px-6 border border-gray-100 font-black uppercase tracking-widest text-[8px] md:text-[10px] flex gap-2"
+              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white h-8 md:h-12 px-4 md:px-6 border-2 border-[#2B2B2B] font-black uppercase tracking-widest text-[8px] md:text-[10px] flex gap-2 rounded-none"
             >
               <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
               <span className="hidden sm:inline">ANTERIOR</span>
@@ -86,7 +86,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
               variant="outline" 
               onClick={nextSlide} 
               disabled={currentSlide === sections.length - 1}
-              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white h-8 md:h-12 px-4 md:px-6 border border-gray-100 font-black uppercase tracking-widest text-[8px] md:text-[10px] flex gap-2"
+              className="text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white h-8 md:h-12 px-4 md:px-6 border-2 border-[#2B2B2B] font-black uppercase tracking-widest text-[8px] md:text-[10px] flex gap-2 rounded-none"
             >
               <span className="hidden sm:inline">SIGUIENTE</span>
               <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
@@ -99,12 +99,12 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
             </h3>
           </div>
 
-          <div className="text-[8px] md:text-[10px] font-black text-[#FF1E2D] uppercase tracking-[0.4em] bg-slate-50 px-3 py-1 border border-gray-100">
+          <div className="text-[8px] md:text-[10px] font-black text-[#FF1E2D] uppercase tracking-[0.4em] bg-slate-50 px-3 py-1 border-2 border-[#2B2B2B]">
             {currentSlide + 1} <span className="text-gray-300 mx-1">/</span> {sections.length}
           </div>
         </div>
         <div className="w-full px-4">
-          <Progress value={progress} className="h-1 bg-gray-100 rounded-none">
+          <Progress value={progress} className="h-2 bg-gray-100 rounded-none border border-gray-200">
             <div className="h-full red-gradient transition-all duration-500" style={{ width: `${progress}%` }} />
           </Progress>
         </div>
