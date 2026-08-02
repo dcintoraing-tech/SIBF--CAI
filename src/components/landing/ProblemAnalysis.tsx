@@ -1,3 +1,4 @@
+
 'use client';
 
 import { History, ShieldAlert, FileX, Clock, CircleAlert, TrendingUp } from "lucide-react";
@@ -12,7 +13,6 @@ export default function ProblemAnalysis() {
 
   return (
     <div id="analisis-problema" className="space-y-12 md:space-y-32">
-      {/* PÁGINA 1: EVOLUCIÓN Y CONTEXTO */}
       <div className="min-h-[50vh] md:min-h-[70vh] flex flex-col justify-center space-y-8 md:space-y-20">
         <div className="space-y-2 md:space-y-5">
           <span className="text-[#FF1E2D] font-black text-[10px] md:text-lg tracking-[0.4em] uppercase">ANTECEDENTES</span>
@@ -49,7 +49,6 @@ export default function ProblemAnalysis() {
         </div>
       </div>
 
-      {/* PÁGINA 2: EL DESAFÍO CRÍTICO */}
       <div className="min-h-[50vh] md:min-h-[70vh] flex flex-col justify-center space-y-8 md:space-y-20 border-t border-gray-100 pt-12 md:pt-32">
         <div className="space-y-2 md:space-y-5">
           <span className="text-[#FF1E2D] font-black text-[10px] md:text-lg tracking-[0.4em] uppercase">EL DESAFÍO</span>
@@ -61,7 +60,7 @@ export default function ProblemAnalysis() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-20 items-center">
           <div className="lg:col-span-6 space-y-8 md:space-y-14">
             <p className="text-lg md:text-4xl text-gray-600 leading-[1.2] font-medium">
-              La falta de integridad nace de sistemas que permiten la <span className="text-[#2B2B2B] font-black text-2xl md:text-6xl">SUPLANTACIÓN</span> de identidad.
+              La falta de integridad nace de sistemas que permiten la <span className="text-[#2B2B2B] font-black text-xl md:text-6xl">SUPLANTACIÓN</span> de identidad.
             </p>
             <div className="p-8 md:p-12 bg-[#2B2B2B] border-b-[8px] md:border-b-[16px] border-[#FF1E2D] shadow-xl transform -rotate-1">
               <p className="text-xl md:text-5xl font-black text-white uppercase italic leading-[0.85] tracking-tighter text-center">

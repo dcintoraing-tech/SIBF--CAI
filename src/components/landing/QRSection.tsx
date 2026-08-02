@@ -46,12 +46,10 @@ export default function QRSection() {
         
         <div className="space-y-10">
           <p className="text-2xl md:text-3xl text-gray-400 font-bold uppercase tracking-tight leading-snug">
-            ESCANEÉ PARA PROBAR EL <span className="text-white border-b-4 border-[#FF1E2D]">RECONOCIMIENTO FACIAL</span> EN TIEMPO REAL.
+            ESCANEÉ PARA PROBAR EL <span className="text-white font-black text-3xl md:text-6xl px-2">RECONOCIMIENTO FACIAL</span> EN TIEMPO REAL.
           </p>
 
-          {/* Contenedor de Botones de Video */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            {/* Botón de Video Tutorial */}
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
@@ -84,7 +82,6 @@ export default function QRSection() {
               </DialogContent>
             </Dialog>
 
-            {/* Botón de Video Demo Pase de Lista */}
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
