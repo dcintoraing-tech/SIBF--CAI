@@ -78,8 +78,6 @@ export default function Methodology() {
     if (currentStep > 0) setCurrentStep(currentStep - 1);
   };
 
-  const ActiveIcon = sprints[currentStep].icon;
-
   return (
     <div className="w-full h-full flex flex-col justify-center space-y-6 max-w-[1200px] mx-auto overflow-hidden animate-in fade-in duration-700">
       <div className="space-y-1">
@@ -126,13 +124,19 @@ export default function Methodology() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-[40px] border border-slate-50 relative overflow-hidden min-h-[450px]">
         <div 
           key={currentStep}
-          className="lg:col-span-8 space-y-6 flex flex-col justify-center animate-in slide-in-from-right-10 duration-500"
+          className="lg:col-span-12 space-y-6 flex flex-col justify-center animate-in slide-in-from-right-10 duration-500"
         >
-          <div className="flex items-center gap-6">
-            <div className="bg-[#FF1E2D] text-white px-6 py-2 text-xs md:text-sm font-black uppercase tracking-[0.3em] italic shadow-lg rounded-full">
-              {sprints[currentStep].phase}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-6">
+              <div className="bg-[#FF1E2D] text-white px-6 py-2 text-xs md:text-sm font-black uppercase tracking-[0.3em] italic shadow-lg rounded-full">
+                {sprints[currentStep].phase}
+              </div>
+              <h3 className="text-2xl md:text-4xl font-black text-[#2B2B2B] italic uppercase">{sprints[currentStep].name}</h3>
             </div>
-            <h3 className="text-2xl md:text-4xl font-black text-[#2B2B2B] italic uppercase">{sprints[currentStep].name}</h3>
+            <div className="flex gap-4">
+               <Button onClick={handlePrev} disabled={currentStep === 0} variant="outline" className="rounded-full h-12 w-12 border-2 border-[#2B2B2B]"><ChevronLeft /></Button>
+               <Button onClick={handleNext} disabled={currentStep === sprints.length - 1} className="bg-[#FF1E2D] rounded-full h-12 w-12"><ChevronRight /></Button>
+            </div>
           </div>
           
           <p className="text-xl md:text-3xl text-[#2B2B2B] font-black uppercase leading-[1.1] italic border-l-[10px] border-[#FF1E2D] pl-8 py-2">
@@ -164,31 +168,6 @@ export default function Methodology() {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-
-        {/* Sidebar Controls */}
-        <div className="hidden lg:col-span-4 lg:flex flex-col justify-center items-center bg-slate-50 rounded-[30px] p-8 border border-slate-100">
-          <div className="relative group">
-            <div className="absolute inset-0 bg-[#FF1E2D]/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-            <ActiveIcon className="w-24 h-24 md:w-32 md:h-32 text-[#2B2B2B] relative z-10 animate-pulse" />
-          </div>
-          <div className="flex gap-6 mt-12">
-            <Button 
-              onClick={handlePrev} 
-              disabled={currentStep === 0}
-              variant="outline"
-              className="rounded-full border-2 border-[#2B2B2B] text-[#2B2B2B] hover:bg-[#2B2B2B] hover:text-white h-14 w-14 shadow-lg transition-all active:scale-90"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </Button>
-            <Button 
-              onClick={handleNext} 
-              disabled={currentStep === sprints.length - 1}
-              className="bg-[#FF1E2D] hover:bg-[#2B2B2B] text-white rounded-full h-14 w-14 shadow-2xl transition-all active:scale-90"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </Button>
           </div>
         </div>
       </div>

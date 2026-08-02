@@ -104,32 +104,32 @@ export default function DesignPhase() {
                 </div>
               </button>
             </DialogTrigger>
-            <DialogContent className="max-w-[95vw] w-full h-[90vh] p-0 overflow-hidden flex flex-col bg-white border-none z-[400]">
+            <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 overflow-hidden flex flex-col bg-white border-none z-[400] shadow-2xl">
               <DialogHeader className="p-4 bg-[#2B2B2B] text-white border-b-4 border-[#FF1E2D]">
                 <DialogTitle className="text-xl md:text-3xl font-black uppercase italic text-center">UX/UI PROTOTYPES - SIBF-CAI</DialogTitle>
               </DialogHeader>
-              <div className="flex-1 flex items-center justify-center bg-white p-6 md:p-12 overflow-hidden">
+              <div className="flex-1 flex items-center justify-center bg-white p-4 md:p-8 overflow-hidden">
                 <Carousel 
                   plugins={[plugin.current]}
-                  className="w-full max-w-lg mx-auto"
+                  className="w-full h-full flex items-center justify-center"
                   onMouseEnter={plugin.current.stop}
                   onMouseLeave={plugin.current.reset}
                 >
-                  <CarouselContent>
+                  <CarouselContent className="h-full">
                     {uxImages.map((img, i) => (
-                      <CarouselItem key={i} className="flex justify-center items-center">
-                        <div className="relative rounded-[30px] overflow-hidden shadow-2xl border-4 border-slate-100 bg-slate-50 aspect-[9/16] h-[70vh]">
+                      <CarouselItem key={i} className="flex justify-center items-center h-full">
+                        <div className="relative w-full h-full flex items-center justify-center bg-white">
                           <img 
                             src={img} 
-                            className="w-full h-full object-contain" 
+                            className="max-h-[80vh] w-auto max-w-full object-contain shadow-2xl rounded-2xl border-2 border-slate-100" 
                             alt={`Interface ${i + 1}`} 
                           />
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="left-[-20px] md:left-[-80px] h-14 w-14 bg-white border-2 border-slate-100 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-xl" />
-                  <CarouselNext className="right-[-20px] md:right-[-80px] h-14 w-14 bg-white border-2 border-slate-100 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-xl" />
+                  <CarouselPrevious className="left-4 md:left-10 h-16 w-16 bg-white/80 border-2 border-slate-200 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-2xl rounded-full z-50" />
+                  <CarouselNext className="right-4 md:right-10 h-16 w-16 bg-white/80 border-2 border-slate-200 text-[#2B2B2B] hover:bg-[#FF1E2D] hover:text-white transition-all shadow-2xl rounded-full z-50" />
                 </Carousel>
               </div>
             </DialogContent>

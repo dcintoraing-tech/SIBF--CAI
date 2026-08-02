@@ -42,14 +42,14 @@ export default function QRSection() {
                 VER TUTORIAL REGISTRO
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-5xl p-0 bg-black border-4 border-[#FF1E2D] overflow-hidden z-[400] rounded-[30px]">
+            <DialogContent className="max-w-[90vw] md:max-w-5xl p-0 bg-black border-4 border-[#FF1E2D] overflow-hidden z-[500] rounded-[30px] shadow-2xl">
               <DialogHeader className="p-6 bg-[#1A1A1A] text-white border-b border-[#FF1E2D]/20">
                 <DialogTitle className="text-xl md:text-3xl font-black uppercase italic flex items-center gap-6">
                   <Video className="w-8 h-8 text-[#FF1E2D]" /> TUTORIAL DE ALTA
                 </DialogTitle>
               </DialogHeader>
-              <div className="aspect-video w-full">
-                <video controls className="w-full h-full" src="/video/video.mp4" autoPlay />
+              <div className="aspect-video w-full flex items-center justify-center bg-black">
+                <video controls className="w-full h-full max-h-[70vh]" src="/video/video.mp4" autoPlay />
               </div>
             </DialogContent>
           </Dialog>
@@ -64,14 +64,14 @@ export default function QRSection() {
                 DEMO PASE LISTA
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-5xl p-0 bg-black border-4 border-[#2B2B2B] overflow-hidden z-[400] rounded-[30px]">
+            <DialogContent className="max-w-[90vw] md:max-w-5xl p-0 bg-black border-4 border-[#2B2B2B] overflow-hidden z-[500] rounded-[30px] shadow-2xl">
               <DialogHeader className="p-6 bg-[#1A1A1A] text-white border-b border-white/10">
                 <DialogTitle className="text-xl md:text-3xl font-black uppercase italic flex items-center gap-6">
                   <Video className="w-8 h-8 text-[#FF1E2D]" /> DEMOSTRACIÓN PASE LISTA
                 </DialogTitle>
               </DialogHeader>
-              <div className="aspect-video w-full">
-                <video controls className="w-full h-full" src="/video/video2.mp4" autoPlay />
+              <div className="aspect-video w-full flex items-center justify-center bg-black">
+                <video controls className="w-full h-full max-h-[70vh]" src="/video/video2.mp4" autoPlay />
               </div>
             </DialogContent>
           </Dialog>
