@@ -8,68 +8,40 @@ import {
 } from "lucide-react";
 
 const specificObjectives = [
-  { 
-    icon: Scan, 
-    title: "BIOMETRÍA", 
-    desc: "IDENTIFICACIÓN FACIAL SEGURA." 
-  },
-  { 
-    icon: CircleCheckBig, 
-    title: "AUTOMATIZACIÓN", 
-    desc: "MARCADO EFICIENTE." 
-  },
-  { 
-    icon: Database, 
-    title: "CENTRALIZACIÓN", 
-    desc: "BASE DE DATOS ÚNICA." 
-  },
-  { 
-    icon: FileSpreadsheet, 
-    title: "REPORTES", 
-    desc: "INFORMES EN TIEMPO REAL." 
-  },
+  { icon: Scan, title: "BIOMETRÍA", desc: "IDENTIFICACIÓN SEGURA." },
+  { icon: CircleCheckBig, title: "AUTOMATIZACIÓN", desc: "MARCADO EFICIENTE." },
+  { icon: Database, title: "CENTRALIZACIÓN", desc: "BASE DE DATOS ÚNICA." },
+  { icon: FileSpreadsheet, title: "REPORTES", desc: "INFORMES TIEMPO REAL." },
 ];
 
 export default function Objectives() {
   return (
-    <div id="objetivos" className="space-y-16 md:space-y-24">
-      {/* OBJETIVO GENERAL */}
-      <div className="flex flex-col justify-center space-y-8 md:space-y-16">
-        <div className="space-y-4">
-          <span className="text-[#FF1E2D] font-black text-lg md:text-xl tracking-[0.4em] uppercase">OBJETIVOS</span>
-          <h2 className="text-4xl md:text-8xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">MISIÓN Y ALCANCE</h2>
-        </div>
-
-        <div className="bg-white border-2 border-gray-100 p-8 md:p-20 text-center shadow-2xl border-l-[12px] md:border-l-[24px] border-[#FF1E2D] relative overflow-hidden animate-executive-pulse">
-          <div className="absolute top-0 right-0 w-24 h-24 md:w-48 md:h-48 bg-[#FF1E2D]/5 -mr-12 -mt-12 md:-mr-24 md:-mt-24 rotate-45 animate-glow-pulse" />
-          <h4 className="text-sm md:text-xl font-black text-[#FF1E2D] uppercase tracking-[0.6em] md:tracking-[0.8em] mb-6 md:mb-12 border-b-2 border-gray-100 pb-4 inline-block">OBJETIVO GENERAL</h4>
-          <p className="text-xl md:text-5xl font-medium text-gray-700 leading-[1.1] italic max-w-6xl mx-auto">
-            "Desarrollar un sistema de información para la <strong>gestión de asistencia</strong> basado en <strong>reconocimiento facial</strong> que permita identificar a las personas y registrar de forma automática la hora de entrada, pase de lista y salida, optimizando el registro y la <strong>gestión de la asistencia institucional</strong>."
-          </p>
-        </div>
+    <div className="w-full h-full flex flex-col justify-center space-y-4 md:space-y-10">
+      <div className="space-y-2">
+        <span className="text-[#FF1E2D] font-black text-[10px] md:text-lg tracking-[0.4em] uppercase">OBJETIVOS</span>
+        <h2 className="text-2xl md:text-6xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">MISIÓN Y ALCANCE</h2>
       </div>
 
-      {/* OBJETIVOS ESPECÍFICOS */}
-      <div className="space-y-8 md:space-y-16">
-        <div className="flex items-center gap-4 md:gap-8">
-          <div className="h-[2px] flex-1 bg-gray-100" />
-          <h4 className="text-sm md:text-xl font-black text-gray-400 uppercase tracking-[0.3em] md:tracking-[0.5em] whitespace-nowrap">ESPECÍFICOS</h4>
-          <div className="h-[2px] flex-1 bg-gray-100" />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
-          {specificObjectives.map((obj, index) => (
-            <div key={index} className="bg-white p-8 md:p-10 border-b-[8px] md:border-b-[12px] border-transparent shadow-2xl text-center flex flex-col items-center justify-center min-h-[250px] md:min-h-[300px] animate-executive-pulse" style={{ animationDelay: `${index * 500}ms` }}>
-              <div className="w-16 h-16 md:w-20 md:h-20 red-gradient rounded-full flex items-center justify-center mb-6 md:mb-8 shadow-xl shadow-red-500/20">
-                <obj.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-black text-[#2B2B2B] mb-4 uppercase tracking-tighter">{obj.title}</h3>
-              <p className="text-sm md:text-lg text-gray-500 font-black uppercase tracking-widest leading-tight">
-                {obj.desc}
-              </p>
+      <div className="bg-white border border-gray-100 p-4 md:p-10 shadow-lg border-l-[8px] md:border-l-[16px] border-[#FF1E2D] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-16 h-16 bg-[#FF1E2D]/5 -mr-8 -mt-8 rotate-45" />
+        <h4 className="text-[8px] md:text-xs font-black text-[#FF1E2D] uppercase tracking-[0.6em] mb-2 border-b border-gray-100 pb-2 inline-block">OBJETIVO GENERAL</h4>
+        <p className="text-sm md:text-4xl font-medium text-gray-700 leading-tight italic max-w-5xl">
+          "Desarrollar un sistema de información para la <strong>gestión de asistencia</strong> basado en <strong>reconocimiento facial</strong> que permita registrar de forma automática, optimizando la <strong>gestión institucional</strong>."
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
+        {specificObjectives.map((obj, index) => (
+          <div key={index} className="bg-white p-4 md:p-8 border-b-[4px] md:border-b-[8px] border-gray-100 shadow-md text-center flex flex-col items-center justify-center space-y-2">
+            <div className="w-10 h-10 md:w-14 md:h-14 red-gradient rounded-full flex items-center justify-center shadow-lg">
+              <obj.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
             </div>
-          ))}
-        </div>
+            <h3 className="text-[10px] md:text-lg font-black text-[#2B2B2B] uppercase tracking-tighter">{obj.title}</h3>
+            <p className="text-[7px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-none">
+              {obj.desc}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

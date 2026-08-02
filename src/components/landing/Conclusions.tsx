@@ -4,38 +4,38 @@ import { Award, Target, Rocket } from "lucide-react";
 
 export default function Conclusions() {
   return (
-    <div id="conclusiones" className="space-y-16 md:space-y-24">
-      <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-lg md:text-xl tracking-[0.4em] uppercase">CONCLUSIONES</span>
-        <h2 className="text-4xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">CIERRE</h2>
+    <div className="w-full h-full flex flex-col justify-center space-y-6 md:space-y-16">
+      <div className="space-y-2">
+        <span className="text-[#FF1E2D] font-black text-[10px] md:text-lg tracking-[0.4em] uppercase">CONCLUSIONES</span>
+        <h2 className="text-3xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">CIERRE</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
-        <div className="space-y-4 md:space-y-8">
-          <Award className="w-16 h-16 md:w-24 md:h-24 text-[#FF1E2D]" />
-          <h3 className="text-2xl md:text-4xl font-black uppercase italic">ÉXITO TÉCNICO</h3>
-          <p className="text-base md:text-xl text-gray-500 font-bold uppercase leading-relaxed">
-            Se logró integrar IA con una precisión del 99%, eliminando la dependencia de hardware costoso.
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
+        <div className="space-y-2 md:space-y-6 text-center md:text-left">
+          <Award className="w-8 h-8 md:w-16 md:h-16 text-[#FF1E2D] mx-auto md:mx-0" />
+          <h3 className="text-lg md:text-3xl font-black uppercase italic">ÉXITO TÉCNICO</h3>
+          <p className="text-[10px] md:text-xl text-gray-500 font-bold uppercase leading-tight">
+            Se logró integrar IA con una precisión del 99%, eliminando hardware costoso.
           </p>
         </div>
-        <div className="space-y-4 md:space-y-8">
-          <Target className="w-16 h-16 md:w-24 md:h-24 text-[#FF1E2D]" />
-          <h3 className="text-2xl md:text-4xl font-black uppercase italic">IMPACTO DIRECTO</h3>
-          <p className="text-base md:text-xl text-gray-500 font-bold uppercase leading-relaxed">
-            La automatización reduce el tiempo de registro en un 85% y garantiza la veracidad total.
+        <div className="space-y-2 md:space-y-6 text-center md:text-left">
+          <Target className="w-8 h-8 md:w-16 md:h-16 text-[#FF1E2D] mx-auto md:mx-0" />
+          <h3 className="text-lg md:text-3xl font-black uppercase italic">IMPACTO</h3>
+          <p className="text-[10px] md:text-xl text-gray-500 font-bold uppercase leading-tight">
+            La automatización reduce el tiempo de registro en un 85% y garantiza veracidad.
           </p>
         </div>
-        <div className="space-y-4 md:space-y-8">
-          <Rocket className="w-16 h-16 md:w-24 md:h-24 text-[#FF1E2D]" />
-          <h3 className="text-2xl md:text-4xl font-black uppercase italic">ESCALABILIDAD</h3>
-          <p className="text-base md:text-xl text-gray-500 font-bold uppercase leading-relaxed">
-            Arquitectura escalable preparada para el crecimiento institucional y adaptabilidad continua.
+        <div className="space-y-2 md:space-y-6 text-center md:text-left">
+          <Rocket className="w-8 h-8 md:w-16 md:h-16 text-[#FF1E2D] mx-auto md:mx-0" />
+          <h3 className="text-lg md:text-3xl font-black uppercase italic">ESCALABLE</h3>
+          <p className="text-[10px] md:text-xl text-gray-500 font-bold uppercase leading-tight">
+            Arquitectura Cloud preparada para el crecimiento institucional continuo.
           </p>
         </div>
       </div>
 
-      <div className="bg-[#2B2B2B] p-12 md:p-24 text-center shadow-2xl border-b-[10px] md:border-b-[20px] border-[#FF1E2D]">
-        <p className="text-2xl md:text-7xl font-black text-white uppercase italic leading-tight tracking-tighter">
+      <div className="bg-[#2B2B2B] p-6 md:p-16 text-center shadow-2xl border-b-[8px] md:border-b-[16px] border-[#FF1E2D]">
+        <p className="text-xl md:text-7xl font-black text-white uppercase italic leading-none tracking-tighter">
           "SIBF-CAI: EL FUTURO DE LA GESTIÓN INTELIGENTE."
         </p>
       </div>
