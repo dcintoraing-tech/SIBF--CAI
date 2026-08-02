@@ -11,24 +11,26 @@ export default function Justification() {
   ];
 
   return (
-    <div className="w-full h-full flex flex-col justify-center space-y-6 md:space-y-12">
+    <div className="w-full h-full flex flex-col justify-center space-y-6 md:space-y-10">
       <div className="space-y-1">
-        <span className="text-[#FF1E2D] font-black text-[10px] md:text-xl tracking-[0.4em] uppercase">JUSTIFICACIÓN</span>
-        <h2 className="text-3xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">VALOR REAL</h2>
+        <span className="text-[#FF1E2D] font-black text-xs md:text-xl tracking-[0.4em] uppercase">JUSTIFICACIÓN</span>
+        <h2 className="text-3xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">VALOR REAL</h2>
       </div>
 
-      <div className="space-y-6 md:space-y-12">
-        <p className="text-sm md:text-5xl text-[#2B2B2B] font-black leading-[1.1] max-w-7xl uppercase italic">
+      <div className="space-y-8">
+        <p className="text-lg md:text-4xl text-[#2B2B2B] font-black leading-[1.1] max-w-5xl uppercase italic border-l-8 border-[#FF1E2D] pl-6">
           Garantizamos una gestión de asistencia de alto nivel competitiva bajo la <span className="text-[#FF1E2D]">TRANSFORMACIÓN DIGITAL</span>.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {values.map((v, i) => (
-            <div key={i} className="flex gap-6 md:gap-10 p-8 md:p-14 bg-white border-2 border-[#2B2B2B] border-t-[16px] border-t-[#FF1E2D] transition-all shadow-2xl animate-executive-pulse" style={{ animationDelay: `${i * 300}ms` }}>
-              <v.icon className="w-10 h-10 md:w-20 md:h-20 text-[#FF1E2D] shrink-0 animate-icon-tilt" style={{ animationDelay: `${i * 400}ms` }} />
-              <div className="space-y-4">
-                <h4 className="text-sm md:text-3xl font-black text-[#2B2B2B] uppercase tracking-widest leading-none">{v.title}</h4>
-                <p className="text-[12px] md:text-xl text-[#2B2B2B] font-black uppercase tracking-widest leading-tight italic">{v.desc}</p>
+            <div key={i} className="flex gap-5 md:gap-8 p-6 md:p-10 bg-white rounded-3xl shadow-lg border border-gray-50 transition-all hover:shadow-2xl animate-executive-pulse" style={{ animationDelay: `${i * 300}ms` }}>
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
+                <v.icon className="w-6 h-6 md:w-10 md:h-10 text-[#FF1E2D] animate-icon-tilt" style={{ animationDelay: `${i * 400}ms` }} />
+              </div>
+              <div className="space-y-2">
+                <h4 className="text-sm md:text-2xl font-black text-[#2B2B2B] uppercase tracking-tight leading-none">{v.title}</h4>
+                <p className="text-[10px] md:text-base text-[#2B2B2B] font-black uppercase tracking-widest leading-tight italic opacity-60">{v.desc}</p>
               </div>
             </div>
           ))}
