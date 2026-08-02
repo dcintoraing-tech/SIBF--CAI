@@ -39,10 +39,10 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
 
   return (
     <div className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden animate-in fade-in duration-500">
-      {/* Cabecera 100% Transparente */}
-      <div className="absolute top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-50 pointer-events-none">
-        <div className="bg-transparent pointer-events-auto opacity-80 hover:opacity-100 transition-opacity">
-          <img src="/images/logo.png" alt="Logo" className="h-10 md:h-14 w-auto object-contain" />
+      {/* Cabecera 100% Transparente y elevada */}
+      <div className="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-[150] pointer-events-none">
+        <div className="bg-transparent pointer-events-auto opacity-90 hover:opacity-100 transition-opacity">
+          <img src="/images/logo.png" alt="Logo" className="h-10 md:h-16 w-auto object-contain" />
         </div>
         
         <div className="pointer-events-auto">
@@ -50,18 +50,18 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
             variant="ghost" 
             size="icon" 
             onClick={onClose} 
-            className="hover:bg-red-50 text-gray-400 hover:text-[#FF1E2D] transition-all w-10 h-10 group"
+            className="hover:bg-red-50 text-gray-400 hover:text-[#FF1E2D] transition-all w-12 h-12 group"
           >
-            <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
+            <X className="w-8 h-8 group-hover:rotate-90 transition-transform duration-300" />
           </Button>
         </div>
       </div>
 
-      {/* Área Principal - Diapositiva con padding superior para evitar el logo */}
+      {/* Área Principal - Diapositiva con margen superior para el logo */}
       <div className="flex-1 relative bg-white overflow-hidden flex items-center justify-center">
         <div 
           key={currentSlide} 
-          className="w-full h-full animate-in fade-in slide-in-from-right-5 duration-700 flex flex-col items-center justify-center pt-16 md:pt-20"
+          className="w-full h-full animate-in fade-in slide-in-from-right-5 duration-700 flex flex-col items-center justify-center pt-24 md:pt-28"
         >
           <div className="w-full h-full max-w-[1600px] p-6 md:p-12 flex flex-col justify-center items-stretch overflow-hidden">
             {sections[currentSlide].component}
@@ -69,42 +69,42 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
         </div>
       </div>
 
-      {/* Navegación Inferior - Limpia y sin bordes negros */}
-      <div className="w-full bg-white border-t border-gray-100 p-2 md:p-4 z-50 shrink-0">
+      {/* Navegación Inferior - Completamente Transparente */}
+      <div className="w-full bg-transparent p-4 md:p-6 z-[150] shrink-0 absolute bottom-0 left-0">
         <div className="w-full flex justify-between items-center px-4 mb-2">
           <div className="flex items-center gap-2">
             <Button 
               variant="ghost" 
               onClick={prevSlide} 
               disabled={currentSlide === 0}
-              className="text-[#2B2B2B] hover:bg-red-50 hover:text-[#FF1E2D] h-9 md:h-11 px-4 font-bold uppercase tracking-widest text-[10px] flex gap-2"
+              className="text-[#2B2B2B] hover:bg-black/5 h-10 md:h-12 px-6 font-black uppercase tracking-widest text-xs flex gap-2"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
               <span className="hidden sm:inline">ANTERIOR</span>
             </Button>
             <Button 
               variant="ghost" 
               onClick={nextSlide} 
               disabled={currentSlide === sections.length - 1}
-              className="text-[#2B2B2B] hover:bg-red-50 hover:text-[#FF1E2D] h-9 md:h-11 px-4 font-bold uppercase tracking-widest text-[10px] flex gap-2"
+              className="text-[#2B2B2B] hover:bg-black/5 h-10 md:h-12 px-6 font-black uppercase tracking-widest text-xs flex gap-2"
             >
               <span className="hidden sm:inline">SIGUIENTE</span>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </Button>
           </div>
 
           <div className="flex-1 text-center hidden md:block px-4">
-            <h3 className="text-[#2B2B2B] font-black uppercase tracking-[0.4em] text-[10px] italic truncate opacity-50">
+            <h3 className="text-[#2B2B2B] font-black uppercase tracking-[0.4em] text-[10px] italic truncate opacity-30">
               {sections[currentSlide].title || "INICIO"}
             </h3>
           </div>
 
-          <div className="text-[10px] font-black text-[#FF1E2D] uppercase tracking-widest bg-red-50 px-3 py-1.5 rounded-full">
+          <div className="text-xs font-black text-[#FF1E2D] uppercase tracking-widest bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
             {currentSlide + 1} <span className="text-red-200 mx-1">/</span> {sections.length}
           </div>
         </div>
         <div className="w-full px-4">
-          <Progress value={progress} className="h-1 bg-gray-100" />
+          <Progress value={progress} className="h-1 bg-black/5" />
         </div>
       </div>
     </div>
