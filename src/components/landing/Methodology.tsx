@@ -142,11 +142,8 @@ export default function Methodology() {
         </div>
 
         <div className="hidden lg:col-span-3 lg:flex flex-col justify-center items-center bg-slate-50 rounded-[24px] p-6">
-          <div className="relative">
-             <RotateCw className="w-20 h-20 md:w-32 md:h-32 text-[#FF1E2D] animate-spin-slow opacity-10" />
-             <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <Target className="w-10 h-10 md:w-16 md:h-16 text-[#2B2B2B]" />
-             </div>
+          <div className="relative flex flex-col items-center">
+             <Target className="w-16 h-16 md:w-24 md:h-24 text-[#2B2B2B]" />
           </div>
           <div className="flex gap-4 mt-8">
             <Button 
@@ -175,7 +172,7 @@ export default function Methodology() {
           { icon: CheckCircle2, label: "CALIDAD" }
         ].map((item, i) => (
           <div key={i} className="flex items-center gap-3 p-3 bg-white shadow-lg rounded-xl border border-slate-50">
-            <item.icon className="w-5 h-5 text-[#FF1E2D]" />
+            <item.icon className={cn("w-5 h-5 text-[#FF1E2D]", item.icon === RotateCw && "animate-spin-slow")} />
             <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-[#2B2B2B] italic">{item.label}</span>
           </div>
         ))}
