@@ -1,7 +1,8 @@
+
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
-import { GitBranch, Database, Layout, Network, Maximize2, FileText } from "lucide-react";
+import React, { useState } from 'react';
+import { GitBranch, Database, Layout, Network, Maximize2, FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -9,88 +10,43 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 
 export default function DesignPhase() {
-  const [currentUxIdx, setCurrentUxIdx] = useState(0);
-
-  const uxImages = useMemo(() => [
+  const uxImages = [
     "/images/1.jpeg", "/images/2.jpeg", "/images/3.jpg", "/images/4.jpg",
     "/images/5.jpg", "/images/6.jpg", "/images/7.png", "/images/8.png",
-  ], []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentUxIdx((prev) => (prev + 1) % uxImages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [uxImages.length]);
+  ];
 
   const umlDiagrams = [
-    { name: "PROCESOS", img: "/images/dp.pdf", previewImg: "/images/pgeneral.jpg", type: "PDF", desc: "Flujo operativo", isPdf: true },
+    { name: "PROCESOS", img: "/images/pgeneral.jpg", type: "PDF", desc: "Flujo operativo" },
     { name: "CASOS USO", img: "/images/cugeneral.jpg", type: "DIAGRAMA", desc: "Actores-sistema" },
     { name: "CLASES", img: "/images/CLA.jpeg", type: "DIAGRAMA", desc: "Lógica objetos" },
     { name: "ARQ. INFO", img: "/images/ar.png", type: "DIAGRAMA", desc: "Flujo datos" },
-  ];
-
-  const dataDiagrams = [
-    { name: "MODELO DE DATOS", img: "/images/ER.jpeg", type: "BASE DATOS", desc: "Mapeo NoSQL", icon: Network },
-    { name: "DISEÑO UX/UI", images: uxImages, type: "PROTOTIPO", desc: "Alta fidelidad", icon: Layout, isCarousel: true }
   ];
 
   const renderCard = (item: any, i: number) => {
     return (
       <Dialog key={i}>
         <DialogTrigger asChild>
-          <button className="relative group overflow-hidden bg-white rounded-2xl p-4 flex flex-col items-center gap-4 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 w-full border border-gray-100">
-            <div className="absolute inset-0 bg-[#FF1E2D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col items-center justify-center p-4 text-center">
-              <Maximize2 className="w-10 h-10 text-white mb-2" />
-              <span className="text-white font-black text-[10px] md:text-xs uppercase tracking-widest italic">AMPLIAR VISTA</span>
+          <button className="relative group overflow-hidden bg-white rounded-2xl p-4 flex flex-col items-center gap-2 shadow-lg hover:shadow-2xl transition-all w-full border border-gray-100">
+            <div className="absolute inset-0 bg-[#FF1E2D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col items-center justify-center p-4">
+              <Maximize2 className="w-8 h-8 text-white mb-2" />
+              <span className="text-white font-black text-[10px] uppercase tracking-widest italic">VER DETALLE</span>
             </div>
-            
-            <div className="w-full h-32 md:h-44 bg-slate-50 rounded-xl flex items-center justify-center overflow-hidden border border-gray-100">
-               {item.isCarousel ? (
-                 <div className="relative w-full h-full flex items-center justify-center">
-                    <img src={item.images[currentUxIdx]} alt={item.name} className="w-full h-full object-cover opacity-40" />
-                    <Layout className="absolute w-12 h-12 text-[#FF1E2D] z-20" />
-                 </div>
-               ) : item.previewImg ? (
-                 <img src={item.previewImg} alt={item.name} className="w-full h-full object-contain" />
-               ) : item.isPdf ? (
-                 <FileText className="w-14 h-14 text-[#FF1E2D]" />
-               ) : item.img ? (
-                 <img src={item.img} alt={item.name} className="w-full h-full object-contain" />
-               ) : (
-                 <item.icon className="w-14 h-14 text-[#FF1E2D] opacity-40" />
-               )}
+            <div className="w-full h-24 md:h-32 bg-slate-50 rounded-xl flex items-center justify-center overflow-hidden">
+               <img src={item.img || uxImages[0]} alt={item.name} className="w-full h-full object-contain opacity-80" />
             </div>
-            <span className="text-xs md:text-lg font-black uppercase tracking-tight truncate w-full text-[#2B2B2B] italic text-center">{item.name}</span>
+            <span className="text-[10px] md:text-sm font-black uppercase text-[#2B2B2B] italic text-center truncate w-full">{item.name}</span>
           </button>
         </DialogTrigger>
-        <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 overflow-hidden flex flex-col bg-white border-none shadow-2xl z-[300]">
-          <DialogHeader className="p-4 bg-[#2B2B2B] text-white shrink-0 border-b-4 border-[#FF1E2D]">
-            <DialogTitle className="text-lg md:text-3xl font-black uppercase italic tracking-widest flex items-center gap-4">
-              <span className="w-2 h-8 bg-[#FF1E2D]" /> {item.name}
+        <DialogContent className="max-w-[95vw] w-full h-[90vh] p-0 overflow-hidden flex flex-col bg-white border-none shadow-2xl z-[300]">
+          <DialogHeader className="p-4 bg-[#2B2B2B] text-white border-b-4 border-[#FF1E2D]">
+            <DialogTitle className="text-xl md:text-3xl font-black uppercase italic tracking-widest">
+              {item.name}
             </DialogTitle>
           </DialogHeader>
-          <div className="flex-1 overflow-hidden bg-slate-50 flex items-center justify-center p-4 md:p-8">
-            {item.isCarousel ? (
-              <div className="w-full h-full flex items-center justify-center overflow-auto">
-                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-                    {item.images.map((img: string, idx: number) => (
-                      <img key={idx} src={img} alt={`${item.name} ${idx + 1}`} className="w-full aspect-[9/16] object-cover rounded-xl shadow-xl hover:scale-105 transition-transform" />
-                    ))}
-                 </div>
-              </div>
-            ) : item.isPdf ? (
-              <iframe src={`${item.img}#toolbar=0&navpanes=0`} className="w-full h-full rounded-xl" title={item.name} />
-            ) : (
-              <img src={item.img} alt={item.name} className="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
-            )}
+          <div className="flex-1 overflow-auto bg-slate-50 p-4 md:p-8 flex items-center justify-center">
+             <img src={item.img || uxImages[0]} alt={item.name} className="max-w-full max-h-full object-contain shadow-2xl rounded-xl" />
           </div>
         </DialogContent>
       </Dialog>
@@ -98,17 +54,17 @@ export default function DesignPhase() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center space-y-6 md:space-y-12 max-w-7xl mx-auto">
+    <div className="w-full h-full flex flex-col justify-center space-y-6 md:space-y-10 max-w-7xl mx-auto">
       <div className="space-y-1">
         <span className="text-[#FF1E2D] font-black text-xs md:text-xl tracking-[0.4em] uppercase">FASE DE DISEÑO</span>
-        <h2 className="text-3xl md:text-7xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">ARQUITECTURA</h2>
+        <h2 className="text-4xl md:text-7xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">ARQUITECTURA</h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-6">
-          <div className="flex items-center gap-4 border-b-2 border-gray-100 pb-3">
-            <GitBranch className="w-8 h-8 md:w-12 md:h-12 text-[#FF1E2D]" />
-            <h3 className="text-lg md:text-3xl font-black uppercase tracking-tight italic text-[#2B2B2B]">MODELADO UML</h3>
+          <div className="flex items-center gap-4 border-b-2 border-slate-100 pb-2">
+            <GitBranch className="w-6 h-6 md:w-10 md:h-10 text-[#FF1E2D]" />
+            <h3 className="text-lg md:text-2xl font-black uppercase italic text-[#2B2B2B]">DIAGRAMAS UML</h3>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {umlDiagrams.map((item, i) => renderCard(item, i))}
@@ -116,13 +72,40 @@ export default function DesignPhase() {
         </div>
 
         <div className="space-y-6">
-          <div className="flex items-center gap-4 border-b-2 border-gray-100 pb-3">
-            <Database className="w-8 h-8 md:w-12 md:h-12 text-[#FF1E2D]" />
-            <h3 className="text-lg md:text-3xl font-black uppercase tracking-tight italic text-[#2B2B2B]">DATOS Y UX</h3>
+          <div className="flex items-center gap-4 border-b-2 border-slate-100 pb-2">
+            <Layout className="w-6 h-6 md:w-10 md:h-10 text-[#FF1E2D]" />
+            <h3 className="text-lg md:text-2xl font-black uppercase italic text-[#2B2B2B]">UX/UI PROTOTIPOS</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {dataDiagrams.map((item, i) => renderCard(item, i))}
-          </div>
+          
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="relative group w-full h-40 md:h-64 bg-slate-100 rounded-3xl overflow-hidden border-2 border-dashed border-slate-200">
+                <div className="absolute inset-0 bg-[#FF1E2D]/80 opacity-0 group-hover:opacity-100 transition-all flex flex-col items-center justify-center z-10">
+                   <Layout className="w-12 h-12 text-white mb-2" />
+                   <span className="text-white font-black uppercase tracking-widest italic">ABRIR CARRUSEL</span>
+                </div>
+                <div className="grid grid-cols-4 h-full">
+                   {uxImages.slice(0, 4).map((img, i) => (
+                     <img key={i} src={img} className="w-full h-full object-cover" alt="UX" />
+                   ))}
+                </div>
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 overflow-hidden flex flex-col bg-white">
+              <DialogHeader className="p-4 bg-[#2B2B2B] text-white border-b-4 border-[#FF1E2D]">
+                <DialogTitle className="text-2xl md:text-4xl font-black uppercase italic">DISEÑO DE INTERFACES</DialogTitle>
+              </DialogHeader>
+              <div className="flex-1 overflow-y-auto p-4 md:p-12">
+                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {uxImages.map((img, i) => (
+                      <div key={i} className="aspect-[9/16] relative group rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <img src={img} className="w-full h-full object-cover" alt={`UI ${i}`} />
+                      </div>
+                    ))}
+                 </div>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from "react";
@@ -62,7 +63,7 @@ export default function Home() {
     { id: "desarrollo", title: "IMPLEMENTACIÓN Y STACK", component: <DevelopmentPhase /> },
     { id: "conclusiones", title: "CONCLUSIONES FINALES", component: <Conclusions /> },
     { id: "bibliografia", title: "BIBLIOGRAFÍA", component: <Bibliography /> },
-    { id: "qr", title: "DEMO INTERACTIVA", component: <div className="bg-[#0A0A0A] w-full h-full flex items-center justify-center p-6 md:p-12"><QRSection /></div> },
+    { id: "qr", title: "DEMO INTERACTIVA", component: <div className="w-full h-full flex items-center justify-center"><QRSection /></div> },
   ];
 
   if (showIntro) {
@@ -88,7 +89,6 @@ export default function Home() {
           </Button>
 
           <div className="text-center space-y-2">
-            <span className="text-[10px] font-black text-gray-300 uppercase tracking-[0.8em]">PRESENTACIÓN EJECUTIVA</span>
             <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px]">CLICK PARA INICIAR SIBF-CAI</p>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function Home() {
           variant="outline"
           size="icon"
           onClick={toggleFullscreen}
-          className="bg-white/80 hover:bg-[#FF1E2D] hover:text-white backdrop-blur-md transition-all rounded-none w-10 h-10 md:w-12 md:h-12 shadow-xl border border-gray-100 group"
+          className="bg-white/80 hover:bg-[#FF1E2D] hover:text-white backdrop-blur-md transition-all rounded-full w-10 h-10 md:w-12 md:h-12 shadow-xl border border-gray-100 group"
         >
           {isFullscreen ? (
             <Minimize className="w-5 h-5 md:w-6 md:h-6" />
