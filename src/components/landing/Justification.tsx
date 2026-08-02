@@ -11,24 +11,24 @@ export default function Justification() {
   ];
 
   return (
-    <div id="justificacion" className="space-y-32">
-      <div className="space-y-4">
-        <span className="text-[#FF1E2D] font-bold text-xl tracking-[0.4em] uppercase">JUSTIFICACIÓN</span>
-        <h2 className="text-6xl md:text-8xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">VALOR REAL</h2>
+    <div className="w-full h-full flex flex-col justify-center space-y-4 md:space-y-12">
+      <div className="space-y-1">
+        <span className="text-[#FF1E2D] font-black text-[10px] md:text-lg tracking-[0.4em] uppercase">JUSTIFICACIÓN</span>
+        <h2 className="text-2xl md:text-6xl font-black text-[#2B2B2B] tracking-tight uppercase italic leading-none">VALOR REAL</h2>
       </div>
 
-      <div className="space-y-24">
-        <p className="text-3xl md:text-6xl text-gray-600 font-medium leading-[1.1] max-w-6xl">
-          El sistema garantiza una gestión de asistencia de alto nivel competitiva bajo la <span className="text-[#FF1E2D] font-black text-4xl md:text-7xl">TRANSFORMACIÓN DIGITAL</span>.
+      <div className="space-y-4 md:space-y-10">
+        <p className="text-sm md:text-4xl text-gray-600 font-medium leading-tight max-w-5xl">
+          El sistema garantiza una gestión de asistencia de alto nivel competitiva bajo la <span className="text-[#FF1E2D] font-black text-xl md:text-5xl">TRANSFORMACIÓN DIGITAL</span>.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {values.map((v, i) => (
-            <div key={i} className="flex gap-12 p-16 bg-slate-50 border-t-[12px] border-transparent border-[#FF1E2D] transition-all shadow-2xl animate-executive-pulse" style={{ animationDelay: `${i * 400}ms` }}>
-              <v.icon className="w-20 h-20 text-[#FF1E2D] shrink-0 animate-icon-tilt" style={{ animationDelay: `${i * 500}ms` }} />
-              <div className="space-y-6">
-                <h4 className="text-3xl font-black text-[#2B2B2B] uppercase tracking-widest">{v.title}</h4>
-                <p className="text-xl text-gray-400 font-bold uppercase tracking-widest leading-relaxed">{v.desc}</p>
+            <div key={i} className="flex gap-4 md:gap-8 p-4 md:p-10 bg-slate-50 border-t-[6px] md:border-t-[12px] border-[#FF1E2D] transition-all shadow-xl animate-executive-pulse" style={{ animationDelay: `${i * 300}ms` }}>
+              <v.icon className="w-8 h-8 md:w-16 md:h-16 text-[#FF1E2D] shrink-0 animate-icon-tilt" style={{ animationDelay: `${i * 400}ms` }} />
+              <div className="space-y-2">
+                <h4 className="text-sm md:text-2xl font-black text-[#2B2B2B] uppercase tracking-widest leading-none">{v.title}</h4>
+                <p className="text-[10px] md:text-lg text-gray-400 font-bold uppercase tracking-widest leading-tight">{v.desc}</p>
               </div>
             </div>
           ))}

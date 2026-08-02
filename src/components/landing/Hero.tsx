@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="flex-1 w-full max-w-[280px] md:max-w-md lg:max-w-lg flex items-center justify-center">
            <div className="relative group w-full aspect-square flex items-center justify-center">
               <div className="absolute -inset-10 md:-inset-20 red-gradient blur-[60px] opacity-10"></div>
-              <div className="relative w-full h-full bg-white border-2 border-gray-100 flex items-center justify-center overflow-hidden shadow-xl">
+              <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <img 
                   src="/images/portada.png" 
                   alt="Biometría Facial SIBF-CAI" 
