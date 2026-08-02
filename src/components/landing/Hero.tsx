@@ -1,3 +1,4 @@
+
 'use client';
 
 import { ShieldCheck, Calendar } from "lucide-react";
@@ -36,7 +37,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Imagen Derecha - Limpia sin recuadros */}
+        {/* Imagen Derecha - Limpia sin recuadros ni etiquetas innecesarias */}
         <div className="flex-1 w-full max-w-[320px] md:max-w-xl lg:max-w-2xl flex items-center justify-center">
            <div className="relative group w-full aspect-square flex items-center justify-center">
               <div className="absolute -inset-10 md:-inset-20 red-gradient blur-[100px] opacity-10"></div>
@@ -47,9 +48,6 @@ export default function Hero() {
                   className="w-full h-full object-contain animate-tech-pulse z-10"
                 />
                 <div className="absolute top-0 left-0 w-full h-[4px] bg-[#FF1E2D] shadow-[0_0_20px_#FF1E2D] animate-scan-line z-20"></div>
-                <div className="absolute bottom-6 left-6 z-30">
-                  <div className="text-[10px] md:text-sm font-black text-white bg-[#2B2B2B] px-4 py-2 uppercase tracking-[0.4em] italic shadow-2xl rounded-sm">PROTOCOLO SIBF-V1.0</div>
-                </div>
               </div>
            </div>
         </div>
