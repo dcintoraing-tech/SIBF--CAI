@@ -71,14 +71,14 @@ export default function Methodology() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center space-y-6 md:space-y-8 max-w-[1400px] mx-auto px-6">
+    <div className="w-full h-full flex flex-col justify-center space-y-4 md:space-y-6 max-w-[1300px] mx-auto">
       <div className="space-y-1">
-        <span className="text-[#FF1E2D] font-black text-xs md:text-xl tracking-[0.4em] uppercase">METODOLOGÍA ÁGIL</span>
-        <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">SCRUM</h2>
+        <span className="text-[#FF1E2D] font-black text-xs md:text-lg tracking-[0.4em] uppercase">METODOLOGÍA ÁGIL</span>
+        <h2 className="text-3xl md:text-6xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">SCRUM</h2>
       </div>
 
-      {/* Línea del Tiempo Animada */}
-      <div className="relative pt-10 pb-4">
+      {/* Línea del Tiempo Interactiva */}
+      <div className="relative pt-6 pb-2">
         <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2" />
         <div 
           className="absolute top-1/2 left-0 h-1 bg-[#FF1E2D] -translate-y-1/2 transition-all duration-700 ease-in-out" 
@@ -91,50 +91,50 @@ export default function Methodology() {
               key={i}
               onClick={() => setCurrentStep(i)}
               className={cn(
-                "w-8 h-8 md:w-14 md:h-14 rounded-full border-4 flex items-center justify-center transition-all duration-300",
+                "w-8 h-8 md:w-12 md:h-12 rounded-full border-4 flex items-center justify-center transition-all duration-300",
                 currentStep >= i ? "bg-[#FF1E2D] border-[#FF1E2D] text-white" : "bg-white border-slate-100 text-slate-300 shadow-sm"
               )}
             >
-              <span className="text-[10px] md:text-xl font-black">{i + 1}</span>
+              <span className="text-[10px] md:text-lg font-black">{i + 1}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Grid de Contenido del Sprint */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white p-6 md:p-10 shadow-2xl rounded-[40px] border border-slate-50 relative overflow-hidden">
-        <div className="lg:col-span-7 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch bg-white p-6 md:p-8 shadow-2xl rounded-[30px] border border-slate-50 relative overflow-hidden">
+        <div className="lg:col-span-8 space-y-4">
           <div className="flex items-center gap-4">
-            <div className="bg-[#FF1E2D] text-white px-5 py-2 text-xs md:text-lg font-black uppercase tracking-widest italic shadow-lg">
+            <div className="bg-[#FF1E2D] text-white px-4 py-1.5 text-[10px] md:text-base font-black uppercase tracking-widest italic shadow-lg">
               {sprints[currentStep].phase}
             </div>
-            <h3 className="text-2xl md:text-5xl font-black text-[#2B2B2B] italic uppercase">{sprints[currentStep].name}</h3>
+            <h3 className="text-xl md:text-4xl font-black text-[#2B2B2B] italic uppercase">{sprints[currentStep].name}</h3>
           </div>
           
-          <p className="text-xl md:text-3xl text-[#2B2B2B] font-bold uppercase leading-tight italic border-l-8 border-[#FF1E2D] pl-6 py-2">
+          <p className="text-lg md:text-2xl text-[#2B2B2B] font-bold uppercase leading-tight italic border-l-8 border-[#FF1E2D] pl-6 py-1">
             {sprints[currentStep].goal}
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-            <div className="space-y-3">
-              <h4 className="text-sm md:text-xl font-black text-[#FF1E2D] uppercase italic flex items-center gap-2">
-                <Layers className="w-5 h-5" /> ÉPICAS POR FASE
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+            <div className="space-y-2">
+              <h4 className="text-[10px] md:text-lg font-black text-[#FF1E2D] uppercase italic flex items-center gap-2">
+                <Layers className="w-4 h-4 md:w-5 md:h-5" /> ÉPICAS
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {sprints[currentStep].epics.map((epic, i) => (
-                  <li key={i} className="text-xs md:text-lg font-black text-[#2B2B2B] uppercase flex items-center gap-2">
-                    <span className="w-2 h-2 bg-[#FF1E2D] rounded-full" /> {epic}
+                  <li key={i} className="text-[10px] md:text-base font-black text-[#2B2B2B] uppercase flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#FF1E2D] rounded-full" /> {epic}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="space-y-3">
-              <h4 className="text-sm md:text-xl font-black text-[#2B2B2B] uppercase italic flex items-center gap-2">
-                <ListTodo className="w-5 h-5" /> LISTA DE TAREAS
+            <div className="space-y-2">
+              <h4 className="text-[10px] md:text-lg font-black text-[#2B2B2B] uppercase italic flex items-center gap-2">
+                <ListTodo className="w-4 h-4 md:w-5 md:h-5" /> TAREAS
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {sprints[currentStep].tasks.map((task, i) => (
-                  <li key={i} className="text-xs md:text-lg font-bold text-[#2B2B2B] uppercase italic opacity-70 flex items-center gap-2">
+                  <li key={i} className="text-[10px] md:text-base font-bold text-[#2B2B2B] uppercase italic opacity-80 flex items-center gap-2">
                     ✓ {task}
                   </li>
                 ))}
@@ -147,41 +147,41 @@ export default function Methodology() {
               onClick={handlePrev} 
               disabled={currentStep === 0}
               variant="outline"
-              className="rounded-full border-2 border-[#2B2B2B] text-[#2B2B2B] hover:bg-[#2B2B2B] hover:text-white h-12 w-12 md:h-16 md:w-16"
+              className="rounded-full border-2 border-[#2B2B2B] text-[#2B2B2B] hover:bg-[#2B2B2B] hover:text-white h-10 w-10 md:h-12 md:w-12"
             >
-              <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </Button>
             <Button 
               onClick={handleNext} 
               disabled={currentStep === sprints.length - 1}
-              className="bg-[#FF1E2D] hover:bg-[#2B2B2B] text-white rounded-full h-12 w-12 md:h-16 md:w-16 shadow-xl"
+              className="bg-[#FF1E2D] hover:bg-[#2B2B2B] text-white rounded-full h-10 w-10 md:h-12 md:w-12 shadow-xl"
             >
-              <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
         </div>
 
-        <div className="hidden lg:col-span-5 lg:flex flex-col justify-center items-center bg-slate-50 rounded-[30px] p-8 border border-slate-100">
+        <div className="hidden lg:col-span-4 lg:flex flex-col justify-center items-center bg-slate-50 rounded-[24px] p-6 border border-slate-100">
           <div className="relative">
-             <div className="absolute -inset-16 bg-[#FF1E2D]/5 blur-[80px] rounded-full animate-pulse" />
-             <RotateCw className="w-32 h-32 md:w-56 md:h-56 text-[#FF1E2D] animate-spin-slow opacity-20" />
+             <div className="absolute -inset-12 bg-[#FF1E2D]/5 blur-[60px] rounded-full animate-pulse" />
+             <RotateCw className="w-24 h-24 md:w-40 md:h-40 text-[#FF1E2D] animate-spin-slow opacity-10" />
              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <Target className="w-16 h-16 md:w-28 md:h-28 text-[#2B2B2B] animate-bounce" />
-                <span className="text-[10px] md:text-sm font-black text-[#2B2B2B] uppercase tracking-[0.5em] mt-4">CORE VALUE</span>
+                <Target className="w-12 h-12 md:w-20 md:h-20 text-[#2B2B2B]" />
+                <span className="text-[8px] md:text-[10px] font-black text-[#2B2B2B] uppercase tracking-[0.4em] mt-2">VALOR</span>
              </div>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 pt-2">
+      <div className="grid grid-cols-3 gap-4 md:gap-6 pt-2">
         {[
           { icon: Users, label: "EQUIPO SCRUM" },
           { icon: RotateCw, label: "ITERACIONES" },
-          { icon: CheckCircle2, label: "CALIDAD ASEGURADA" }
+          { icon: CheckCircle2, label: "CALIDAD" }
         ].map((item, i) => (
-          <div key={i} className="flex items-center gap-4 p-4 bg-white shadow-lg rounded-2xl border border-slate-50">
-            <item.icon className="w-6 h-6 md:w-10 md:h-10 text-[#FF1E2D]" />
-            <span className="text-[10px] md:text-sm font-black uppercase tracking-widest text-[#2B2B2B] italic">{item.label}</span>
+          <div key={i} className="flex items-center gap-3 p-3 md:p-4 bg-white shadow-lg rounded-xl border border-slate-50">
+            <item.icon className="w-5 h-5 md:w-8 md:h-8 text-[#FF1E2D]" />
+            <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-[#2B2B2B] italic">{item.label}</span>
           </div>
         ))}
       </div>
