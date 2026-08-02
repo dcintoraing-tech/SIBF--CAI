@@ -9,7 +9,6 @@ import Methodology from "@/components/landing/Methodology";
 import AnalysisPhase from "@/components/landing/AnalysisPhase";
 import DesignPhase from "@/components/landing/DesignPhase";
 import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
-import BusinessProcess from "@/components/landing/BusinessProcess";
 import Conclusions from "@/components/landing/Conclusions";
 import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
@@ -61,10 +60,9 @@ export default function Home() {
     { id: "metodologia", title: "METODOLOGÍA SCRUM", component: <Methodology /> },
     { id: "diseno", title: "DISEÑO Y ARQUITECTURA", component: <DesignPhase /> },
     { id: "desarrollo", title: "IMPLEMENTACIÓN Y STACK", component: <DevelopmentPhase /> },
-    { id: "negocio", title: "PROCESO DE NEGOCIO", component: <BusinessProcess /> },
     { id: "conclusiones", title: "CONCLUSIONES FINALES", component: <Conclusions /> },
     { id: "bibliografia", title: "BIBLIOGRAFÍA", component: <Bibliography /> },
-    { id: "qr", title: "DEMO INTERACTIVA", component: <div className="bg-[#0A0A0A] -m-6 md:-m-24 p-6 md:p-24"><QRSection /></div> },
+    { id: "qr", title: "DEMO INTERACTIVA", component: <div className="bg-[#0A0A0A] w-full h-full flex items-center justify-center p-6 md:p-12"><QRSection /></div> },
   ];
 
   if (showIntro) {
@@ -100,7 +98,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white font-sans overflow-hidden relative animate-in fade-in zoom-in-95 duration-1000">
-      {/* Botón Global Fullscreen */}
       <div className="fixed top-4 right-4 z-[150]">
         <Button
           variant="outline"
@@ -116,7 +113,6 @@ export default function Home() {
         </Button>
       </div>
 
-      {/* Mobile Rotation Hint */}
       {showRotationHint && (
         <div className="fixed inset-0 z-[200] bg-[#2B2B2B]/95 flex flex-col items-center justify-center text-white p-6 animate-in fade-in duration-500 backdrop-blur-sm">
           <div className="animate-rotate-phone mb-8">

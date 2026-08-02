@@ -39,7 +39,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
 
   return (
     <div className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden animate-in fade-in duration-500">
-      {/* Cabecera 100% Transparente y elevada */}
+      {/* Cabecera 100% Transparente */}
       <div className="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-[150] pointer-events-none">
         <div className="bg-transparent pointer-events-auto opacity-90 hover:opacity-100 transition-opacity">
           <img src="/images/logo.png" alt="Logo" className="h-10 md:h-16 w-auto object-contain" />
@@ -57,21 +57,21 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
         </div>
       </div>
 
-      {/* Área Principal - Diapositiva con margen superior para el logo */}
-      <div className="flex-1 relative bg-white overflow-hidden flex items-center justify-center">
+      {/* Área Principal - Centrado absoluto y ocupación de espacio */}
+      <div className="flex-1 relative bg-white overflow-hidden flex flex-col items-center justify-center pt-20 pb-20">
         <div 
           key={currentSlide} 
-          className="w-full h-full animate-in fade-in slide-in-from-right-5 duration-700 flex flex-col items-center justify-center pt-24 md:pt-28"
+          className="w-full h-full animate-in fade-in slide-in-from-right-5 duration-700 flex flex-col items-center justify-center px-4 md:px-12"
         >
-          <div className="w-full h-full max-w-[1600px] p-6 md:p-12 flex flex-col justify-center items-stretch overflow-hidden">
+          <div className="w-full h-full max-w-[1600px] flex flex-col justify-center items-center overflow-hidden">
             {sections[currentSlide].component}
           </div>
         </div>
       </div>
 
       {/* Navegación Inferior - Completamente Transparente */}
-      <div className="w-full bg-transparent p-4 md:p-6 z-[150] shrink-0 absolute bottom-0 left-0">
-        <div className="w-full flex justify-between items-center px-4 mb-2">
+      <div className="w-full bg-transparent p-4 md:p-6 z-[150] shrink-0 absolute bottom-0 left-0 pointer-events-none">
+        <div className="w-full flex justify-between items-center px-4 mb-2 pointer-events-auto">
           <div className="flex items-center gap-2">
             <Button 
               variant="ghost" 
@@ -103,7 +103,7 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
             {currentSlide + 1} <span className="text-red-200 mx-1">/</span> {sections.length}
           </div>
         </div>
-        <div className="w-full px-4">
+        <div className="w-full px-4 opacity-50">
           <Progress value={progress} className="h-1 bg-black/5" />
         </div>
       </div>
