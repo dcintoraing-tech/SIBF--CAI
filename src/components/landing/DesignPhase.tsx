@@ -32,7 +32,7 @@ export default function DesignPhase() {
   ];
 
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false })
+    Autoplay({ delay: 1000, stopOnInteraction: false })
   );
 
   const renderCard = (item: any, i: number) => {
@@ -111,6 +111,9 @@ export default function DesignPhase() {
               <div className="flex-1 flex items-center justify-center bg-white p-4 md:p-8 overflow-hidden">
                 <Carousel 
                   plugins={[plugin.current]}
+                  opts={{
+                    loop: true,
+                  }}
                   className="w-full h-full flex items-center justify-center"
                   onMouseEnter={plugin.current.stop}
                   onMouseLeave={plugin.current.reset}
@@ -121,7 +124,7 @@ export default function DesignPhase() {
                         <div className="relative w-full h-full flex items-center justify-center bg-white">
                           <img 
                             src={img} 
-                            className="max-h-[80vh] w-auto max-w-full object-contain shadow-2xl rounded-2xl border-2 border-slate-100" 
+                            className="max-h-[85vh] w-auto max-w-full object-contain shadow-2xl rounded-2xl border-2 border-slate-100" 
                             alt={`Interface ${i + 1}`} 
                           />
                         </div>
