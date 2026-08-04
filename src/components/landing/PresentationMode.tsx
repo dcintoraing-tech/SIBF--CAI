@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import { cn } from '@/lib/utils';
 
 interface PresentationModeProps {
   sections: Array<{ id: string; title?: string; component: React.ReactNode }>;
@@ -12,6 +13,8 @@ interface PresentationModeProps {
 
 export default function PresentationMode({ sections, onClose }: PresentationModeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showControls, setShowControls] = useState(true);
+  const controlsTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -19,10 +22,27 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
       if (e.key === 'ArrowLeft') prevSlide();
       if (e.key === 'Escape') onClose();
     };
+
+    const resetControlsTimer = () => {
+      setShowControls(true);
+      if (controlsTimerRef.current) {
+        clearTimeout(controlsTimerRef.current);
+      }
+      controlsTimerRef.current = setTimeout(() => {
+        setShowControls(false);
+      }, 3000); // Ocultar después de 3 segundos de inactividad
+    };
+
     window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('mousemove', resetControlsTimer);
+    
     document.body.style.overflow = 'hidden';
+    resetControlsTimer();
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('mousemove', resetControlsTimer);
+      if (controlsTimerRef.current) clearTimeout(controlsTimerRef.current);
       document.body.style.overflow = 'auto';
     };
   }, [currentSlide]);
@@ -38,14 +58,16 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
   const progress = ((currentSlide + 1) / sections.length) * 100;
 
   return (
-    <div className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden animate-in fade-in duration-500">
-      {/* Cabecera Totalmente Transparente */}
-      <div className="absolute top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-[200] pointer-events-none">
-        <div className="pointer-events-auto opacity-70 hover:opacity-100 transition-opacity">
-          {/* Logo institucional limpio y transparente */}
+    <div className="fixed inset-0 z-[100] bg-white flex flex-col overflow-hidden animate-in fade-in duration-500 cursor-default">
+      {/* Cabecera Auto-ocultable */}
+      <div className={cn(
+        "absolute top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-[200] transition-all duration-500",
+        showControls ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+      )}>
+        <div className="opacity-70 hover:opacity-100 transition-opacity">
           <img src="/images/logo.png" alt="Logo" className="h-8 md:h-12 w-auto object-contain" />
         </div>
-        <div className="pointer-events-auto">
+        <div>
           <Button 
             variant="ghost" 
             size="icon" 
@@ -57,8 +79,8 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
         </div>
       </div>
 
-      {/* Área de Visualización con Zonas de Seguridad para evitar encimes */}
-      <div className="flex-1 relative flex items-center justify-center px-6 md:px-16 pt-24 pb-32">
+      {/* Área de Visualización */}
+      <div className="flex-1 relative flex items-center justify-center px-6 md:px-16">
         <div 
           key={currentSlide} 
           className="w-full h-full max-w-[1400px] flex items-center justify-center animate-in fade-in slide-in-from-right-10 duration-700"
@@ -67,15 +89,18 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
         </div>
       </div>
 
-      {/* Navegación Inferior 100% Transparente */}
-      <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 z-[200] pointer-events-none">
-        <div className="flex justify-between items-center pointer-events-auto max-w-[1400px] mx-auto">
+      {/* Navegación Inferior Auto-ocultable */}
+      <div className={cn(
+        "absolute bottom-0 left-0 w-full p-6 md:p-10 z-[200] transition-all duration-500",
+        showControls ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+      )}>
+        <div className="flex justify-between items-center max-w-[1400px] mx-auto">
           <div className="flex gap-4">
             <Button 
               variant="ghost" 
               onClick={prevSlide} 
               disabled={currentSlide === 0}
-              className="text-[#2B2B2B] hover:bg-slate-100/40 h-10 md:h-12 px-6 md:px-8 font-black uppercase tracking-widest text-[9px] md:text-xs flex gap-2 bg-white/5 backdrop-blur-md rounded-full border border-black/5 shadow-sm"
+              className="text-[#2B2B2B] hover:bg-slate-100/40 h-10 md:h-12 px-6 md:px-8 font-black uppercase tracking-widest text-[9px] md:text-xs flex gap-2 bg-white/50 backdrop-blur-md rounded-full border border-black/5 shadow-sm"
             >
               <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
               <span className="hidden sm:inline">ANTERIOR</span>
@@ -84,19 +109,19 @@ export default function PresentationMode({ sections, onClose }: PresentationMode
               variant="ghost" 
               onClick={nextSlide} 
               disabled={currentSlide === sections.length - 1}
-              className="text-[#2B2B2B] hover:bg-slate-100/40 h-10 md:h-12 px-6 md:px-8 font-black uppercase tracking-widest text-[9px] md:text-xs flex gap-2 bg-white/5 backdrop-blur-md rounded-full border border-black/5 shadow-sm"
+              className="text-[#2B2B2B] hover:bg-slate-100/40 h-10 md:h-12 px-6 md:px-8 font-black uppercase tracking-widest text-[9px] md:text-xs flex gap-2 bg-white/50 backdrop-blur-md rounded-full border border-black/5 shadow-sm"
             >
               <span className="hidden sm:inline">SIGUIENTE</span>
               <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </Button>
           </div>
 
-          <div className="text-[9px] md:text-xs font-black text-[#FF1E2D] uppercase tracking-widest bg-white/20 backdrop-blur-xl px-6 py-2 md:px-8 md:py-3 rounded-full border border-black/5 shadow-2xl">
+          <div className="text-[9px] md:text-xs font-black text-[#FF1E2D] uppercase tracking-widest bg-white/50 backdrop-blur-xl px-6 py-2 md:px-8 md:py-3 rounded-full border border-black/5 shadow-2xl">
             {currentSlide + 1} <span className="text-[#2B2B2B]/30 mx-2">/</span> {sections.length}
           </div>
         </div>
-        <div className="mt-6 px-10 opacity-20 max-w-[1400px] mx-auto">
-          <Progress value={progress} className="h-0.5 bg-slate-300" />
+        <div className="mt-6 px-10 opacity-30 max-w-[1400px] mx-auto">
+          <Progress value={progress} className="h-1 bg-slate-200" />
         </div>
       </div>
     </div>
