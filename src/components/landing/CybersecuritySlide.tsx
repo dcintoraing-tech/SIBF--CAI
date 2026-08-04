@@ -1,27 +1,27 @@
 'use client';
 
-import { ShieldCheck, Lock, Database, Cpu, Globe, Server } from "lucide-react";
+import { ShieldCheck, Lock, Database, Cpu, Globe, Server, UserCheck, Activity } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function CybersecuritySlide() {
-  const techCards = [
+  const triad = [
     {
       icon: Lock,
-      title: "CIFRADO AVANZADO",
-      desc: "Protección de datos biométricos mediante algoritmos de encriptación AES-256 en tránsito y reposo.",
-      tag: "SEGURIDAD"
-    },
-    {
-      icon: ShieldCheck,
-      title: "REGLAS DE FIREBASE",
-      desc: "Arquitectura Zero-Trust con reglas de seguridad granulares que impiden el acceso no autorizado.",
-      tag: "INFRAESTRUCTURA"
+      title: "CONFIDENCIALIDAD",
+      desc: "Acceso exclusivo mediante biometría facial. Los datos biométricos están cifrados con algoritmos de grado militar (AES-256).",
+      tag: "PROTECCIÓN"
     },
     {
       icon: Database,
-      title: "INTEGRIDAD DE DATOS",
-      desc: "Sincronización en tiempo real con auditoría automática de cada registro de asistencia.",
-      tag: "RELIABILITY"
+      title: "INTEGRIDAD",
+      desc: "Garantía de que los registros de asistencia no pueden ser alterados. Sincronización inmutable en tiempo real con auditoría automática.",
+      tag: "VERACIDAD"
+    },
+    {
+      icon: Globe,
+      title: "DISPONIBILIDAD",
+      desc: "Infraestructura Cloud de alta disponibilidad (99.9%). Acceso garantizado desde cualquier punto institucional 24/7.",
+      tag: "ACCESO"
     }
   ];
 
@@ -29,14 +29,15 @@ export default function CybersecuritySlide() {
     <div className="w-full h-full flex flex-col justify-center space-y-8 md:space-y-12 max-w-[1300px] mx-auto px-6 text-[#2B2B2B]">
       <div className="space-y-2">
         <span className="text-[#FF1E2D] font-black text-xs md:text-xl tracking-[0.4em] uppercase">CIBERSEGURIDAD Y NUBE</span>
-        <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">PROTECCIÓN <span className="red-gradient-text">TOTAL</span></h2>
+        <h2 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">TRÍADA DE <span className="red-gradient-text">SEGURIDAD</span></h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-        {techCards.map((card, i) => (
+        {triad.map((card, i) => (
           <div 
             key={i} 
-            className="group relative bg-white p-8 md:p-12 rounded-[40px] shadow-2xl border border-slate-100 hover:border-[#FF1E2D]/30 transition-all duration-500 hover:-translate-y-2"
+            className="group relative bg-white p-8 md:p-12 rounded-[40px] shadow-2xl border border-slate-100 hover:border-[#FF1E2D]/30 transition-all duration-500 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-10"
+            style={{ animationDelay: `${i * 200}ms` }}
           >
             <div className="absolute top-6 right-8">
               <Badge variant="outline" className="border-[#FF1E2D] text-[#FF1E2D] font-black text-[10px] px-3 py-1 rounded-full uppercase italic">
@@ -63,7 +64,7 @@ export default function CybersecuritySlide() {
               <Cpu className="w-6 h-6 md:w-10 md:h-10 text-[#FF1E2D]" />
             </div>
             <div className="w-12 h-12 md:w-20 md:h-20 bg-[#FF1E2D] rounded-full flex items-center justify-center shadow-xl border-4 border-[#2B2B2B]">
-              <Globe className="w-6 h-6 md:w-10 md:h-10 text-white" />
+              <ShieldCheck className="w-6 h-6 md:w-10 md:h-10 text-white" />
             </div>
             <div className="w-12 h-12 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-[#2B2B2B]">
               <Server className="w-6 h-6 md:w-10 md:h-10 text-[#2B2B2B]" />
@@ -71,13 +72,13 @@ export default function CybersecuritySlide() {
           </div>
           <div className="space-y-1">
             <h4 className="text-white text-xl md:text-4xl font-black uppercase italic leading-none">STACK TECNOLÓGICO</h4>
-            <p className="text-[#FF1E2D] text-xs md:text-xl font-bold uppercase tracking-[0.2em] italic">NEXT.JS 15 + TENSORFLOW.JS + FIREBASE</p>
+            <p className="text-[#FF1E2D] text-xs md:text-xl font-bold uppercase tracking-[0.2em] italic">NEXT.JS 15 + FIREBASE + TENSORFLOW.JS</p>
           </div>
         </div>
 
         <div className="text-right z-10">
-          <div className="text-4xl md:text-7xl font-black text-white italic tracking-tighter leading-none">100% <span className="text-[#FF1E2D]">CLOUD</span></div>
-          <p className="text-gray-400 text-[10px] md:text-sm font-black uppercase tracking-widest mt-2">Disponibilidad Global Garantizada</p>
+          <div className="text-4xl md:text-7xl font-black text-white italic tracking-tighter leading-none">ZERO <span className="text-[#FF1E2D]">TRUST</span></div>
+          <p className="text-gray-400 text-[10px] md:text-sm font-black uppercase tracking-widest mt-2">Seguridad Granular por Diseño</p>
         </div>
       </div>
     </div>
