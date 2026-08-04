@@ -34,10 +34,14 @@ export default function AnalysisPhase() {
             <CardTitle className="text-sm md:text-2xl font-black uppercase tracking-widest">CALIDAD TÉCNICA</CardTitle>
           </CardHeader>
           <CardContent className="p-0 space-y-4 md:space-y-6">
-            {["SEGURIDAD BIOMÉTRICA", "RESPUESTA < 2S", "99.9% DISPONIBILIDAD"].map((item, i) => (
+            {[
+              { label: "SEGURIDAD BIOMÉTRICA", val: "✓ OK" },
+              { label: "RESPUESTA < 2 SEG", val: "✓ OK" },
+              { label: "99.9% DISPONIBILIDAD", val: "✓ OK" }
+            ].map((item, i) => (
               <div key={i} className="flex justify-between items-center border-b border-gray-100 pb-2">
-                <span className="text-[10px] md:text-lg lg:text-xl font-black uppercase tracking-widest">{item}</span>
-                <span className="text-[10px] md:text-lg lg:text-xl font-black text-[#FF1E2D] italic">✓ OK</span>
+                <span className="text-[10px] md:text-lg lg:text-xl font-black uppercase tracking-widest">{item.label}</span>
+                <span className="text-[10px] md:text-lg lg:text-xl font-black text-[#FF1E2D] italic">{item.val}</span>
               </div>
             ))}
           </CardContent>
