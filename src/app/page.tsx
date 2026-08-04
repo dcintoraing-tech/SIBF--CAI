@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from "react";
@@ -10,6 +9,7 @@ import Methodology from "@/components/landing/Methodology";
 import AnalysisPhase from "@/components/landing/AnalysisPhase";
 import DesignPhase from "@/components/landing/DesignPhase";
 import DevelopmentPhase from "@/components/landing/DevelopmentPhase";
+import CybersecuritySlide from "@/components/landing/CybersecuritySlide";
 import Conclusions from "@/components/landing/Conclusions";
 import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
@@ -61,6 +61,7 @@ export default function Home() {
     { id: "metodologia", title: "METODOLOGÍA SCRUM", component: <Methodology /> },
     { id: "diseno", title: "DISEÑO Y ARQUITECTURA", component: <DesignPhase /> },
     { id: "desarrollo", title: "IMPLEMENTACIÓN Y STACK", component: <DevelopmentPhase /> },
+    { id: "seguridad", title: "CIBERSEGURIDAD", component: <CybersecuritySlide /> },
     { id: "conclusiones", title: "CONCLUSIONES FINALES", component: <Conclusions /> },
     { id: "bibliografia", title: "BIBLIOGRAFÍA", component: <Bibliography /> },
     { id: "qr", title: "DEMO INTERACTIVA", component: <div className="w-full h-full flex items-center justify-center"><QRSection /></div> },
