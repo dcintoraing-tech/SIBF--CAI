@@ -25,8 +25,8 @@ export default function Objectives() {
       <div className="bg-slate-50 rounded-2xl p-6 md:p-12 shadow-inner border-l-[8px] md:border-l-[16px] border-l-[#FF1E2D] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF1E2D]/5 -mr-12 -mt-12 rotate-45" />
         <h4 className="text-[10px] md:text-base font-black text-[#FF1E2D] uppercase tracking-[0.4em] mb-4 border-b border-red-100 pb-1 inline-block italic">OBJETIVO GENERAL</h4>
-        <p className="text-sm md:text-2xl lg:text-3xl font-bold text-[#2B2B2B] leading-tight italic max-w-5xl">
-          "Desarrollar un sistema de información para la <span className="text-[#FF1E2D]">gestión de asistencia</span> basado en <span className="text-[#FF1E2D]">reconocimiento facial</span> que permita registrar de forma automática, optimizando la gestión institucional."
+        <p className="text-xs md:text-xl lg:text-2xl font-bold text-[#2B2B2B] leading-tight italic max-w-5xl">
+          "Desarrollar un sistema de información para la gestión de asistencia basado en reconocimiento facial que permita identificar a las personas y registrar de forma automática la hora de entrada, pase de lista y salida, optimizando el registro y la gestión de la asistencia institucional."
         </p>
       </div>
 
