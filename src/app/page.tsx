@@ -13,6 +13,7 @@ import CybersecuritySlide from "@/components/landing/CybersecuritySlide";
 import Conclusions from "@/components/landing/Conclusions";
 import Bibliography from "@/components/landing/Bibliography";
 import QRSection from "@/components/landing/QRSection";
+import CommercialSlide from "@/components/landing/CommercialSlide";
 import PresentationMode from "@/components/landing/PresentationMode";
 import { Smartphone, Maximize, Minimize, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -65,6 +66,7 @@ export default function Home() {
     { id: "conclusiones", title: "CONCLUSIONES FINALES", component: <Conclusions /> },
     { id: "bibliografia", title: "BIBLIOGRAFÍA", component: <Bibliography /> },
     { id: "qr", title: "DEMO INTERACTIVA", component: <div className="w-full h-full flex items-center justify-center"><QRSection /></div> },
+    { id: "comercial", title: "SPOT COMERCIAL", component: <CommercialSlide /> },
   ];
 
   if (showIntro) {
