@@ -71,7 +71,7 @@ export default function QRSection() {
                 </DialogTitle>
               </DialogHeader>
               <div className="aspect-video w-full flex items-center justify-center bg-black">
-                <video controls className="w-full h-full max-h-[70vh]" src="/video/video2.mp4" autoPlay />
+                <video controls className="w-full h-full max-h-[70vh]" src="/video/pasedelista.mp4" autoPlay />
               </div>
             </DialogContent>
           </Dialog>
