@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 const sprints = [
   { 
     name: "SPRINT 1", 
-    phase: "ANÁLISIS", 
+    phases: ["ANÁLISIS", "INVESTIGACIÓN"], 
     icon: Search,
     goal: "Definición de Requerimientos e Inteligencia Institucional.",
     epics: ["Auditoría de Procesos", "Modelado de Sistemas", "Análisis de Requerimientos"],
@@ -27,7 +27,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 2", 
-    phase: "DESARROLLO", 
+    phases: ["DISEÑO", "ARQUITECTURA"], 
     icon: Code2,
     goal: "Diseño de Arquitectura y Prototipado de Interfaz.",
     epics: ["Diseño de Base de Datos", "UX/UI Prototyping", "Arquitectura Cloud"],
@@ -35,7 +35,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 3", 
-    phase: "DESARROLLO", 
+    phases: ["DESARROLLO", "FRONTEND"], 
     icon: Code2,
     goal: "Implementación del Motor Biométrico y Core Lógico.",
     epics: ["Integración IA", "Reconocimiento Facial", "Frontend Core"],
@@ -43,7 +43,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 4", 
-    phase: "IMPLEMENTACIÓN", 
+    phases: ["BACKEND", "INTEGRACIÓN"], 
     icon: Settings2,
     goal: "Integración de Servicios y Sincronización Real-time.",
     epics: ["Backend Firebase", "Auth Services", "Real-time Sync"],
@@ -51,7 +51,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 5", 
-    phase: "IMPLEMENTACIÓN", 
+    phases: ["DESPLIEGUE", "ENTREGA"], 
     icon: Settings2,
     goal: "Despliegue Final y Puesta en Marcha Inicial.",
     epics: ["Deployment Cloud", "Documentación Técnica", "Capacitación"],
@@ -59,7 +59,7 @@ const sprints = [
   },
   { 
     name: "SPRINT 6", 
-    phase: "PRUEBAS", 
+    phases: ["PRUEBAS", "OPTIMIZACIÓN"], 
     icon: ShieldCheck,
     goal: "Validación de Precisión y Pruebas de Calidad Final.",
     epics: ["QA & Testing", "Optimización de Algoritmo", "Depuración UI"],
@@ -85,7 +85,6 @@ export default function Methodology() {
         <h2 className="text-3xl md:text-6xl font-black text-[#2B2B2B] tracking-tighter uppercase italic leading-none">SCRUM ROADMAP</h2>
       </div>
 
-      {/* Timeline Visual */}
       <div className="relative pt-10 pb-4">
         <div className="absolute top-1/2 left-0 w-full h-1.5 bg-slate-100 -translate-y-1/2 rounded-full" />
         <div 
@@ -109,18 +108,21 @@ export default function Methodology() {
               >
                 <s.icon className="w-5 h-5 md:w-7 md:h-7" />
               </button>
-              <span className={cn(
-                "text-[8px] md:text-[10px] font-black uppercase tracking-widest hidden md:block",
-                currentStep === i ? "text-[#FF1E2D]" : "text-slate-400"
-              )}>
-                {s.phase}
-              </span>
+              <div className="flex flex-col items-center gap-0.5 mt-2">
+                {s.phases.map((p, idx) => (
+                  <span key={idx} className={cn(
+                    "text-[7px] md:text-[9px] font-black uppercase tracking-widest hidden md:block leading-none",
+                    currentStep === i ? "text-[#FF1E2D]" : "text-slate-400"
+                  )}>
+                    {p}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Content Card */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-[40px] border border-slate-50 relative overflow-hidden min-h-[450px]">
         <div 
           key={currentStep}
@@ -128,8 +130,12 @@ export default function Methodology() {
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <div className="bg-[#FF1E2D] text-white px-6 py-2 text-xs md:text-sm font-black uppercase tracking-[0.3em] italic shadow-lg rounded-full">
-                {sprints[currentStep].phase}
+              <div className="flex flex-col gap-2">
+                {sprints[currentStep].phases.map((phase, idx) => (
+                  <div key={idx} className="bg-[#FF1E2D] text-white px-6 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] italic shadow-lg rounded-full w-fit">
+                    {phase}
+                  </div>
+                ))}
               </div>
               <h3 className="text-2xl md:text-4xl font-black text-[#2B2B2B] italic uppercase">{sprints[currentStep].name}</h3>
             </div>
@@ -172,7 +178,6 @@ export default function Methodology() {
         </div>
       </div>
 
-      {/* Footer Badges */}
       <div className="grid grid-cols-3 gap-6 pt-2">
         {[
           { icon: Users, label: "EQUIPO MULTIDISCIPLINARIO" },

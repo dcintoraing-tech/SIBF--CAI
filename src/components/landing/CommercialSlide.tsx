@@ -1,11 +1,9 @@
 'use client';
 
-import { Play, Video } from "lucide-react";
+import { Play } from "lucide-react";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
@@ -20,21 +18,23 @@ export default function CommercialSlide() {
       </div>
 
       <div className="relative group cursor-pointer w-full max-w-4xl">
-        {/* Efecto de resplandor de fondo */}
         <div className="absolute -inset-10 md:-inset-20 bg-[#FF1E2D]/20 blur-[80px] md:blur-[120px] opacity-60 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
         
         <Dialog>
           <DialogTrigger asChild>
             <div className="relative bg-[#2B2B2B] p-2 rounded-[40px] md:rounded-[60px] shadow-2xl transition-all duration-700 hover:scale-[1.02] active:scale-95 group overflow-hidden border border-white/10">
               <div className="w-full aspect-video rounded-[35px] md:rounded-[55px] overflow-hidden relative">
-                {/* Imagen de Previsualización */}
+                {/* Imagen de Portada en Blanco/Tech */}
                 <img 
-                  src="https://picsum.photos/seed/sibf-commercial/1280/720" 
+                  src="https://picsum.photos/seed/sibf-cover/1280/720?grayscale" 
                   alt="Spot Comercial SIBF-CAI" 
-                  className="w-full h-full object-cover opacity-50 group-hover:opacity-30 transition-all duration-700 group-hover:scale-110"
-                  data-ai-hint="technology commercial"
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110"
+                  data-ai-hint="technology abstract"
                 />
                 
+                {/* Overlay de Gradiente */}
+                <div className="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
                 {/* Botón Play Gigante */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-24 h-24 md:w-44 md:h-44 bg-[#FF1E2D] rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(255,30,45,0.6)] transform transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_80px_rgba(255,30,45,0.8)]">
