@@ -28,11 +28,10 @@ export default function DesignPhase() {
   const umlDiagrams = [
     { name: "PROCESOS OPERATIVOS", img: "/images/pgeneral.jpg" },
     { name: "CASOS DE USO", img: "/images/cugeneral.jpg" },
-    { name: "DIAGRAMA DE CLASES", img: "/images/CLA.jpeg" },
+    { name: "DIAGRAMA DE CLASES", img: "/images/clasees.png" },
     { name: "ARQUITECTURA INFO.", img: "/images/ar.png" },
   ];
 
-  // Auto-play cada 1 segundo (1000ms) y sin detenerse al interactuar
   const plugin = React.useRef(
     Autoplay({ delay: 1000, stopOnInteraction: false, stopOnMouseEnter: false })
   );
@@ -74,7 +73,6 @@ export default function DesignPhase() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* UML Section */}
         <div className="space-y-4">
           <div className="flex items-center gap-4 border-b-2 border-slate-100 pb-2">
             <GitBranch className="w-6 h-6 md:w-8 md:h-8 text-[#FF1E2D]" />
@@ -85,7 +83,6 @@ export default function DesignPhase() {
           </div>
         </div>
 
-        {/* Prototyping Section */}
         <div className="space-y-4">
           <div className="flex items-center gap-4 border-b-2 border-slate-100 pb-2">
             <Layout className="w-6 h-6 md:w-8 md:h-8 text-[#FF1E2D]" />
@@ -126,7 +123,7 @@ export default function DesignPhase() {
                             src={img} 
                             className={cn(
                               "h-[80vh] md:h-[85vh] w-auto max-w-full object-contain shadow-2xl rounded-2xl border-2 border-slate-100 transition-transform duration-300",
-                              i === 0 && "rotate-90" // Rotar la primera imagen hacia la derecha
+                              i === 0 && "rotate-90"
                             )} 
                             alt={`Interface ${i + 1}`} 
                           />
